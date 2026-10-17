@@ -1,0 +1,668 @@
+{
+  "read_only": true,
+  "runs": [
+    {
+      "run": "20261016-212331",
+      "task": "go_run",
+      "continuation_from": null,
+      "summary": {
+        "steps": 12832,
+        "reason": "visual_cycle_target_reached",
+        "task_success": null,
+        "error": null,
+        "handover_contract_stop": null,
+        "last_sensor_receipts": {
+          "/sensors_data_raw": {
+            "receipt_monotonic_s": 127821.424765132,
+            "source_stamp_s": 1792188270.8562298,
+            "receipts": 647544
+          },
+          "/gripper/state": {
+            "receipt_monotonic_s": 127821.435192812,
+            "source_stamp_s": 1792188270.87172,
+            "receipts": 1830718
+          },
+          "/cam_h/color/image_raw/compressed": {
+            "receipt_monotonic_s": 127821.422184032,
+            "source_stamp_s": 1792188270.8336134,
+            "receipts": 67239
+          },
+          "/cam_r/color/image_raw/compressed": {
+            "receipt_monotonic_s": 127821.435230871,
+            "source_stamp_s": 1792188270.8231914,
+            "receipts": 64841
+          },
+          "/cam_l/color/image_raw/compressed": {
+            "receipt_monotonic_s": 127821.367702442,
+            "source_stamp_s": 1792188270.787906,
+            "receipts": 66976
+          }
+        },
+        "trace_manifest_error": null,
+        "visual_confirmed_parcels": 4,
+        "note": "Original KuavoSimEnv returns reward=0 and does not judge scene1 success."
+      },
+      "visual_steps": 7867,
+      "all_visual_steps_freeze_policy": true,
+      "stage_steps": {
+        "lift": 679,
+        "transport": 1178,
+        "left_approach": 1057,
+        "left_insert": 1070,
+        "close_left": 24,
+        "release_right": 21,
+        "right_retreat": 937,
+        "left_clear": 631,
+        "bin_transport": 1056,
+        "release_left": 18,
+        "left_retreat": 263,
+        "verify_bin": 21,
+        "return_home": 912
+      },
+      "transitions": [
+        {
+          "step": 1008,
+          "source": "lift",
+          "target": "transport"
+        },
+        {
+          "step": 1309,
+          "source": "transport",
+          "target": "left_approach"
+        },
+        {
+          "step": 1574,
+          "source": "left_approach",
+          "target": "left_insert"
+        },
+        {
+          "step": 1843,
+          "source": "left_insert",
+          "target": "close_left"
+        },
+        {
+          "step": 1850,
+          "source": "close_left",
+          "target": "release_right"
+        },
+        {
+          "step": 1855,
+          "source": "release_right",
+          "target": "right_retreat"
+        },
+        {
+          "step": 2139,
+          "source": "right_retreat",
+          "target": "left_clear"
+        },
+        {
+          "step": 2300,
+          "source": "left_clear",
+          "target": "bin_transport"
+        },
+        {
+          "step": 2544,
+          "source": "bin_transport",
+          "target": "release_left"
+        },
+        {
+          "step": 2548,
+          "source": "release_left",
+          "target": "left_retreat"
+        },
+        {
+          "step": 2617,
+          "source": "left_retreat",
+          "target": "verify_bin"
+        },
+        {
+          "step": 2622,
+          "source": "verify_bin",
+          "target": "return_home"
+        },
+        {
+          "step": 4282,
+          "source": "lift",
+          "target": "transport"
+        },
+        {
+          "step": 4580,
+          "source": "transport",
+          "target": "left_approach"
+        },
+        {
+          "step": 4833,
+          "source": "left_approach",
+          "target": "left_insert"
+        },
+        {
+          "step": 5104,
+          "source": "left_insert",
+          "target": "close_left"
+        },
+        {
+          "step": 5109,
+          "source": "close_left",
+          "target": "release_right"
+        },
+        {
+          "step": 5115,
+          "source": "release_right",
+          "target": "right_retreat"
+        },
+        {
+          "step": 5304,
+          "source": "right_retreat",
+          "target": "left_clear"
+        },
+        {
+          "step": 5459,
+          "source": "left_clear",
+          "target": "bin_transport"
+        },
+        {
+          "step": 5707,
+          "source": "bin_transport",
+          "target": "release_left"
+        },
+        {
+          "step": 5712,
+          "source": "release_left",
+          "target": "left_retreat"
+        },
+        {
+          "step": 5785,
+          "source": "left_retreat",
+          "target": "verify_bin"
+        },
+        {
+          "step": 5791,
+          "source": "verify_bin",
+          "target": "return_home"
+        },
+        {
+          "step": 7341,
+          "source": "lift",
+          "target": "transport"
+        },
+        {
+          "step": 7640,
+          "source": "transport",
+          "target": "left_approach"
+        },
+        {
+          "step": 7909,
+          "source": "left_approach",
+          "target": "left_insert"
+        },
+        {
+          "step": 8174,
+          "source": "left_insert",
+          "target": "close_left"
+        },
+        {
+          "step": 8180,
+          "source": "close_left",
+          "target": "release_right"
+        },
+        {
+          "step": 8185,
+          "source": "release_right",
+          "target": "right_retreat"
+        },
+        {
+          "step": 8390,
+          "source": "right_retreat",
+          "target": "left_clear"
+        },
+        {
+          "step": 8545,
+          "source": "left_clear",
+          "target": "bin_transport"
+        },
+        {
+          "step": 8824,
+          "source": "bin_transport",
+          "target": "release_left"
+        },
+        {
+          "step": 8828,
+          "source": "release_left",
+          "target": "left_retreat"
+        },
+        {
+          "step": 8897,
+          "source": "left_retreat",
+          "target": "verify_bin"
+        },
+        {
+          "step": 8902,
+          "source": "verify_bin",
+          "target": "return_home"
+        },
+        {
+          "step": 11001,
+          "source": "lift",
+          "target": "transport"
+        },
+        {
+          "step": 11281,
+          "source": "transport",
+          "target": "left_approach"
+        },
+        {
+          "step": 11551,
+          "source": "left_approach",
+          "target": "left_insert"
+        },
+        {
+          "step": 11816,
+          "source": "left_insert",
+          "target": "close_left"
+        },
+        {
+          "step": 11822,
+          "source": "close_left",
+          "target": "release_right"
+        },
+        {
+          "step": 11827,
+          "source": "release_right",
+          "target": "right_retreat"
+        },
+        {
+          "step": 12086,
+          "source": "right_retreat",
+          "target": "left_clear"
+        },
+        {
+          "step": 12246,
+          "source": "left_clear",
+          "target": "bin_transport"
+        },
+        {
+          "step": 12531,
+          "source": "bin_transport",
+          "target": "release_left"
+        },
+        {
+          "step": 12536,
+          "source": "release_left",
+          "target": "left_retreat"
+        },
+        {
+          "step": 12588,
+          "source": "left_retreat",
+          "target": "verify_bin"
+        },
+        {
+          "step": 12593,
+          "source": "verify_bin",
+          "target": "return_home"
+        }
+      ],
+      "gripper_events": [
+        {
+          "step": 1843,
+          "side": "left",
+          "command": "close",
+          "stage": "left_insert",
+          "feedback_before_send": [
+            0.0032548843882977962,
+            0.5074547529220581
+          ],
+          "receiver_contact_frames": null,
+          "bin_footprint_clear": null
+        },
+        {
+          "step": 1850,
+          "side": "right",
+          "command": "open",
+          "stage": "close_left",
+          "feedback_before_send": [
+            0.4951171278953552,
+            0.5074255466461182
+          ],
+          "receiver_contact_frames": 3,
+          "bin_footprint_clear": null
+        },
+        {
+          "step": 2544,
+          "side": "left",
+          "command": "open",
+          "stage": "bin_transport",
+          "feedback_before_send": [
+            0.5074910521507263,
+            0.0032644711900502443
+          ],
+          "receiver_contact_frames": null,
+          "bin_footprint_clear": true
+        },
+        {
+          "step": 5104,
+          "side": "left",
+          "command": "close",
+          "stage": "left_insert",
+          "feedback_before_send": [
+            0.0032542531844228506,
+            0.5077465176582336
+          ],
+          "receiver_contact_frames": null,
+          "bin_footprint_clear": null
+        },
+        {
+          "step": 5109,
+          "side": "right",
+          "command": "open",
+          "stage": "close_left",
+          "feedback_before_send": [
+            0.47533372044563293,
+            0.507715106010437
+          ],
+          "receiver_contact_frames": 3,
+          "bin_footprint_clear": null
+        },
+        {
+          "step": 5707,
+          "side": "left",
+          "command": "open",
+          "stage": "bin_transport",
+          "feedback_before_send": [
+            0.5077878832817078,
+            0.0032692928798496723
+          ],
+          "receiver_contact_frames": null,
+          "bin_footprint_clear": true
+        },
+        {
+          "step": 8174,
+          "side": "left",
+          "command": "close",
+          "stage": "left_insert",
+          "feedback_before_send": [
+            0.0032540957909077406,
+            0.5075883269309998
+          ],
+          "receiver_contact_frames": null,
+          "bin_footprint_clear": null
+        },
+        {
+          "step": 8180,
+          "side": "right",
+          "command": "open",
+          "stage": "close_left",
+          "feedback_before_send": [
+            0.48009470105171204,
+            0.5075557231903076
+          ],
+          "receiver_contact_frames": 3,
+          "bin_footprint_clear": null
+        },
+        {
+          "step": 8824,
+          "side": "left",
+          "command": "open",
+          "stage": "bin_transport",
+          "feedback_before_send": [
+            0.5075196623802185,
+            0.0032754279673099518
+          ],
+          "receiver_contact_frames": null,
+          "bin_footprint_clear": true
+        },
+        {
+          "step": 11816,
+          "side": "left",
+          "command": "close",
+          "stage": "left_insert",
+          "feedback_before_send": [
+            0.003251740476116538,
+            0.5073835849761963
+          ],
+          "receiver_contact_frames": null,
+          "bin_footprint_clear": null
+        },
+        {
+          "step": 11822,
+          "side": "right",
+          "command": "open",
+          "stage": "close_left",
+          "feedback_before_send": [
+            0.4888071119785309,
+            0.5073567628860474
+          ],
+          "receiver_contact_frames": 3,
+          "bin_footprint_clear": null
+        },
+        {
+          "step": 12531,
+          "side": "left",
+          "command": "open",
+          "stage": "bin_transport",
+          "feedback_before_send": [
+            0.5073975920677185,
+            0.0032649440690875053
+          ],
+          "receiver_contact_frames": null,
+          "bin_footprint_clear": true
+        }
+      ],
+      "whole_run_gripper_events": [
+        {
+          "step": 133,
+          "side": "right",
+          "command": "close",
+          "state": "small_grasp"
+        },
+        {
+          "step": 373,
+          "side": "right",
+          "command": "open",
+          "state": "weighing_release"
+        },
+        {
+          "step": 830,
+          "side": "right",
+          "command": "close",
+          "state": "regrasp_pose_verified"
+        },
+        {
+          "step": 1843,
+          "side": "left",
+          "command": "close",
+          "state": "visual_cycle_left_insert"
+        },
+        {
+          "step": 1850,
+          "side": "right",
+          "command": "open",
+          "state": "visual_cycle_close_left"
+        },
+        {
+          "step": 2544,
+          "side": "left",
+          "command": "open",
+          "state": "visual_cycle_bin_transport"
+        },
+        {
+          "step": 3212,
+          "side": "right",
+          "command": "close",
+          "state": "small_grasp"
+        },
+        {
+          "step": 3778,
+          "side": "right",
+          "command": "open",
+          "state": "weighing_release"
+        },
+        {
+          "step": 4113,
+          "side": "right",
+          "command": "close",
+          "state": "regrasp_pose_verified"
+        },
+        {
+          "step": 5104,
+          "side": "left",
+          "command": "close",
+          "state": "visual_cycle_left_insert"
+        },
+        {
+          "step": 5109,
+          "side": "right",
+          "command": "open",
+          "state": "visual_cycle_close_left"
+        },
+        {
+          "step": 5707,
+          "side": "left",
+          "command": "open",
+          "state": "visual_cycle_bin_transport"
+        },
+        {
+          "step": 6383,
+          "side": "right",
+          "command": "close",
+          "state": "small_grasp"
+        },
+        {
+          "step": 6832,
+          "side": "right",
+          "command": "open",
+          "state": "weighing_release"
+        },
+        {
+          "step": 7169,
+          "side": "right",
+          "command": "close",
+          "state": "regrasp_pose_verified"
+        },
+        {
+          "step": 8174,
+          "side": "left",
+          "command": "close",
+          "state": "visual_cycle_left_insert"
+        },
+        {
+          "step": 8180,
+          "side": "right",
+          "command": "open",
+          "state": "visual_cycle_close_left"
+        },
+        {
+          "step": 8824,
+          "side": "left",
+          "command": "open",
+          "state": "visual_cycle_bin_transport"
+        },
+        {
+          "step": 9520,
+          "side": "right",
+          "command": "close",
+          "state": "small_grasp"
+        },
+        {
+          "step": 10385,
+          "side": "right",
+          "command": "open",
+          "state": "weighing_release"
+        },
+        {
+          "step": 10815,
+          "side": "right",
+          "command": "close",
+          "state": "regrasp_pose_verified"
+        },
+        {
+          "step": 11816,
+          "side": "left",
+          "command": "close",
+          "state": "visual_cycle_left_insert"
+        },
+        {
+          "step": 11822,
+          "side": "right",
+          "command": "open",
+          "state": "visual_cycle_close_left"
+        },
+        {
+          "step": 12531,
+          "side": "left",
+          "command": "open",
+          "state": "visual_cycle_bin_transport"
+        }
+      ],
+      "visual_confirmations": [
+        {
+          "step": 2622,
+          "points": 143
+        },
+        {
+          "step": 5791,
+          "points": 125
+        },
+        {
+          "step": 8902,
+          "points": 130
+        },
+        {
+          "step": 12593,
+          "points": 92
+        }
+      ],
+      "configured_target_parcels": 4,
+      "requested_target_parcels": 4,
+      "control_elapsed_s": 2428.0488294700044,
+      "policy_reentries": [],
+      "expected_gripper_sequence_matches": true,
+      "whole_run_gripper_sequence_matches": true,
+      "expected_policy_reentries_match": true,
+      "visual_pickup_steps": 4129,
+      "independent_visual_sequence_complete": true,
+      "completion_prefixes": [
+        {
+          "completed": 1,
+          "step": 2851,
+          "elapsed_s": 516.6893282210076,
+          "gripper_events": 6,
+          "exact_gripper_sequence": true,
+          "confirmations": 1,
+          "policy_frozen_after_first": true,
+          "independent_prefix_verified": true
+        },
+        {
+          "completed": 2,
+          "step": 6009,
+          "elapsed_s": 1122.5944421890017,
+          "gripper_events": 12,
+          "exact_gripper_sequence": true,
+          "confirmations": 2,
+          "policy_frozen_after_first": true,
+          "independent_prefix_verified": true
+        },
+        {
+          "completed": 3,
+          "step": 9128,
+          "elapsed_s": 1708.85193592,
+          "gripper_events": 18,
+          "exact_gripper_sequence": true,
+          "confirmations": 3,
+          "policy_frozen_after_first": true,
+          "independent_prefix_verified": true
+        },
+        {
+          "completed": 4,
+          "step": 12832,
+          "elapsed_s": 2428.0488294700044,
+          "gripper_events": 24,
+          "exact_gripper_sequence": true,
+          "confirmations": 4,
+          "policy_frozen_after_first": true,
+          "independent_prefix_verified": true
+        }
+      ]
+    }
+  ],
+  "limitation": "Visual and feedback evidence does not replace the official task judge."
+}

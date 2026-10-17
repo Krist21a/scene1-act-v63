@@ -1,0 +1,19 @@
+{
+  "video_packet_stream_hashes": {
+    ".mkv": "0,v,SHA256=e823101c5ab06ea28ef5a6e72186d521e036ae0e0244dd172144da08a982dddb",
+    ".mp4": "0,v,SHA256=e823101c5ab06ea28ef5a6e72186d521e036ae0e0244dd172144da08a982dddb"
+  },
+  "identical_encoded_stream": true,
+  "mkv": {
+    "path": "results/videos/v63-four-parcels-third-view-20261017.mkv",
+    "bytes": 51142804,
+    "sha256": "8305bd74127cd13ad7c942596ef8ff95017a4a676f1e5e6f6f66913558b4d013"
+  },
+  "mp4": {
+    "path": "results/videos/v63-four-parcels-third-view-20261017.mp4",
+    "bytes": 52050388,
+    "sha256": "238a8bbaf17af14c2bcf56bc35663364ddd348ee4275b49aa30bc297def72b7e"
+  },
+  "mkv_duplicate_removed_after_validation": true,
+  "mp4_preserved": true
+}

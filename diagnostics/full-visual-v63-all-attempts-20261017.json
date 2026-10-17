@@ -1,0 +1,78 @@
+{
+  "version": "v63",
+  "tests": 332,
+  "files": 115,
+  "task_success": null,
+  "independent_attempts": 5,
+  "complete_count": 4,
+  "failed_count": 1,
+  "first_three_consecutive_successes": true,
+  "formal_video_success_run": "20261017-012700",
+  "runs": [
+    {
+      "run": "20261016-200019",
+      "version": 63,
+      "trial": 1,
+      "audit": "diagnostics/full-visual-v63-trial1-20261017.json",
+      "independent": true,
+      "completed_prefix": 4,
+      "four_visual_complete": true,
+      "steps": 12426,
+      "elapsed_s": 2332.934749082997,
+      "error": null,
+      "task_success": null
+    },
+    {
+      "run": "20261016-204228",
+      "version": 63,
+      "trial": 2,
+      "audit": "diagnostics/full-visual-v63-trial2-20261017.json",
+      "independent": true,
+      "completed_prefix": 4,
+      "four_visual_complete": true,
+      "steps": 12271,
+      "elapsed_s": 2304.227128614002,
+      "error": null,
+      "task_success": null
+    },
+    {
+      "run": "20261016-212331",
+      "version": 63,
+      "trial": 3,
+      "audit": "diagnostics/full-visual-v63-trial3-20261017.json",
+      "independent": true,
+      "completed_prefix": 4,
+      "four_visual_complete": true,
+      "steps": 12832,
+      "elapsed_s": 2428.0488294700044,
+      "error": null,
+      "task_success": null
+    },
+    {
+      "run": "20261017-011742",
+      "version": 63,
+      "purpose": "formal video attempt 1",
+      "audit": "diagnostics/full-visual-v63-video-attempt1-20261017.json",
+      "independent": true,
+      "completed_prefix": 0,
+      "four_visual_complete": false,
+      "steps": 527,
+      "error": "Released parcel has no stable support observation; regrasp withheld",
+      "task_success": null
+    },
+    {
+      "run": "20261017-012700",
+      "version": 63,
+      "purpose": "formal video attempt 2",
+      "audit": "diagnostics/full-visual-v63-video-attempt2-20261017.json",
+      "independent": true,
+      "completed_prefix": 4,
+      "four_visual_complete": true,
+      "steps": 12487,
+      "elapsed_s": 2760.3123237770005,
+      "error": null,
+      "task_success": null
+    }
+  ],
+  "limitation": "Same seed 0 only; first video attempt failed first-parcel settlement. Do not claim every run or unseen scenes succeed."
+}

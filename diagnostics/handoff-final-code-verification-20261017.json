@@ -1,0 +1,22 @@
+{
+  "checked_at": "2026-10-17T10:25:27.133493+08:00",
+  "manifest": "diagnostics/full-visual-v63-hashes-20261017.json",
+  "file_count": 115,
+  "all_match": true,
+  "mismatches": {
+    "host": {},
+    "container": {},
+    "snapshot": {}
+  },
+  "protected_hashes": {
+    "scene1/residual.py": "5b9cb07595fc044ba7d4d7782627d72e69ca2e5fb1db58ef3adb4020c60e57ad",
+    "scene1/settlement.py": "4af5b2d89f806d6295b4fd6ad82efafcb92b49cc050daec1c4fe091d270c4271",
+    "scene1/wrist.py": "a07b3348ec99a81d0f4b739710d558936e492cedb1bae0478826141dd2ada48f",
+    "config.yaml": "6aa1b68895cf079b8531d008ade9a567c23b956a5f114b5afda41b07d60a5beb"
+  },
+  "disk_free_bytes": 3585286144,
+  "processes": {
+    "kuavo-ros-noetic-s12-ready": "PID                 PPID                COMMAND\n9040                9016                /bin/bash\n",
+    "kuavo_challenge_container_GPU_046e4301": "PID                 PPID                COMMAND\n9125                9093                zsh\n"
+  }
+}

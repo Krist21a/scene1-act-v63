@@ -1,0 +1,12 @@
+{
+  "decoded_frames": 84555,
+  "expected_frames": 84555,
+  "frame_count_matches": true,
+  "time_base": "1/30",
+  "first_pts": 0,
+  "last_pts": 84554,
+  "pts_gaps_or_duration_errors": [],
+  "distinct_decoded_frame_hashes": 84512,
+  "consecutive_identical_frames": 36,
+  "all_frames_decoded": true
+}

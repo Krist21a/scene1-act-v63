@@ -1,0 +1,37 @@
+{
+  "steps": 12271,
+  "reason": "visual_cycle_target_reached",
+  "task_success": null,
+  "error": null,
+  "handover_contract_stop": null,
+  "last_sensor_receipts": {
+    "/gripper/state": {
+      "receipt_monotonic_s": 125234.338571684,
+      "source_stamp_s": 1792185683.775051,
+      "receipts": 1738893
+    },
+    "/sensors_data_raw": {
+      "receipt_monotonic_s": 125234.335553158,
+      "source_stamp_s": 1792185683.7720304,
+      "receipts": 610727
+    },
+    "/cam_r/color/image_raw/compressed": {
+      "receipt_monotonic_s": 125234.283787092,
+      "source_stamp_s": 1792185683.6964633,
+      "receipts": 63022
+    },
+    "/cam_h/color/image_raw/compressed": {
+      "receipt_monotonic_s": 125234.277987033,
+      "source_stamp_s": 1792185683.6884918,
+      "receipts": 63881
+    },
+    "/cam_l/color/image_raw/compressed": {
+      "receipt_monotonic_s": 125234.333756732,
+      "source_stamp_s": 1792185683.7432709,
+      "receipts": 63716
+    }
+  },
+  "trace_manifest_error": null,
+  "visual_confirmed_parcels": 4,
+  "note": "Original KuavoSimEnv returns reward=0 and does not judge scene1 success."
+}

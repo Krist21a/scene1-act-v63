@@ -1,0 +1,967 @@
+{
+  "created_at": "2026-10-17T10:26:29.357609+08:00",
+  "version": "v63",
+  "method": "Group each send_monotonic_s interval under the PREVIOUS sent row strategy/stage (or state when no stage); includes intervening computation, I/O and scheduling. Not function CPU profiling and not causal attribution. First/last boundaries match audit control_elapsed_s.",
+  "runs": [
+    {
+      "run": "20261016-200019",
+      "steps_path": "results/20261016-200019/steps.jsonl",
+      "sha256": "e53dac295c7ad2f4f0e379a4416ceba0c16acc3269f11fed96789c159978355e",
+      "rows": 12426,
+      "control_elapsed_s": 2332.934749082997,
+      "mean_send_interval_s": 0.18776134801472813,
+      "visual_cycle_sensor_hold_rows": 6,
+      "visual_cycle_sensor_hold_interval_s": 0.7726598379958887,
+      "phases": [
+        {
+          "phase": "visual_pickup/local_weighing",
+          "rows": 1141,
+          "wall_interval_s": 237.44852383200487,
+          "percent": 10.178103949342706
+        },
+        {
+          "phase": "visual_motion/left_insert",
+          "rows": 1066,
+          "wall_interval_s": 212.59257294400595,
+          "percent": 9.112666911390017
+        },
+        {
+          "phase": "visual_motion/transport",
+          "rows": 1191,
+          "wall_interval_s": 199.2245420350082,
+          "percent": 8.539653417795636
+        },
+        {
+          "phase": "visual_motion/left_approach",
+          "rows": 1055,
+          "wall_interval_s": 184.89129407498694,
+          "percent": 7.925266411658615
+        },
+        {
+          "phase": "visual_motion/bin_transport",
+          "rows": 1067,
+          "wall_interval_s": 177.93966623900633,
+          "percent": 7.62728860329029
+        },
+        {
+          "phase": "visual_motion/right_retreat",
+          "rows": 938,
+          "wall_interval_s": 162.46752169901447,
+          "percent": 6.964083404513364
+        },
+        {
+          "phase": "visual_pickup/carry",
+          "rows": 684,
+          "wall_interval_s": 146.55361757600622,
+          "percent": 6.281942417532759
+        },
+        {
+          "phase": "visual_motion/return_home",
+          "rows": 897,
+          "wall_interval_s": 136.13856250098615,
+          "percent": 5.83550665334716
+        },
+        {
+          "phase": "visual_motion/lift",
+          "rows": 684,
+          "wall_interval_s": 129.3934088859969,
+          "percent": 5.546379252006829
+        },
+        {
+          "phase": "visual_pickup/descend",
+          "rows": 513,
+          "wall_interval_s": 119.9796639620181,
+          "percent": 5.142864111787881
+        },
+        {
+          "phase": "visual_pickup/hover",
+          "rows": 512,
+          "wall_interval_s": 117.72487585998897,
+          "percent": 5.046213826008761
+        },
+        {
+          "phase": "visual_pickup/lift",
+          "rows": 531,
+          "wall_interval_s": 113.05602088199521,
+          "percent": 4.846085855013046
+        },
+        {
+          "phase": "visual_motion/left_clear",
+          "rows": 612,
+          "wall_interval_s": 102.96673857599671,
+          "percent": 4.4136141662971795
+        },
+        {
+          "phase": "act_residual/small_pregrasp",
+          "rows": 386,
+          "wall_interval_s": 74.47816946600506,
+          "percent": 3.1924668915527996
+        },
+        {
+          "phase": "visual_pickup/prepare_weighing",
+          "rows": 214,
+          "wall_interval_s": 46.069072136000614,
+          "percent": 1.9747261321435978
+        },
+        {
+          "phase": "visual_motion/left_retreat",
+          "rows": 270,
+          "wall_interval_s": 45.74777904099028,
+          "percent": 1.9609540755039245
+        },
+        {
+          "phase": "act_residual/small_weighing",
+          "rows": 161,
+          "wall_interval_s": 32.80988281600003,
+          "percent": 1.4063780750360273
+        },
+        {
+          "phase": "act_residual/act",
+          "rows": 113,
+          "wall_interval_s": 19.366281124021043,
+          "percent": 0.830125280256266
+        },
+        {
+          "phase": "visual_pickup/select",
+          "rows": 58,
+          "wall_interval_s": 10.566338474003715,
+          "percent": 0.45292044615294147
+        },
+        {
+          "phase": "visual_pickup/local_grasp",
+          "rows": 69,
+          "wall_interval_s": 9.890777948996401,
+          "percent": 0.42396290564423866
+        },
+        {
+          "phase": "act_residual/open_hand_visual_tracking",
+          "rows": 47,
+          "wall_interval_s": 7.984219645004487,
+          "percent": 0.34223930387006457
+        },
+        {
+          "phase": "act_residual/act_transport_leveling",
+          "rows": 33,
+          "wall_interval_s": 7.897932548992685,
+          "percent": 0.33854065365939245
+        },
+        {
+          "phase": "visual_motion/verify_bin",
+          "rows": 24,
+          "wall_interval_s": 6.1234535300172865,
+          "percent": 0.2624785597807321
+        },
+        {
+          "phase": "act_residual/small_short_retreat",
+          "rows": 31,
+          "wall_interval_s": 5.341104267004994,
+          "percent": 0.22894357714481356
+        },
+        {
+          "phase": "visual_motion/close_left",
+          "rows": 24,
+          "wall_interval_s": 4.697761681993143,
+          "percent": 0.2013670413988083
+        },
+        {
+          "phase": "visual_motion/release_left",
+          "rows": 20,
+          "wall_interval_s": 4.01569215899508,
+          "percent": 0.17213049617326512
+        },
+        {
+          "phase": "visual_motion/release_right",
+          "rows": 21,
+          "wall_interval_s": 3.889272065993282,
+          "percent": 0.16671156651603874
+        },
+        {
+          "phase": "act_residual/small_grasp",
+          "rows": 23,
+          "wall_interval_s": 3.015662887992221,
+          "percent": 0.12926477644424403
+        },
+        {
+          "phase": "visual_pickup/clear",
+          "rows": 12,
+          "wall_interval_s": 2.7980596849956783,
+          "percent": 0.11993733155612292
+        },
+        {
+          "phase": "act_residual/small_settle",
+          "rows": 8,
+          "wall_interval_s": 2.4705098300037207,
+          "percent": 0.10589708224693384
+        },
+        {
+          "phase": "visual_pickup/observe_pad",
+          "rows": 9,
+          "wall_interval_s": 2.3823675899911905,
+          "percent": 0.10211891228109247
+        },
+        {
+          "phase": "unassigned/returning_policy_view",
+          "rows": 5,
+          "wall_interval_s": 0.961085736998939,
+          "percent": 0.04119642597705364
+        },
+        {
+          "phase": "act_residual/grasp_contact_confirmed",
+          "rows": 2,
+          "wall_interval_s": 0.5759927339968272,
+          "percent": 0.024689620411510942
+        },
+        {
+          "phase": "act_residual/short_retreat_complete",
+          "rows": 1,
+          "wall_interval_s": 0.3775419640005566,
+          "percent": 0.016183134318221135
+        },
+        {
+          "phase": "act_residual/placement_stable",
+          "rows": 1,
+          "wall_interval_s": 0.3295318349992158,
+          "percent": 0.01412520582192641
+        },
+        {
+          "phase": "act_residual/regrasp_pose_verified",
+          "rows": 1,
+          "wall_interval_s": 0.26859932800289243,
+          "percent": 0.011513366505791487
+        },
+        {
+          "phase": "act_residual/weighing_release",
+          "rows": 1,
+          "wall_interval_s": 0.25230015999113675,
+          "percent": 0.010814711388319282
+        },
+        {
+          "phase": "act_residual/pregrasp_aligned",
+          "rows": 1,
+          "wall_interval_s": 0.24835136099136434,
+          "percent": 0.010645448231631143
+        }
+      ]
+    },
+    {
+      "run": "20261016-204228",
+      "steps_path": "results/20261016-204228/steps.jsonl",
+      "sha256": "6a04646cce6873a68fedb33fba41a7c04306681f1ca6f2a4963fbf80830114b7",
+      "rows": 12271,
+      "control_elapsed_s": 2304.227128614002,
+      "mean_send_interval_s": 0.1877935720141811,
+      "visual_cycle_sensor_hold_rows": 6,
+      "visual_cycle_sensor_hold_interval_s": 0.9014695799851324,
+      "phases": [
+        {
+          "phase": "visual_pickup/local_weighing",
+          "rows": 1044,
+          "wall_interval_s": 218.0011753180006,
+          "percent": 9.460923908535388
+        },
+        {
+          "phase": "visual_motion/left_insert",
+          "rows": 1066,
+          "wall_interval_s": 213.49843935802346,
+          "percent": 9.26551192401086
+        },
+        {
+          "phase": "visual_motion/transport",
+          "rows": 1189,
+          "wall_interval_s": 198.01224807300605,
+          "percent": 8.5934344585254
+        },
+        {
+          "phase": "visual_motion/left_approach",
+          "rows": 1031,
+          "wall_interval_s": 180.95264335199317,
+          "percent": 7.853073210748829
+        },
+        {
+          "phase": "visual_motion/bin_transport",
+          "rows": 1078,
+          "wall_interval_s": 179.99728946300456,
+          "percent": 7.81161228542923
+        },
+        {
+          "phase": "visual_motion/right_retreat",
+          "rows": 961,
+          "wall_interval_s": 165.53090767700633,
+          "percent": 7.183793022026155
+        },
+        {
+          "phase": "visual_pickup/carry",
+          "rows": 679,
+          "wall_interval_s": 144.67639195901575,
+          "percent": 6.278738331061961
+        },
+        {
+          "phase": "visual_motion/return_home",
+          "rows": 842,
+          "wall_interval_s": 127.8255607939791,
+          "percent": 5.547437542360091
+        },
+        {
+          "phase": "visual_motion/lift",
+          "rows": 672,
+          "wall_interval_s": 125.18896534199303,
+          "percent": 5.433013255828407
+        },
+        {
+          "phase": "visual_pickup/descend",
+          "rows": 523,
+          "wall_interval_s": 124.97447221599577,
+          "percent": 5.423704575996734
+        },
+        {
+          "phase": "visual_pickup/hover",
+          "rows": 504,
+          "wall_interval_s": 117.61473377098446,
+          "percent": 5.104302970416375
+        },
+        {
+          "phase": "visual_pickup/lift",
+          "rows": 524,
+          "wall_interval_s": 112.10853012400912,
+          "percent": 4.86534199393107
+        },
+        {
+          "phase": "visual_motion/left_clear",
+          "rows": 618,
+          "wall_interval_s": 104.16327090898994,
+          "percent": 4.520529665478089
+        },
+        {
+          "phase": "act_residual/small_pregrasp",
+          "rows": 418,
+          "wall_interval_s": 81.21614344099362,
+          "percent": 3.5246587644268086
+        },
+        {
+          "phase": "visual_pickup/prepare_weighing",
+          "rows": 230,
+          "wall_interval_s": 48.87559264499578,
+          "percent": 2.1211273853196304
+        },
+        {
+          "phase": "visual_motion/left_retreat",
+          "rows": 269,
+          "wall_interval_s": 45.256352221011184,
+          "percent": 1.9640577814146725
+        },
+        {
+          "phase": "act_residual/small_weighing",
+          "rows": 118,
+          "wall_interval_s": 24.083995756998775,
+          "percent": 1.045209278977865
+        },
+        {
+          "phase": "act_residual/act",
+          "rows": 116,
+          "wall_interval_s": 19.939922152014333,
+          "percent": 0.8653627025044289
+        },
+        {
+          "phase": "visual_pickup/select",
+          "rows": 63,
+          "wall_interval_s": 11.134309962028055,
+          "percent": 0.4832123458560862
+        },
+        {
+          "phase": "visual_pickup/local_grasp",
+          "rows": 71,
+          "wall_interval_s": 9.481381784004043,
+          "percent": 0.4114777430689793
+        },
+        {
+          "phase": "act_residual/open_hand_visual_tracking",
+          "rows": 46,
+          "wall_interval_s": 7.837598871003138,
+          "percent": 0.34014003106184554
+        },
+        {
+          "phase": "act_residual/act_transport_leveling",
+          "rows": 26,
+          "wall_interval_s": 6.569705233996501,
+          "percent": 0.28511534962910506
+        },
+        {
+          "phase": "visual_motion/verify_bin",
+          "rows": 22,
+          "wall_interval_s": 5.973822269981611,
+          "percent": 0.25925492308455195
+        },
+        {
+          "phase": "act_residual/small_short_retreat",
+          "rows": 28,
+          "wall_interval_s": 4.699825296003837,
+          "percent": 0.20396536598502737
+        },
+        {
+          "phase": "visual_motion/close_left",
+          "rows": 25,
+          "wall_interval_s": 4.5624319259950425,
+          "percent": 0.1980026998787813
+        },
+        {
+          "phase": "visual_motion/release_left",
+          "rows": 20,
+          "wall_interval_s": 4.271222995012067,
+          "percent": 0.1853646692190981
+        },
+        {
+          "phase": "visual_motion/release_right",
+          "rows": 22,
+          "wall_interval_s": 3.9885930359887425,
+          "percent": 0.17309895307012943
+        },
+        {
+          "phase": "act_residual/small_grasp",
+          "rows": 24,
+          "wall_interval_s": 2.9378767640009755,
+          "percent": 0.1274994434150298
+        },
+        {
+          "phase": "visual_pickup/clear",
+          "rows": 12,
+          "wall_interval_s": 2.892988295003306,
+          "percent": 0.1255513512135171
+        },
+        {
+          "phase": "visual_pickup/observe_pad",
+          "rows": 12,
+          "wall_interval_s": 2.8893738699844107,
+          "percent": 0.12539449059096772
+        },
+        {
+          "phase": "act_residual/small_settle",
+          "rows": 5,
+          "wall_interval_s": 1.596695340005681,
+          "percent": 0.06929418199177687
+        },
+        {
+          "phase": "unassigned/returning_policy_view",
+          "rows": 6,
+          "wall_interval_s": 1.1760916850034846,
+          "percent": 0.051040614460211936
+        },
+        {
+          "phase": "act_residual/short_retreat_complete",
+          "rows": 1,
+          "wall_interval_s": 0.595967279994511,
+          "percent": 0.025864085731556626
+        },
+        {
+          "phase": "act_residual/grasp_contact_confirmed",
+          "rows": 2,
+          "wall_interval_s": 0.5279683849803405,
+          "percent": 0.02291303571700914
+        },
+        {
+          "phase": "act_residual/placement_stable",
+          "rows": 1,
+          "wall_interval_s": 0.31385196499468293,
+          "percent": 0.013620704361009133
+        },
+        {
+          "phase": "act_residual/regrasp_pose_verified",
+          "rows": 1,
+          "wall_interval_s": 0.3117557040095562,
+          "percent": 0.013529729779593299
+        },
+        {
+          "phase": "act_residual/weighing_release",
+          "rows": 1,
+          "wall_interval_s": 0.2873177629953716,
+          "percent": 0.012469159807531383
+        },
+        {
+          "phase": "act_residual/pregrasp_aligned",
+          "rows": 1,
+          "wall_interval_s": 0.26171561700175516,
+          "percent": 0.011358065086195634
+        }
+      ]
+    },
+    {
+      "run": "20261016-212331",
+      "steps_path": "results/20261016-212331/steps.jsonl",
+      "sha256": "36d567960ebde7f9cffac0dc03df3b7788f9e77b264a32d21867dcd54bad59d3",
+      "rows": 12832,
+      "control_elapsed_s": 2428.0488294700044,
+      "mean_send_interval_s": 0.1892330160914975,
+      "visual_cycle_sensor_hold_rows": 5,
+      "visual_cycle_sensor_hold_interval_s": 0.777736919990275,
+      "phases": [
+        {
+          "phase": "visual_pickup/local_weighing",
+          "rows": 1274,
+          "wall_interval_s": 265.5843551970029,
+          "percent": 10.938180154102369
+        },
+        {
+          "phase": "visual_motion/left_insert",
+          "rows": 1070,
+          "wall_interval_s": 212.7154336660169,
+          "percent": 8.760756006395823
+        },
+        {
+          "phase": "visual_motion/transport",
+          "rows": 1178,
+          "wall_interval_s": 195.79674660299497,
+          "percent": 8.06395424286972
+        },
+        {
+          "phase": "visual_motion/left_approach",
+          "rows": 1057,
+          "wall_interval_s": 182.8323447080038,
+          "percent": 7.5300110314466995
+        },
+        {
+          "phase": "visual_motion/bin_transport",
+          "rows": 1056,
+          "wall_interval_s": 176.72055409100722,
+          "percent": 7.278294898607202
+        },
+        {
+          "phase": "visual_motion/right_retreat",
+          "rows": 937,
+          "wall_interval_s": 161.554438666004,
+          "percent": 6.65367338190098
+        },
+        {
+          "phase": "visual_pickup/carry",
+          "rows": 687,
+          "wall_interval_s": 146.91604159597773,
+          "percent": 6.050786121465548
+        },
+        {
+          "phase": "visual_motion/return_home",
+          "rows": 912,
+          "wall_interval_s": 138.5858277790103,
+          "percent": 5.707703490018397
+        },
+        {
+          "phase": "visual_motion/lift",
+          "rows": 679,
+          "wall_interval_s": 128.95076627998787,
+          "percent": 5.310880272046889
+        },
+        {
+          "phase": "visual_pickup/prepare_weighing",
+          "rows": 492,
+          "wall_interval_s": 118.92182761302684,
+          "percent": 4.897835091684921
+        },
+        {
+          "phase": "visual_pickup/descend",
+          "rows": 500,
+          "wall_interval_s": 118.70904278299713,
+          "percent": 4.889071477566166
+        },
+        {
+          "phase": "visual_pickup/hover",
+          "rows": 503,
+          "wall_interval_s": 116.39876773799188,
+          "percent": 4.793922030118293
+        },
+        {
+          "phase": "visual_pickup/lift",
+          "rows": 518,
+          "wall_interval_s": 110.14202116499655,
+          "percent": 4.536235837935697
+        },
+        {
+          "phase": "visual_motion/left_clear",
+          "rows": 631,
+          "wall_interval_s": 105.42565221698896,
+          "percent": 4.341990611449166
+        },
+        {
+          "phase": "act_residual/small_pregrasp",
+          "rows": 429,
+          "wall_interval_s": 84.5210105330043,
+          "percent": 3.4810259788495928
+        },
+        {
+          "phase": "visual_motion/left_retreat",
+          "rows": 263,
+          "wall_interval_s": 44.95416045100137,
+          "percent": 1.8514520756493182
+        },
+        {
+          "phase": "act_residual/small_weighing",
+          "rows": 135,
+          "wall_interval_s": 27.581301990998327,
+          "percent": 1.1359451118212802
+        },
+        {
+          "phase": "act_residual/act",
+          "rows": 121,
+          "wall_interval_s": 20.607419127001776,
+          "percent": 0.8487234225639512
+        },
+        {
+          "phase": "visual_pickup/local_grasp",
+          "rows": 80,
+          "wall_interval_s": 10.859272899004281,
+          "percent": 0.4472427723529204
+        },
+        {
+          "phase": "visual_pickup/select",
+          "rows": 54,
+          "wall_interval_s": 9.340459643004579,
+          "percent": 0.3846899423782766
+        },
+        {
+          "phase": "act_residual/open_hand_visual_tracking",
+          "rows": 46,
+          "wall_interval_s": 7.785055531989201,
+          "percent": 0.32063010584875784
+        },
+        {
+          "phase": "act_residual/act_transport_leveling",
+          "rows": 29,
+          "wall_interval_s": 6.832554717999301,
+          "percent": 0.2814010424778283
+        },
+        {
+          "phase": "visual_motion/verify_bin",
+          "rows": 21,
+          "wall_interval_s": 5.731189098994946,
+          "percent": 0.2360409325147696
+        },
+        {
+          "phase": "act_residual/small_short_retreat",
+          "rows": 33,
+          "wall_interval_s": 5.266506156011019,
+          "percent": 0.2169028106885558
+        },
+        {
+          "phase": "visual_motion/close_left",
+          "rows": 24,
+          "wall_interval_s": 4.294072634002077,
+          "percent": 0.17685281209683865
+        },
+        {
+          "phase": "visual_motion/release_right",
+          "rows": 21,
+          "wall_interval_s": 3.832214637994184,
+          "percent": 0.15783103665302653
+        },
+        {
+          "phase": "visual_motion/release_left",
+          "rows": 18,
+          "wall_interval_s": 3.684472487992025,
+          "percent": 0.15174622698161608
+        },
+        {
+          "phase": "act_residual/small_settle",
+          "rows": 10,
+          "wall_interval_s": 2.860619831000804,
+          "percent": 0.11781558081866177
+        },
+        {
+          "phase": "act_residual/small_grasp",
+          "rows": 23,
+          "wall_interval_s": 2.805862116991193,
+          "percent": 0.11556036612342997
+        },
+        {
+          "phase": "visual_pickup/clear",
+          "rows": 12,
+          "wall_interval_s": 2.578686332999496,
+          "percent": 0.10620405577108483
+        },
+        {
+          "phase": "visual_pickup/observe_pad",
+          "rows": 9,
+          "wall_interval_s": 2.219336291003856,
+          "percent": 0.091404104566064
+        },
+        {
+          "phase": "unassigned/returning_policy_view",
+          "rows": 3,
+          "wall_interval_s": 0.8041221800085623,
+          "percent": 0.03311803989477784
+        },
+        {
+          "phase": "act_residual/grasp_contact_confirmed",
+          "rows": 2,
+          "wall_interval_s": 0.5871491529978812,
+          "percent": 0.024181933487970434
+        },
+        {
+          "phase": "act_residual/short_retreat_complete",
+          "rows": 1,
+          "wall_interval_s": 0.4249101099994732,
+          "percent": 0.01750006444854829
+        },
+        {
+          "phase": "act_residual/placement_stable",
+          "rows": 1,
+          "wall_interval_s": 0.3787663529947167,
+          "percent": 0.015599618442492115
+        },
+        {
+          "phase": "act_residual/regrasp_pose_verified",
+          "rows": 1,
+          "wall_interval_s": 0.32344868501240853,
+          "percent": 0.013321341856333714
+        },
+        {
+          "phase": "act_residual/weighing_release",
+          "rows": 1,
+          "wall_interval_s": 0.28902769899286795,
+          "percent": 0.011903702079004607
+        },
+        {
+          "phase": "act_residual/pregrasp_aligned",
+          "rows": 1,
+          "wall_interval_s": 0.23339070699876174,
+          "percent": 0.009612274027030436
+        }
+      ]
+    },
+    {
+      "run": "20261017-012700",
+      "steps_path": "results/20261017-012700/steps.jsonl",
+      "sha256": "1b6a34a31e44ae322a58c7b6001ed2cd35aff0364e47d3cab22385303ff457bb",
+      "rows": 12487,
+      "control_elapsed_s": 2760.3123237770005,
+      "mean_send_interval_s": 0.22107258719982384,
+      "visual_cycle_sensor_hold_rows": 14,
+      "visual_cycle_sensor_hold_interval_s": 2.5609879510004703,
+      "phases": [
+        {
+          "phase": "visual_pickup/local_weighing",
+          "rows": 1121,
+          "wall_interval_s": 279.6390739809999,
+          "percent": 10.130704108090317
+        },
+        {
+          "phase": "visual_motion/left_insert",
+          "rows": 1067,
+          "wall_interval_s": 250.71003044199983,
+          "percent": 9.082668953162061
+        },
+        {
+          "phase": "visual_motion/transport",
+          "rows": 1201,
+          "wall_interval_s": 232.21264177599983,
+          "percent": 8.412549542881358
+        },
+        {
+          "phase": "visual_motion/left_approach",
+          "rows": 1038,
+          "wall_interval_s": 210.10214213899985,
+          "percent": 7.61153512699288
+        },
+        {
+          "phase": "visual_motion/bin_transport",
+          "rows": 1078,
+          "wall_interval_s": 204.52663317600036,
+          "percent": 7.409546789840859
+        },
+        {
+          "phase": "visual_motion/right_retreat",
+          "rows": 917,
+          "wall_interval_s": 188.11071855800014,
+          "percent": 6.814834572799494
+        },
+        {
+          "phase": "visual_pickup/carry",
+          "rows": 704,
+          "wall_interval_s": 178.65577249100033,
+          "percent": 6.472302824288427
+        },
+        {
+          "phase": "visual_motion/return_home",
+          "rows": 976,
+          "wall_interval_s": 174.97146856600057,
+          "percent": 6.338828655685707
+        },
+        {
+          "phase": "visual_pickup/descend",
+          "rows": 530,
+          "wall_interval_s": 150.94694787200024,
+          "percent": 5.46847349742858
+        },
+        {
+          "phase": "visual_pickup/hover",
+          "rows": 526,
+          "wall_interval_s": 145.3184034269998,
+          "percent": 5.264563802264129
+        },
+        {
+          "phase": "visual_motion/lift",
+          "rows": 657,
+          "wall_interval_s": 143.04911831400022,
+          "percent": 5.1823526302365215
+        },
+        {
+          "phase": "visual_pickup/lift",
+          "rows": 533,
+          "wall_interval_s": 135.55884271100012,
+          "percent": 4.910996539895593
+        },
+        {
+          "phase": "visual_motion/left_clear",
+          "rows": 618,
+          "wall_interval_s": 121.62942810599952,
+          "percent": 4.406364709467772
+        },
+        {
+          "phase": "act_residual/small_pregrasp",
+          "rows": 378,
+          "wall_interval_s": 86.95911885099963,
+          "percent": 3.1503362174614864
+        },
+        {
+          "phase": "visual_motion/left_retreat",
+          "rows": 271,
+          "wall_interval_s": 55.69444485899976,
+          "percent": 2.0176863458259584
+        },
+        {
+          "phase": "visual_pickup/prepare_weighing",
+          "rows": 201,
+          "wall_interval_s": 50.455825189999814,
+          "percent": 1.8279027614150531
+        },
+        {
+          "phase": "act_residual/small_weighing",
+          "rows": 152,
+          "wall_interval_s": 36.815851759,
+          "percent": 1.333756743462421
+        },
+        {
+          "phase": "act_residual/act",
+          "rows": 113,
+          "wall_interval_s": 22.96020156099985,
+          "percent": 0.8317972340746884
+        },
+        {
+          "phase": "visual_pickup/select",
+          "rows": 60,
+          "wall_interval_s": 12.878291476999493,
+          "percent": 0.466551968270671
+        },
+        {
+          "phase": "visual_pickup/local_grasp",
+          "rows": 70,
+          "wall_interval_s": 11.84193271299955,
+          "percent": 0.42900698631073586
+        },
+        {
+          "phase": "act_residual/open_hand_visual_tracking",
+          "rows": 46,
+          "wall_interval_s": 9.335944010000048,
+          "percent": 0.3382205676358194
+        },
+        {
+          "phase": "visual_motion/verify_bin",
+          "rows": 30,
+          "wall_interval_s": 9.12427782900022,
+          "percent": 0.3305523708460373
+        },
+        {
+          "phase": "act_residual/act_transport_leveling",
+          "rows": 29,
+          "wall_interval_s": 8.431027398000197,
+          "percent": 0.3054374436318794
+        },
+        {
+          "phase": "act_residual/small_settle",
+          "rows": 17,
+          "wall_interval_s": 6.675371557999824,
+          "percent": 0.24183392221593808
+        },
+        {
+          "phase": "act_residual/small_short_retreat",
+          "rows": 30,
+          "wall_interval_s": 5.671750963000022,
+          "percent": 0.2054749715872453
+        },
+        {
+          "phase": "visual_motion/release_right",
+          "rows": 22,
+          "wall_interval_s": 5.208361193999735,
+          "percent": 0.1886873868995017
+        },
+        {
+          "phase": "visual_motion/close_left",
+          "rows": 23,
+          "wall_interval_s": 4.954297150000684,
+          "percent": 0.17948320946600718
+        },
+        {
+          "phase": "act_residual/small_grasp",
+          "rows": 26,
+          "wall_interval_s": 4.01893521199986,
+          "percent": 0.14559711875287562
+        },
+        {
+          "phase": "visual_motion/release_left",
+          "rows": 19,
+          "wall_interval_s": 3.9808811610000703,
+          "percent": 0.1442185047941581
+        },
+        {
+          "phase": "visual_pickup/clear",
+          "rows": 12,
+          "wall_interval_s": 3.10788323900033,
+          "percent": 0.11259172421285066
+        },
+        {
+          "phase": "visual_pickup/observe_pad",
+          "rows": 9,
+          "wall_interval_s": 2.6666949499999646,
+          "percent": 0.0966084499579766
+        },
+        {
+          "phase": "unassigned/returning_policy_view",
+          "rows": 6,
+          "wall_interval_s": 1.5120645519998561,
+          "percent": 0.054778748729812664
+        },
+        {
+          "phase": "act_residual/grasp_contact_confirmed",
+          "rows": 2,
+          "wall_interval_s": 0.6188785520000692,
+          "percent": 0.022420598809385565
+        },
+        {
+          "phase": "act_residual/pregrasp_aligned",
+          "rows": 1,
+          "wall_interval_s": 0.49254176700014796,
+          "percent": 0.017843696988831734
+        },
+        {
+          "phase": "act_residual/short_retreat_complete",
+          "rows": 1,
+          "wall_interval_s": 0.4808022660001825,
+          "percent": 0.01741840087654608
+        },
+        {
+          "phase": "act_residual/placement_stable",
+          "rows": 1,
+          "wall_interval_s": 0.35603234300015174,
+          "percent": 0.012898262994855027
+        },
+        {
+          "phase": "act_residual/regrasp_pose_verified",
+          "rows": 1,
+          "wall_interval_s": 0.3455211750001581,
+          "percent": 0.012517466665778361
+        },
+        {
+          "phase": "act_residual/weighing_release",
+          "rows": 1,
+          "wall_interval_s": 0.2941704889999528,
+          "percent": 0.010657145079779681
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,253 @@
+# Unvalidated experiment; stop-before-send contract, no legacy grip lock/refresh.
+base_config: /root/LeTools-Learning/configs/deploy/deploy_scene1.yaml
+project_root: /root/LeTools-Learning
+max_steps: 2200
+sensor_timeout_s: 2.0
+startup_timeout_s: 15.0
+log_every_steps: 1
+snapshot_every_steps: 20
+motion:
+  direct_to_wbc: false
+  head_init_degrees:
+  - 0.0
+  - 20.0
+  smoothing_alpha: 1.0
+  max_joint_velocity_rad_s: 1.5
+head_camera:
+  enabled: true
+  home_degrees:
+  - 0
+  - 20
+  limits_degrees:
+  - 70
+  - 25
+  speed_degrees_s:
+  - 35
+  - 20
+  home_tolerance_degrees: 2.6
+  stable_frames: 3
+vision:
+  table_segmentation: true
+  table_hsv:
+  - - 40
+    - 120
+    - 20
+  - - 85
+    - 255
+    - 255
+  image_key: observation.images.head_cam_h
+  roi:
+  - 0.05
+  - 0.18
+  - 0.95
+  - 0.95
+  min_area_fraction: 0.0003
+  max_area_fraction: 0.08
+  min_fill_ratio: 0.35
+  min_solidity: 0.65
+  max_aspect_ratio: 3.5
+  stable_frames: 3
+  max_center_jump_px: 45.0
+  include_bright_labels: true
+  label_max_saturation: 50
+  label_min_value: 120
+  min_color_fraction: 0.08
+  targets:
+    brown:
+    - - 12
+      - 15
+      - 75
+    - - 40
+      - 100
+      - 255
+    yellow:
+    - - 18
+      - 75
+      - 70
+    - - 40
+      - 255
+      - 255
+    orange:
+    - - 3
+      - 100
+      - 65
+    - - 20
+      - 255
+      - 255
+    blue:
+    - - 90
+      - 10
+      - 60
+    - - 130
+      - 255
+      - 255
+grasp:
+  closed_threshold: 0.75
+  open_threshold: 0.2
+  missing_frames: 5
+  feedback_grace_frames: 10
+  left_roi: null
+  right_roi: null
+cartesian_alignment:
+  enabled: true
+  strategy: act_residual
+  base_frame: base_link
+  camera_frame: Head Camera View
+  camera_mount_frame: camera_base
+  description_param: /humanoid_description
+  head_joint_indices:
+  - -2
+  - -1
+  fixed_ik_waist: true
+  rgb_topic: /cam_h/color/image_raw/compressed
+  depth_topic: /cam_h/depth/image_raw/compressedDepth
+  info_topic: /cam_h/color/camera_info
+  image_wh:
+  - 848
+  - 480
+  max_sensor_age_s: 1.0
+  max_rgb_depth_dt_s: 0.1
+  max_rgb_joint_dt_s: 0.035
+  workspace_min:
+  - 0.1
+  - -0.8
+  - -0.4
+  workspace_max:
+  - 1.2
+  - 0.8
+  - 0.3
+  table_hsv:
+  - - 40
+    - 100
+    - 15
+  - - 85
+    - 255
+    - 255
+  min_object_height_m: 0.025
+  max_object_height_m: 0.14
+  grid_resolution_m: 0.0075
+  min_component_points: 30
+  max_object_extent_m: 0.19
+  max_object_width_m: 0.065
+  close_threshold: 0.6
+  open_threshold: 0.25
+  other_arm_closed_threshold: 0.55
+  skip_initial_grasps: 0
+  max_target_distance_m: 0.12
+  max_xy_correction_m: 0.1
+  max_joint_residual_rad: 0.5
+  alignment_tolerance_m: 0.012
+  alignment_timeout_steps: 50
+  loaded_alignment_timeout_steps: 90
+  clearance_m: 0.07
+  alignment_z_tolerance_m: 0.015
+  orientation_tolerance_rad: 0.15
+  stable_steps: 3
+  settle_motion_m: 0.003
+  close_dwell_steps: 6
+  release_dwell_steps: 8
+  release_tolerance_m: 0.02
+  closed_command: 0.98
+  approach_joint_velocity_rad_s: 0.6
+  transport_offset_decay: 0.8
+  lift_before_offset_decay_m: 0.06
+  target_memory_steps: 40
+  target_stable_frames: 3
+  target_association_distance_m: 0.025
+  placement_margin_m: 0.025
+  weighing_release_height_m: 0.08
+  max_weighing_release_height_m: 0.16
+  placement_vertical_step_m: 0.035
+  tracking_compensation_gain: 2.0
+  tracking_compensation_alpha: 0.1
+  max_tracking_compensation_rad: 0.2
+  max_loaded_tracking_compensation_rad: 1.2
+  max_loaded_feedforward_rad: 1.2
+  loaded_tracking_compensation_gain: 1.0
+  loaded_tracking_compensation_alpha: 0.08
+  side_grasp_insertion_m: 0.02
+servo:
+  enabled: false
+  arm: left
+  image_key: observation.images.wrist_cam_l
+  target: yellow
+  desired_uv: null
+  calibration_file: null
+  gain: 0.3
+  max_joint_offset_rad: 0.03
+  max_error_px: 60.0
+  deadband_px: 3.0
+  gripper_window:
+  - 0.0
+  - 0.15
+visual_residual:
+  close_event_threshold: 0.25
+  max_translation_m: 0.02
+  max_joint_offset_rad: 0.2617993878
+  max_placement_joint_offset_rad: 0.5235987756
+  max_joint_step_rad: 0.012
+  gain: 0.25
+  grasp_tolerance_m: 0.012
+  grasp_z_tolerance_m: 0.01
+  placement_tolerance_m: 0.015
+  placement_margin_m: 0.025
+  max_release_error_m: 0.08
+  max_release_gap_m: 0.002
+  level_target_degrees: 10.0
+  level_target_bottom_spread_m: 0.023
+  level_tolerance_degrees: 15.0
+  max_bottom_height_spread_m: 0.034
+  placement_heading_settle_degrees: 10.0
+  placement_heading_tolerance_degrees: 15.0
+  max_grasp_steps: 45
+  max_initial_pregrasp_steps: 160
+  max_close_settle_steps: 40
+  max_release_steps: 450
+wrist_assist:
+  enabled: true
+  act_after_regrasp: true
+  handover_grip_guard: false
+  handover_contact_frames: 3
+  trace_act_handover: true
+  refresh_stale_handover_ensemble: false
+  max_regrasp_joint_offset_rad: 0.5235987756
+  regrasp_pitch_degrees: 12.5
+  regrasp_finger_tilt_degrees: 5.0
+  regrasp_descent_request_m: 0.012
+  require_edges: true
+  use_parcel_outline: true
+  centering_deadband_px: 4
+  regrasp_aligned_error_px: 10
+  min_edge_support: 0.64
+  min_area_px: 600
+  max_bbox_px: 320
+  max_center_error_px: 25
+  max_regrasp_center_error_px: 45
+  aligned_error_px: 22
+  max_correction_m: 0.012
+  stable_frames: 3
+  max_pregrasp_align_steps: 320
+  max_level_regrasp_steps: 900
+  regrasp_visible_v_fraction: 0.67
+  release_open_dwell_steps: 12
+  release_short_retreat_m: 0.05
+  release_clearance_rise_m: 0.02
+  release_retreat_ready_m: 0.014
+  max_short_retreat_steps: 140
+  max_open_joint_delta_rad: 0.025
+  max_handover_align_steps: 80
+  act_after_first_grasp: false
+control_profile: contract_regrasp
+policy_trace:
+  enabled: true
+  pre_steps: 8
+  post_steps: 200
+  max_frames: 240
+handover_contract:
+  enabled: true
+  max_steps: 300
+  max_seconds: 45.0
+  contact_frames: 3
+  hold_threshold: 0.9
+  transition_steps: 0
+  transition_velocity_rad_s: 0.3

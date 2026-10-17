@@ -1,0 +1,6 @@
+{
+  "run": "20261017-011742",
+  "files": 115,
+  "host_container_snapshot_match": true,
+  "snapshot_verification": "v63-trial3-postrun-code-verification-20261017.json; host hashes unchanged"
+}

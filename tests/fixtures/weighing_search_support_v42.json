@@ -1,0 +1,67 @@
+{
+  "read_only": true,
+  "checkpoint_step": 3768,
+  "limitation": "Post-search feedback with original pre-search XY/yaw reconstructed; not an exact original-search counterfactual or physical outcome.",
+  "candidates": [
+    {
+      "shift_xy_m": [
+        -0.01,
+        0.03
+      ],
+      "yaw_offset_degrees": -9.99999999999999,
+      "support_margin_m": 0.031557876798007325,
+      "predicted_error": 0.017599690895742093,
+      "predicted_position_m": 0.006106833162191478,
+      "predicted_angle_rad": 0.1375519367454288,
+      "baseline_error": 0.026129243214214053
+    },
+    {
+      "shift_xy_m": [
+        -0.01,
+        0.03
+      ],
+      "yaw_offset_degrees": 0.0,
+      "support_margin_m": 0.03325844772750192,
+      "predicted_error": 0.020560614454367094,
+      "predicted_position_m": 0.007674170409597611,
+      "predicted_angle_rad": 0.158956225469988,
+      "baseline_error": 0.026129243214214053
+    },
+    {
+      "shift_xy_m": [
+        0.0,
+        0.03
+      ],
+      "yaw_offset_degrees": -9.99999999999999,
+      "support_margin_m": 0.04155742146033016,
+      "predicted_error": 0.018580308724737524,
+      "predicted_position_m": 0.006576786296938137,
+      "predicted_angle_rad": 0.14481160038107466,
+      "baseline_error": 0.026129243214214053
+    },
+    {
+      "shift_xy_m": [
+        0.01,
+        0.03
+      ],
+      "yaw_offset_degrees": -9.99999999999999,
+      "support_margin_m": 0.03377131790591829,
+      "predicted_error": 0.0196718826259694,
+      "predicted_position_m": 0.007122580999703166,
+      "predicted_angle_rad": 0.15280975053254406,
+      "baseline_error": 0.026129243214214053
+    },
+    {
+      "shift_xy_m": [
+        -0.01,
+        0.0
+      ],
+      "yaw_offset_degrees": -9.99999999999999,
+      "support_margin_m": 0.03126529140260817,
+      "predicted_error": 0.020733893994548353,
+      "predicted_position_m": 0.00771396703509941,
+      "predicted_angle_rad": 0.1603791239096026,
+      "baseline_error": 0.026129243214214053
+    }
+  ]
+}

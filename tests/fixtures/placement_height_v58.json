@@ -1,0 +1,273 @@
+{
+  "frames": [
+    {
+      "tag": "failed_early",
+      "source_run": "20261016-153803",
+      "source_step": 11000,
+      "source_sha256": "bcdcb02eab976914fb84c14601341cee10e1fab88ea2ced460ad5e684a14e7de",
+      "surface": {
+        "position_base_m": [
+          0.44303135644926284,
+          -0.5534396711672438,
+          -0.08602695708548647
+        ],
+        "extent_xy_m": [
+          0.19030682591060577,
+          0.1889155490994227
+        ],
+        "points": 236,
+        "partial": false,
+        "footprint_xy_m": [
+          [
+            0.543285071849823,
+            -0.6273032426834106
+          ],
+          [
+            0.5431708693504333,
+            -0.5425759553909302
+          ],
+          [
+            0.5429632067680359,
+            -0.4595215916633606
+          ],
+          [
+            0.5280460119247437,
+            -0.45279571413993835
+          ],
+          [
+            0.34627029299736023,
+            -0.45599719882011414
+          ],
+          [
+            0.34412068128585815,
+            -0.4669768512248993
+          ],
+          [
+            0.3456078767776489,
+            -0.6547182202339172
+          ],
+          [
+            0.5382535457611084,
+            -0.6530027985572815
+          ]
+        ]
+      },
+      "original_gap_m": 0.004982873338964355,
+      "stamp": 1792167264.065325,
+      "head_stable": true
+    },
+    {
+      "tag": "failed_late",
+      "source_run": "20261016-153803",
+      "source_step": 11040,
+      "source_sha256": "c8135199165af5718db902b086f580486421efcef01e35d1950c720b5b19511e",
+      "surface": {
+        "position_base_m": [
+          0.44303135644926284,
+          -0.5534396711672438,
+          -0.08602695708548647
+        ],
+        "extent_xy_m": [
+          0.19030682591060577,
+          0.1889155490994227
+        ],
+        "points": 236,
+        "partial": false,
+        "footprint_xy_m": [
+          [
+            0.543285071849823,
+            -0.6273032426834106
+          ],
+          [
+            0.5431708693504333,
+            -0.5425759553909302
+          ],
+          [
+            0.5429632067680359,
+            -0.4595215916633606
+          ],
+          [
+            0.5280460119247437,
+            -0.45279571413993835
+          ],
+          [
+            0.34627029299736023,
+            -0.45599719882011414
+          ],
+          [
+            0.34412068128585815,
+            -0.4669768512248993
+          ],
+          [
+            0.3456078767776489,
+            -0.6547182202339172
+          ],
+          [
+            0.5382535457611084,
+            -0.6530027985572815
+          ]
+        ]
+      },
+      "original_gap_m": 0.004368087478479887,
+      "stamp": 1792167272.5573661,
+      "head_stable": true
+    },
+    {
+      "tag": "successful",
+      "source_run": "20261016-134007",
+      "source_step": 10300,
+      "source_sha256": "c908609a3fb2bec25b9ed96b58e5c1e16676b8a1bf2b41de2ec8c832c8d21f11",
+      "surface": {
+        "position_base_m": [
+          0.42537137054624424,
+          -0.5639150202519024,
+          -0.08410994243670655
+        ],
+        "extent_xy_m": [
+          0.18819052815973125,
+          0.1880865328669878
+        ],
+        "points": 203,
+        "partial": false,
+        "footprint_xy_m": [
+          [
+            0.5251185894012451,
+            -0.48436078429222107
+          ],
+          [
+            0.5132061839103699,
+            -0.4647878110408783
+          ],
+          [
+            0.3573390543460846,
+            -0.4650258719921112
+          ],
+          [
+            0.3298285901546478,
+            -0.4744705855846405
+          ],
+          [
+            0.3249642550945282,
+            -0.49624863266944885
+          ],
+          [
+            0.32628363370895386,
+            -0.5467917919158936
+          ],
+          [
+            0.3300691246986389,
+            -0.5871148705482483
+          ],
+          [
+            0.35437625646591187,
+            -0.6550279855728149
+          ],
+          [
+            0.36613330245018005,
+            -0.662945032119751
+          ],
+          [
+            0.5181493163108826,
+            -0.6645394563674927
+          ],
+          [
+            0.5238378047943115,
+            -0.6390717625617981
+          ]
+        ]
+      },
+      "original_gap_m": 0.005701404774438951,
+      "stamp": 1792160022.6734655,
+      "head_stable": true
+    }
+  ],
+  "config": {
+    "enabled": true,
+    "strategy": "act_residual",
+    "base_frame": "base_link",
+    "camera_frame": "Head Camera View",
+    "camera_mount_frame": "camera_base",
+    "description_param": "/humanoid_description",
+    "head_joint_indices": [
+      -2,
+      -1
+    ],
+    "fixed_ik_waist": true,
+    "rgb_topic": "/cam_h/color/image_raw/compressed",
+    "depth_topic": "/cam_h/depth/image_raw/compressedDepth",
+    "info_topic": "/cam_h/color/camera_info",
+    "image_wh": [
+      848,
+      480
+    ],
+    "max_sensor_age_s": 1.0,
+    "max_rgb_depth_dt_s": 0.1,
+    "max_rgb_joint_dt_s": 0.035,
+    "workspace_min": [
+      0.1,
+      -0.8,
+      -0.4
+    ],
+    "workspace_max": [
+      1.2,
+      0.8,
+      0.3
+    ],
+    "table_hsv": [
+      [
+        40,
+        100,
+        15
+      ],
+      [
+        85,
+        255,
+        255
+      ]
+    ],
+    "min_object_height_m": 0.025,
+    "max_object_height_m": 0.14,
+    "grid_resolution_m": 0.0075,
+    "min_component_points": 30,
+    "max_object_extent_m": 0.19,
+    "max_object_width_m": 0.065,
+    "close_threshold": 0.6,
+    "open_threshold": 0.25,
+    "other_arm_closed_threshold": 0.55,
+    "skip_initial_grasps": 0,
+    "max_target_distance_m": 0.12,
+    "max_xy_correction_m": 0.1,
+    "max_joint_residual_rad": 0.5,
+    "alignment_tolerance_m": 0.012,
+    "alignment_timeout_steps": 50,
+    "loaded_alignment_timeout_steps": 90,
+    "clearance_m": 0.07,
+    "alignment_z_tolerance_m": 0.015,
+    "orientation_tolerance_rad": 0.15,
+    "stable_steps": 3,
+    "settle_motion_m": 0.003,
+    "close_dwell_steps": 6,
+    "release_dwell_steps": 8,
+    "release_tolerance_m": 0.02,
+    "closed_command": 0.98,
+    "approach_joint_velocity_rad_s": 0.6,
+    "transport_offset_decay": 0.8,
+    "lift_before_offset_decay_m": 0.06,
+    "target_memory_steps": 40,
+    "target_stable_frames": 3,
+    "target_association_distance_m": 0.025,
+    "placement_margin_m": 0.025,
+    "weighing_release_height_m": 0.08,
+    "max_weighing_release_height_m": 0.16,
+    "placement_vertical_step_m": 0.035,
+    "tracking_compensation_gain": 2.0,
+    "tracking_compensation_alpha": 0.1,
+    "max_tracking_compensation_rad": 0.2,
+    "max_loaded_tracking_compensation_rad": 1.2,
+    "max_loaded_feedforward_rad": 1.2,
+    "loaded_tracking_compensation_gain": 1.0,
+    "loaded_tracking_compensation_alpha": 0.08,
+    "side_grasp_insertion_m": 0.02
+  },
+  "limitation": "Periodic raw frames verify current plane/gap mismatch only; do not prove fresh-frame continuity or physical success."
+}

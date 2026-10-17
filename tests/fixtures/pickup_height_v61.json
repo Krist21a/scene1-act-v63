@@ -1,0 +1,1944 @@
+{
+  "public_urdf": "<?xml version='1.0' encoding='utf-8'?>\n<robot name=\"biped_s52\">\n  <mujoco>\n    <compiler meshdir=\"../meshes/\" balanceinertia=\"true\" discardvisual=\"false\" />\n  </mujoco>\n  <link name=\"dummy_link\" />\n  <link name=\"base_link\">\n    <inertial>\n      <!-- \u8d28\u5fc3\uff1a( -0.05495950, -0.00028705, -0.01468007 ) -->\n      <origin xyz=\"-0.05495950 -0.00028705 -0.01468007\" rpy=\"0 0 0\" />\n      <!-- \u8d28\u91cf\uff1a7.06404632 kg -->\n      <mass value=\"7.06405\" />\n      <!-- \u2705 \u7531\u91cd\u5fc3\u51b3\u5b9a\uff0c\u5e76\u4e14\u5bf9\u9f50\u8f93\u51fa\u7684\u5750\u6807\u7cfb\uff08\u4f7f\u7528\u8d1f\u5f20\u91cf\u8bb0\u6570\u6cd5\uff09- \u6765\u81eatorso Lxx/Lyy/Lzz -->\n      <inertia\n        ixx=\"0.07432439\"\n        ixy=\"0.0\"\n        ixz=\"-0.01900645\"\n        iyy=\"0.05497594\"\n        iyz=\"0.0\"\n        izz=\"0.07548789\" />\n    </inertial>\n    <visual>\n      <origin xyz=\"0 0 0\" rpy=\"0 0 0\" />\n      <geometry>\n        <mesh filename=\"package://kuavo_assets/models/biped_s52/meshes/torso.STL\" />\n      </geometry>\n      <material name=\"\">\n        <color rgba=\"0.752941176470588 0.752941176470588 0.752941176470588 1\" />\n      </material>\n    </visual>\n    <collision>\n      <origin xyz=\"-0.025 0.095 -0.065\" rpy=\"0 1.57 0\" />\n      <geometry>\n        <cylinder radius=\"0.06\" length=\"0.24\" />\n      </geometry>\n    </collision>\n    <collision>\n      <origin xyz=\"-0.025 -0.095 -0.065\" rpy=\"0 1.57 0\" />\n      <geometry>\n        <cylinder radius=\"0.06\" length=\"0.24\" />\n      </geometry>\n    </collision>\n  </link>\n  <joint name=\"dummy_to_base_link\" type=\"fixed\">\n    <origin xyz=\"0 0 0\" rpy=\"0 0 0\" />\n    <parent link=\"dummy_link\" />\n    <child link=\"base_link\" />\n  </joint>\n  <!-- ============ l_leg_roll ============ -->\n  <!-- \u5750\u6807\u7cfb\uff1al_leg_yaw_roll -->\n  <!-- \u5bf9\u79f0\u6e90\uff1ar_leg_roll (X-Z\u5e73\u9762\u5bf9\u79f0) -->\n  <link name=\"leg_l1_link\">\n    <inertial>\n      <!-- \u8d28\u5fc3\uff1a\u53f3\u817f(-0.00560896, -0.00032862, -0.00212773) -> \u5de6\u817f(-0.00560896, +0.00032862, -0.00212773) -->\n      <origin xyz=\"-0.00560896 0.00032862 -0.00212773\" rpy=\"0 0 0\" />\n      <!-- \u8d28\u91cf\uff1a1.55641268 kg -->\n      <mass value=\"1.55641\" />\n      <!-- \u2705 \u60ef\u6027\u5f20\u91cf\uff1a\u7531\u91cd\u5fc3\u51b3\u5b9a\uff0c\u5bf9\u9f50\u8f93\u51fa\u5750\u6807\u7cfb\uff0c\u8d1f\u5f20\u91cf\u8bb0\u6570\u6cd5\uff0cixy/ixz/iyz\u7b26\u53f7\u53d6\u53cd -->\n      <inertia\n        ixx=\"0.00191127\"\n        ixy=\"-0.00001633\"      \n        ixz=\"-0.00000320\"     \n        iyy=\"0.00254335\"\n        iyz=\"0.00000055\"     \n        izz=\"0.00260594\" />\n    </inertial>\n    <visual>\n      <origin xyz=\"0 0 0\" rpy=\"0 0 0\" />\n      <geometry>\n        <mesh filename=\"package://kuavo_assets/models/biped_s52/meshes/l_leg_roll.STL\" />\n      </geometry>\n      <material name=\"\">\n        <color rgba=\"1 1 1 1\" />\n      </material>\n    </visual>\n  </link>\n  <joint name=\"leg_l1_joint\" type=\"revolute\">\n    <origin xyz=\"0.0 0.095075 -0.066\" rpy=\"0 0 0\" />\n    <parent link=\"base_link\" />\n    <child link=\"leg_l1_link\" />\n    <axis xyz=\"1 0 0\" />\n    <limit lower=\"-0.314159265358979\" upper=\"0.663225115757845\" effort=\"127.0\" velocity=\"10.4\" />\n    <dynamics damping=\"0.02\" friction=\"0.0\" />\n  </joint>\n  <!-- ============ l_leg_yaw ============ -->\n  <!-- \u5750\u6807\u7cfb\uff1al_leg_yaw_roll -->\n  <!-- \u5bf9\u79f0\u6e90\uff1ar_leg_yaw (X-Z\u5e73\u9762\u5bf9\u79f0) -->\n  <link name=\"leg_l2_link\">\n    <inertial>\n      <!-- \u8d28\u5fc3\uff1a\u53f3\u817f(0.00006341, 0.00960017, -0.09308949) -> \u5de6\u817f(0.00006341, -0.00960017, -0.09308949) -->\n      <origin xyz=\"0.00006341 -0.00960017 -0.09308949\" rpy=\"0 0 0\" />\n      <!-- \u8d28\u91cf\uff1a0.75872512 kg -->\n      <mass value=\"0.75873\" />\n      <!-- \u2705 \u60ef\u6027\u5f20\u91cf\uff1a\u7531\u91cd\u5fc3\u51b3\u5b9a\uff0c\u5bf9\u9f50\u8f93\u51fa\u5750\u6807\u7cfb\uff0c\u8d1f\u5f20\u91cf\u8bb0\u6570\u6cd5\uff0cixy/ixz/iyz\u7b26\u53f7\u53d6\u53cd -->\n      <inertia\n        ixx=\"0.00348980\"\n        ixy=\"0.00000617\"     \n        ixz=\"-0.00000543\"      \n        iyy=\"0.00201021\"\n        iyz=\"-0.00030265\"      \n        izz=\"0.00236363\" />\n    </inertial>\n    <visual>\n      <origin xyz=\"0 0 0\" rpy=\"0 0 0\" />\n      <geometry>\n        <mesh filename=\"package://kuavo_assets/models/biped_s52/meshes/l_leg_yaw.STL\" />\n      </geometry>\n      <material name=\"\">\n        <color rgba=\"1 1 1 1\" />\n      </material>\n    </visual>\n  </link>\n  <joint name=\"leg_l2_joint\" type=\"revolute\">\n    <origin xyz=\"0 0 0\" rpy=\"0 0 0\" />\n    <parent link=\"leg_l1_link\" />\n    <child link=\"leg_l2_link\" />\n    <axis xyz=\"0 0 1\" />\n    <limit lower=\"-0.785398163397448\" upper=\"1.91986217719376\" effort=\"71.0\" velocity=\"8.7\" />\n    <dynamics damping=\"0.02\" friction=\"0.0\" />\n  </joint>\n\n  <!-- ============ l_leg_pitch ============ -->\n  <!-- \u5750\u6807\u7cfb\uff1al_leg_pitch -->\n  <!-- \u5bf9\u79f0\u6e90\uff1ar_leg_pitch (X-Z\u5e73\u9762\u5bf9\u79f0) -->\n  <link name=\"leg_l3_link\">\n    <inertial>\n      <!-- \u8d28\u5fc3\uff1a\u53f3\u817f(0.00273544, -0.01478421, -0.09011501) -> \u5de6\u817f(0.00273544, +0.01478421, -0.09011501) -->\n      <origin xyz=\"0.00273544 0.01478421 -0.09011501\" rpy=\"0 0 0\" />\n      <!-- \u8d28\u91cf\uff1a6.68074305 kg -->\n      <mass value=\"6.68074\" />\n      <!-- \u2705 \u60ef\u6027\u5f20\u91cf\uff1a\u7531\u91cd\u5fc3\u51b3\u5b9a\uff0c\u5bf9\u9f50\u8f93\u51fa\u5750\u6807\u7cfb\uff0c\u8d1f\u5f20\u91cf\u8bb0\u6570\u6cd5\uff0cixy/ixz/iyz\u7b26\u53f7\u53d6\u53cd -->\n      <inertia\n        ixx=\"0.06155086\"\n        ixy=\"0.00016595\"      \n        ixz=\"-0.00169943\"      \n        iyy=\"0.05999156\"\n        iyz=\"0.00073898\"     \n        izz=\"0.01575336\" />\n    </inertial>\n    <visual>\n      <origin xyz=\"0 0 0\" rpy=\"0 0 0\" />\n      <geometry>\n        <mesh filename=\"package://kuavo_assets/models/biped_s52/meshes/l_leg_pitch.STL\" />\n      </geometry>\n      <material name=\"\">\n        <color rgba=\"1 1 1 1\" />\n      </material>\n    </visual>\n  </link>\n  <joint name=\"leg_l3_joint\" type=\"revolute\">\n    <origin xyz=\"0 0 -0.1437\" rpy=\"0 0 0\" />\n    <parent link=\"leg_l2_link\" />\n    <child link=\"leg_l3_link\" />\n    <axis xyz=\"0 1 0\" />\n    <limit lower=\"-1.91986217719376\" upper=\"1.5707963267949\" effort=\"132\" velocity=\"12.7\" />\n    <dynamics damping=\"0.02\" friction=\"0.0\" />\n  </joint>\n\n  <!-- ============ l_knee ============ -->\n  <!-- \u5750\u6807\u7cfb\uff1al_knee -->\n  <!-- \u5bf9\u79f0\u6e90\uff1ar_knee (X-Z\u5e73\u9762\u5bf9\u79f0) -->\n  <link name=\"leg_l4_link\">\n    <inertial>\n      <!-- \u8d28\u5fc3\uff1a\u53f3\u817f(0.00684787, -0.00006281, -0.16262733) -> \u5de6\u817f(0.00684787, +0.00006281, -0.16262733) -->\n      <origin xyz=\"0.00684787 0.00006281 -0.16262733\" rpy=\"0 0 0\" />\n      <!-- \u8d28\u91cf\uff1a3.64665831 kg -->\n      <mass value=\"3.64666\" />\n      <!-- \u2705 \u60ef\u6027\u5f20\u91cf\uff1a\u7531\u91cd\u5fc3\u51b3\u5b9a\uff0c\u5bf9\u9f50\u8f93\u51fa\u5750\u6807\u7cfb\uff0c\u8d1f\u5f20\u91cf\u8bb0\u6570\u6cd5\uff0cixy/ixz/iyz\u7b26\u53f7\u53d6\u53cd -->\n      <inertia\n        ixx=\"0.04372691\"\n        ixy=\"0.00000494\"     \n        ixz=\"0.00053020\"      \n        iyy=\"0.04357016\"\n        iyz=\"-0.00006946\"      \n        izz=\"0.00246985\" />\n    </inertial>\n    <visual>\n      <origin xyz=\"0 0 0\" rpy=\"0 0 0\" />\n      <geometry>\n        <mesh filename=\"package://kuavo_assets/models/biped_s52/meshes/l_knee.STL\" />\n      </geometry>\n      <material name=\"\">\n        <color rgba=\"1 1 1 1\" />\n      </material>\n    </visual>\n  </link>\n  <joint name=\"leg_l4_joint\" type=\"revolute\">\n    <origin xyz=\"-0.0011639 0 -0.284\" rpy=\"0 0 0\" />\n    <parent link=\"leg_l3_link\" />\n    <child link=\"leg_l4_link\" />\n    <axis xyz=\"0 1 0\" />\n    <limit lower=\"0.0\" upper=\"2.53072741539178\" effort=\"280.0\" velocity=\"10.4\" />\n    <dynamics damping=\"0.02\" friction=\"0.0\" />\n  </joint>\n\n  <!-- ============ l_foot_pitch ============ -->\n  <!-- \u5750\u6807\u7cfb\uff1al_foot_pitch_roll -->\n  <!-- \u5bf9\u79f0\u6e90\uff1ar_foot_pitch (\u5b8c\u5168\u5bf9\u79f0) -->\n  <link name=\"leg_l5_link\">\n    <inertial>\n      <!-- \u8d28\u5fc3\uff1a( 0, 0, 0 ) -->\n      <origin xyz=\"0 0 0\" rpy=\"0 0 0\" />\n      <!-- \u8d28\u91cf\uff1a0.07848005 kg -->\n      <mass value=\"0.07848\" />\n      <!-- \u2705 \u60ef\u6027\u5f20\u91cf\uff1a\u5b8c\u5168\u5bf9\u79f0\uff0c\u4e0e\u53f3\u817f\u5b8c\u5168\u76f8\u540c -->\n      <inertia\n        ixx=\"0.00000757\"\n        ixy=\"0.00000000\"\n        ixz=\"0.00000000\"\n        iyy=\"0.00000757\"\n        iyz=\"0.00000000\"\n        izz=\"0.00001318\" />\n    </inertial>\n    <visual>\n      <origin xyz=\"0 0 0\" rpy=\"0 0 0\" />\n      <geometry>\n        <mesh filename=\"package://kuavo_assets/models/biped_s52/meshes/l_foot_pitch.STL\" />\n      </geometry>\n      <material name=\"\">\n        <color rgba=\"1 1 1 1\" />\n      </material>\n    </visual>\n  </link>\n  <joint name=\"leg_l5_joint\" type=\"revolute\">\n    <origin xyz=\"0.002 0 -0.416\" rpy=\"0 0 0\" />\n    <parent link=\"leg_l4_link\" />\n    <child link=\"leg_l5_link\" />\n    <axis xyz=\"0 1 0\" />\n    <limit lower=\"-0.872664625997165\" upper=\"0.349065850398866\" effort=\"91.6\" velocity=\"17.8\" />\n    <dynamics damping=\"0.02\" friction=\"0.0\" />\n  </joint>\n  <!-- ============ l_foot_roll ============ -->\n  <!-- \u5750\u6807\u7cfb\uff1al_foot_pitch_roll -->\n  <!-- \u5bf9\u79f0\u6e90\uff1ar_foot_roll (\u5b8c\u5168\u5bf9\u79f0\uff0c\u7528\u6237\u8986\u76d6\u503c\u76f8\u540c) -->\n  <link name=\"leg_l6_link\">\n    <inertial>\n      <!-- \u8d28\u5fc3\uff08\u7528\u6237\u8986\u76d6\uff09\uff1a( 0.02655895, -0.00004538, -0.03373024 ) -->\n      <origin xyz=\"0.02655895 -0.00004538 -0.03373024\" rpy=\"0 0 0\" />\n      <!-- \u8d28\u91cf\uff08\u7528\u6237\u8986\u76d6\uff09\uff1a0.69242441 kg -->\n      <mass value=\"0.69242\" />\n      <!-- \u2705 \u60ef\u6027\u5f20\u91cf\uff1a\u5b8c\u5168\u5bf9\u79f0\uff0c\u4e0e\u53f3\u817f\u5b8c\u5168\u76f8\u540c\uff08\u8d28\u5fc3Y\u4e3a\u8d1f\uff0c\u65e0\u9700\u955c\u50cf\uff09 -->\n      <inertia\n        ixx=\"0.00051423\"\n        ixy=\"-0.00000078\"\n        ixz=\"0.00014745\"\n        iyy=\"0.00189913\"\n        iyz=\"0.00000033\"\n        izz=\"0.00199352\" />\n    </inertial>\n    <visual>\n      <origin xyz=\"0 0 0\" rpy=\"0 0 0\" />\n      <geometry>\n        <mesh filename=\"package://kuavo_assets/models/biped_s52/meshes/l_foot_roll.STL\" />\n      </geometry>\n      <material name=\"\">\n        <color rgba=\"1 1 1 1\" />\n      </material>\n    </visual>\n    <collision>\n      <origin xyz=\"0.0488 0 0\" rpy=\"0 0 0\" />\n      <geometry>\n        <box size=\"0.25 0.1 0.04\" />\n      </geometry>\n    </collision>\n  </link>\n  <joint name=\"leg_l6_joint\" type=\"revolute\">\n    <origin xyz=\"0 0 0\" rpy=\"0 0 0\" />\n    <parent link=\"leg_l5_link\" />\n    <child link=\"leg_l6_link\" />\n    <axis xyz=\"1 0 0\" />\n    <limit lower=\"-0.261799387799149\" upper=\"0.261799387799149\" effort=\"30.0\" velocity=\"17.8\" />\n    <dynamics damping=\"0.02\" friction=\"0.0\" />\n  </joint>\n  <link name=\"ll_foot_toe\">\n    <collision>\n      <origin rpy=\"0 0 0\" xyz=\"0 0 0\" />\n      <geometry>\n        <sphere radius=\"0.005\" />\n      </geometry>\n    </collision>\n  </link>\n  <joint name=\"ll_foot_toe_joint\" type=\"fixed\">\n    <origin xyz=\"0.17084 0.05 -0.0595\" rpy=\"0 0 0\" />\n    <parent link=\"leg_l6_link\" />\n    <child link=\"ll_foot_toe\" />\n  </joint>\n  <link name=\"ll_foot_heel\">\n    <collision>\n      <origin rpy=\"0 0 0\" xyz=\"0 0 0\" />\n      <geometry>\n        <sphere radius=\"0.005\" />\n      </geometry>\n    </collision>\n  </link>\n  <joint name=\"ll_foot_heel_joint\" type=\"fixed\">\n    <origin xyz=\"-0.073164 0.05 -0.0595\" rpy=\"0 0 0\" />\n    <parent link=\"leg_l6_link\" />\n    <child link=\"ll_foot_heel\" />\n  </joint>\n  <link name=\"lr_foot_toe\">\n    <collision>\n      <origin rpy=\"0 0 0\" xyz=\"0 0 0\" />\n      <geometry>\n        <sphere radius=\"0.005\" />\n      </geometry>\n    </collision>\n  </link>\n  <joint name=\"lr_foot_toe_joint\" type=\"fixed\">\n    <origin xyz=\"0.17084 -0.05 -0.0595\" rpy=\"0 0 0\" />\n    <parent link=\"leg_l6_link\" />\n    <child link=\"lr_foot_toe\" />\n  </joint>\n  <link name=\"lr_foot_heel\">\n    <collision>\n      <origin rpy=\"0 0 0\" xyz=\"0 0 0\" />\n      <geometry>\n        <sphere radius=\"0.005\" />\n      </geometry>\n    </collision>\n  </link>\n  <joint name=\"lr_foot_heel_joint\" type=\"fixed\">\n    <origin xyz=\"-0.073164 -0.05 -0.0595\" rpy=\"0 0 0\" />\n    <parent link=\"leg_l6_link\" />\n    <child link=\"lr_foot_heel\" />\n  </joint>\n  <link name=\"l_foot_toe\">\n    <collision>\n      <origin rpy=\"0 0 0\" xyz=\"0 0 0\" />\n      <geometry>\n        <sphere radius=\"0.005\" />\n      </geometry>\n    </collision>\n  </link>\n  <joint name=\"l_foot_toe_joint\" type=\"fixed\">\n    <origin xyz=\"0.17084 0.0 -0.0595\" rpy=\"0 0 0\" />\n    <parent link=\"leg_l6_link\" />\n    <child link=\"l_foot_toe\" />\n  </joint>\n  <link name=\"l_foot_heel\">\n    <collision>\n      <origin rpy=\"0 0 0\" xyz=\"0 0 0\" />\n      <geometry>\n        <sphere radius=\"0.005\" />\n      </geometry>\n    </collision>\n  </link>\n  <joint name=\"l_foot_heel_joint\" type=\"fixed\">\n    <origin xyz=\"-0.073164 0.0 -0.0595\" rpy=\"0 0 0\" />\n    <parent link=\"leg_l6_link\" />\n    <child link=\"l_foot_heel\" />\n  </joint>\n  <!-- ============ r_leg_roll ============ -->\n  <!-- \u5750\u6807\u7cfb\uff1ar_leg_roll_yaw -->\n  <link name=\"leg_r1_link\">\n    <inertial>\n      <!-- \u8d28\u5fc3\uff1a( -0.00560896, -0.00032862, -0.00212773 ) -->\n      <origin xyz=\"-0.00560896 -0.00032862 -0.00212773\" rpy=\"0 0 0\" />\n      <!-- \u8d28\u91cf\uff1a1.55641268 kg -->\n      <mass value=\"1.55641\" />\n      <!-- \u2705 \u7531\u91cd\u5fc3\u51b3\u5b9a\uff0c\u5e76\u4e14\u5bf9\u9f50\u8f93\u51fa\u7684\u5750\u6807\u7cfb\uff08\u4f7f\u7528\u8d1f\u5f20\u91cf\u8bb0\u6570\u6cd5\uff09 -->\n      <inertia\n        ixx=\"0.00191127\"\n        ixy=\"0.00001633\"\n        ixz=\"0.00000320\"\n        iyy=\"0.00254335\"\n        iyz=\"-0.00000055\"\n        izz=\"0.00260594\" />\n    </inertial>\n    <visual>\n      <origin xyz=\"0 0 0\" rpy=\"0 0 0\" />\n      <geometry>\n        <mesh filename=\"package://kuavo_assets/models/biped_s52/meshes/r_leg_roll.STL\" />\n      </geometry>\n      <material name=\"\">\n        <color rgba=\"1 1 1 1\" />\n      </material>\n    </visual>\n  </link>\n  <joint name=\"leg_r1_joint\" type=\"revolute\">\n    <origin xyz=\"0.0 -0.095075 -0.066\" rpy=\"0 0 0\" />\n    <parent link=\"base_link\" />\n    <child link=\"leg_r1_link\" />\n    <axis xyz=\"1 0 0\" />\n    <limit lower=\"-0.663225115757845\" upper=\"0.314159265358979\" effort=\"127.0\" velocity=\"10.4\" />\n    <dynamics damping=\"0.02\" friction=\"0.0\" />\n  </joint>\n  <!-- ============ r_leg_yaw ============ -->\n  <!-- \u5750\u6807\u7cfb\uff1ar_leg_roll_yaw -->\n  <link name=\"leg_r2_link\">\n    <inertial>\n      <!-- \u8d28\u5fc3\uff1a( 0.00006341, 0.00960017, -0.09308949 ) -->\n      <origin xyz=\"0.00006341 0.00960017 -0.09308949\" rpy=\"0 0 0\" />\n      <!-- \u8d28\u91cf\uff1a0.75872512 kg -->\n      <mass value=\"0.75873\" />\n      <!-- \u2705 \u7531\u91cd\u5fc3\u51b3\u5b9a\uff0c\u5e76\u4e14\u5bf9\u9f50\u8f93\u51fa\u7684\u5750\u6807\u7cfb\uff08\u4f7f\u7528\u8d1f\u5f20\u91cf\u8bb0\u6570\u6cd5\uff09 -->\n      <inertia\n        ixx=\"0.00348980\"\n        ixy=\"-0.00000617\"\n        ixz=\"0.00000543\"\n        iyy=\"0.00201021\"\n        iyz=\"0.00030265\"\n        izz=\"0.00236363\" />\n    </inertial>\n    <visual>\n      <origin xyz=\"0 0 0\" rpy=\"0 0 0\" />\n      <geometry>\n        <mesh filename=\"package://kuavo_assets/models/biped_s52/meshes/r_leg_yaw.STL\" />\n      </geometry>\n      <material name=\"\">\n        <color rgba=\"1 1 1 1\" />\n      </material>\n    </visual>\n  </link>\n  <joint name=\"leg_r2_joint\" type=\"revolute\">\n    <origin xyz=\"0 0 0\" rpy=\"0 0 0\" />\n    <parent link=\"leg_r1_link\" />\n    <child link=\"leg_r2_link\" />\n    <axis xyz=\"0 0 1\" />\n    <limit lower=\"-1.91986217719376\" upper=\"0.785398163397448\" effort=\"71.0\" velocity=\"8.7\" />\n    <dynamics damping=\"0.02\" friction=\"0.0\" />\n  </joint>\n  <!-- ============ r_leg_pitch ============ -->\n  <!-- \u5750\u6807\u7cfb\uff1ar_leg_pitch -->\n  <link name=\"leg_r3_link\">\n    <inertial>\n      <!-- \u8d28\u5fc3\uff1a( 0.00273544, -0.01478421, -0.09011501 ) -->\n      <origin xyz=\"0.00273544 -0.01478421 -0.09011501\" rpy=\"0 0 0\" />\n      <!-- \u8d28\u91cf\uff1a6.68074305 kg -->\n      <mass value=\"6.68074\" />\n      <!-- \u2705 \u7531\u91cd\u5fc3\u51b3\u5b9a\uff0c\u5e76\u4e14\u5bf9\u9f50\u8f93\u51fa\u7684\u5750\u6807\u7cfb\uff08\u4f7f\u7528\u8d1f\u5f20\u91cf\u8bb0\u6570\u6cd5\uff09 -->\n      <inertia\n        ixx=\"0.06155086\"\n        ixy=\"-0.00016595\"\n        ixz=\"0.00169943\"\n        iyy=\"0.05999156\"\n        iyz=\"-0.00073898\"\n        izz=\"0.01575336\" />\n    </inertial>\n    <visual>\n      <origin xyz=\"0 0 0\" rpy=\"0 0 0\" />\n      <geometry>\n        <mesh filename=\"package://kuavo_assets/models/biped_s52/meshes/r_leg_pitch.STL\" />\n      </geometry>\n      <material name=\"\">\n        <color rgba=\"1 1 1 1\" />\n      </material>\n    </visual>\n  </link>\n  <joint name=\"leg_r3_joint\" type=\"revolute\">\n    <origin xyz=\"0 0 -0.1437\" rpy=\"0 0 0\" />\n    <parent link=\"leg_r2_link\" />\n    <child link=\"leg_r3_link\" />\n    <axis xyz=\"0 1 0\" />\n    <limit lower=\"-1.91986217719376\" upper=\"1.5707963267949\" effort=\"132.0\" velocity=\"12.7\" />\n    <dynamics damping=\"0.02\" friction=\"0.0\" />\n  </joint>\n\n  <!-- ============ r_knee ============ -->\n  <!-- \u5750\u6807\u7cfb\uff1ar_knee -->\n  <link name=\"leg_r4_link\">\n    <inertial>\n      <!-- \u8d28\u5fc3\uff1a( 0.00684787, -0.00006281, -0.16262733 ) -->\n      <origin xyz=\"0.00684787 -0.00006281 -0.16262733\" rpy=\"0 0 0\" />\n      <!-- \u8d28\u91cf\uff1a3.64665831 kg -->\n      <mass value=\"3.64666\" />\n      <!-- \u2705 \u7531\u91cd\u5fc3\u51b3\u5b9a\uff0c\u5e76\u4e14\u5bf9\u9f50\u8f93\u51fa\u7684\u5750\u6807\u7cfb\uff08\u4f7f\u7528\u8d1f\u5f20\u91cf\u8bb0\u6570\u6cd5\uff09 -->\n      <inertia\n        ixx=\"0.04372691\"\n        ixy=\"-0.00000494\"\n        ixz=\"-0.00053020\"\n        iyy=\"0.04357016\"\n        iyz=\"0.00006946\"\n        izz=\"0.00246985\" />\n    </inertial>\n    <visual>\n      <origin xyz=\"0 0 0\" rpy=\"0 0 0\" />\n      <geometry>\n        <mesh filename=\"package://kuavo_assets/models/biped_s52/meshes/r_knee.STL\" />\n      </geometry>\n      <material name=\"\">\n        <color rgba=\"1 1 1 1\" />\n      </material>\n    </visual>\n  </link>\n  <joint name=\"leg_r4_joint\" type=\"revolute\">\n    <origin xyz=\"-0.0011639 0 -0.284\" rpy=\"0 0 0\" />\n    <parent link=\"leg_r3_link\" />\n    <child link=\"leg_r4_link\" />\n    <axis xyz=\"0 1 0\" />\n    <limit lower=\"0.0\" upper=\"2.53072741539178\" effort=\"280.0\" velocity=\"10.4\" />\n    <dynamics damping=\"0.02\" friction=\"0.0\" />\n  </joint>\n\n  <!-- ============ r_foot_pitch ============ -->\n  <!-- \u5750\u6807\u7cfb\uff1ar_foot_pitch_roll -->\n  <link name=\"leg_r5_link\">\n    <inertial>\n      <!-- \u8d28\u5fc3\uff1a( 0, 0, 0 ) -->\n      <origin xyz=\"0 0 0\" rpy=\"0 0 0\" />\n      <!-- \u8d28\u91cf\uff1a0.07848005 kg -->\n      <mass value=\"0.07848\" />\n      <!-- \u2705 \u7531\u91cd\u5fc3\u51b3\u5b9a\uff0c\u5e76\u4e14\u5bf9\u9f50\u8f93\u51fa\u7684\u5750\u6807\u7cfb\uff08\u4f7f\u7528\u8d1f\u5f20\u91cf\u8bb0\u6570\u6cd5\uff09- \u4e0e\u8f93\u51fa\u5750\u6807\u7cfb\u76f8\u540c\u56e0\u4e3a\u8d28\u5fc3\u5728\u539f\u70b9 -->\n      <inertia\n        ixx=\"0.00000757\"\n        ixy=\"0.00000000\"\n        ixz=\"0.00000000\"\n        iyy=\"0.00000757\"\n        iyz=\"0.00000000\"\n        izz=\"0.00001318\" />\n    </inertial>\n    <visual>\n      <origin xyz=\"0 0 0\" rpy=\"0 0 0\" />\n      <geometry>\n        <mesh filename=\"package://kuavo_assets/models/biped_s52/meshes/r_foot_pitch.STL\" />\n      </geometry>\n      <material name=\"\">\n        <color rgba=\"1 1 1 1\" />\n      </material>\n    </visual>\n  </link>\n  <joint name=\"leg_r5_joint\" type=\"revolute\">\n    <origin xyz=\"0.002 0 -0.416\" rpy=\"0 0 0\" />\n    <parent link=\"leg_r4_link\" />\n    <child link=\"leg_r5_link\" />\n    <axis xyz=\"0 1 0\" />\n    <limit lower=\"-0.872664625997165\" upper=\"0.349065850398866\" effort=\"91.6\" velocity=\"17.8\" />\n    <dynamics damping=\"0.02\" friction=\"0.0\" />\n  </joint>\n\n  <!-- ============ r_foot_roll ============ -->\n  <!-- \u5750\u6807\u7cfb\uff1ar_foot_pitch_roll -->\n  <link name=\"leg_r6_link\">\n    <inertial>\n      <!-- \u8d28\u5fc3\uff08\u7528\u6237\u8986\u76d6\uff09\uff1a( 0.02655895, -0.00004538, -0.03373024 ) -->\n      <origin xyz=\"0.02655895 -0.00004538 -0.03373024\" rpy=\"0 0 0\" />\n      <!-- \u8d28\u91cf\uff08\u7528\u6237\u8986\u76d6\uff09\uff1a0.69242441 kg -->\n      <mass value=\"0.69242\" />\n      <!-- \u2705 \u7531\u91cd\u5fc3\u51b3\u5b9a\uff0c\u5e76\u4e14\u5bf9\u9f50\u8f93\u51fa\u7684\u5750\u6807\u7cfb\uff08\u4f7f\u7528\u8d1f\u5f20\u91cf\u8bb0\u6570\u6cd5\uff09 -->\n      <inertia\n        ixx=\"0.00051423\"\n        ixy=\"-0.00000078\"\n        ixz=\"0.00014745\"\n        iyy=\"0.00189913\"\n        iyz=\"0.00000033\"\n        izz=\"0.00199352\" />\n    </inertial>\n    <visual>\n      <origin xyz=\"0 0 0\" rpy=\"0 0 0\" />\n      <geometry>\n        <mesh filename=\"package://kuavo_assets/models/biped_s52/meshes/r_foot_roll.STL\" />\n      </geometry>\n      <material name=\"\">\n        <color rgba=\"1 1 1 1\" />\n      </material>\n    </visual>\n    <collision>\n      <origin xyz=\"0.0488 0 0\" rpy=\"0 0 0\" />\n      <geometry>\n        <box size=\"0.25 0.1 0.04\" />\n      </geometry>\n    </collision>\n  </link>\n  <joint name=\"leg_r6_joint\" type=\"revolute\">\n    <origin xyz=\"0 0 0\" rpy=\"0 0 0\" />\n    <parent link=\"leg_r5_link\" />\n    <child link=\"leg_r6_link\" />\n    <axis xyz=\"1 0 0\" />\n    <limit lower=\"-0.261799387799149\" upper=\"0.261799387799149\" effort=\"30.0\" velocity=\"17.8\" />\n    <dynamics damping=\"0.02\" friction=\"0.0\" />\n  </joint>\n  <link name=\"rl_foot_toe\">\n    <collision>\n      <origin rpy=\"0 0 0\" xyz=\"0 0 0\" />\n      <geometry>\n        <sphere radius=\"0.005\" />\n      </geometry>\n    </collision>\n  </link>\n  <joint name=\"rl_foot_toe_joint\" type=\"fixed\">\n    <origin xyz=\"0.17084 0.05 -0.0595\" rpy=\"0 0 0\" />\n    <parent link=\"leg_r6_link\" />\n    <child link=\"rl_foot_toe\" />\n  </joint>\n  <link name=\"rl_foot_heel\">\n    <collision>\n      <origin rpy=\"0 0 0\" xyz=\"0 0 0\" />\n      <geometry>\n        <sphere radius=\"0.005\" />\n      </geometry>\n    </collision>\n  </link>\n  <joint name=\"rl_foot_heel_joint\" type=\"fixed\">\n    <origin xyz=\"-0.073164 0.05 -0.0595\" rpy=\"0 0 0\" />\n    <parent link=\"leg_r6_link\" />\n    <child link=\"rl_foot_heel\" />\n  </joint>\n  <link name=\"rr_foot_toe\">\n    <collision>\n      <origin rpy=\"0 0 0\" xyz=\"0 0 0\" />\n      <geometry>\n        <sphere radius=\"0.005\" />\n      </geometry>\n    </collision>\n  </link>\n  <joint name=\"rr_foot_toe_joint\" type=\"fixed\">\n    <origin xyz=\"0.17084 -0.05 -0.0595\" rpy=\"0 0 0\" />\n    <parent link=\"leg_r6_link\" />\n    <child link=\"rr_foot_toe\" />\n  </joint>\n  <link name=\"rr_foot_heel\">\n    <collision>\n      <origin rpy=\"0 0 0\" xyz=\"0 0 0\" />\n      <geometry>\n        <sphere radius=\"0.005\" />\n      </geometry>\n    </collision>\n  </link>\n  <joint name=\"rr_foot_heel_joint\" type=\"fixed\">\n    <origin xyz=\"-0.073164 -0.05 -0.0595\" rpy=\"0 0 0\" />\n    <parent link=\"leg_r6_link\" />\n    <child link=\"rr_foot_heel\" />\n  </joint>\n  <link name=\"r_foot_toe\">\n    <collision>\n      <origin rpy=\"0 0 0\" xyz=\"0 0 0\" />\n      <geometry>\n        <sphere radius=\"0.005\" />\n      </geometry>\n    </collision>\n  </link>\n  <joint name=\"r_foot_toe_joint\" type=\"fixed\">\n    <origin xyz=\"0.17084 0.0 -0.0595\" rpy=\"0 0 0\" />\n    <parent link=\"leg_r6_link\" />\n    <child link=\"r_foot_toe\" />\n  </joint>\n  <link name=\"r_foot_heel\">\n    <collision>\n      <origin rpy=\"0 0 0\" xyz=\"0 0 0\" />\n      <geometry>\n        <sphere radius=\"0.005\" />\n      </geometry>\n    </collision>\n  </link>\n  <joint name=\"r_foot_heel_joint\" type=\"fixed\">\n    <origin xyz=\"-0.073164 0.0 -0.0595\" rpy=\"0 0 0\" />\n    <parent link=\"leg_r6_link\" />\n    <child link=\"r_foot_heel\" />\n  </joint>\n  <link name=\"waist_yaw_link\">\n    <inertial>\n      <!-- \u8d28\u5fc3\uff1a( -0.00044187, -0.00068282, 0.16674017 ) -->\n      <origin xyz=\"0.04044187 -0.00068282 0.16674017\" rpy=\"0 0 0\" />\n      <!-- \u8d28\u91cf\uff1a17.11065787 kg -->\n      <mass value=\"19.54016\" />\n      <!-- \u2705 \u7531\u91cd\u5fc3\u51b3\u5b9a\uff0c\u5e76\u4e14\u5bf9\u9f50\u8f93\u51fa\u7684\u5750\u6807\u7cfb\uff08\u4f7f\u7528\u8d1f\u5f20\u91cf\u8bb0\u6570\u6cd5\uff09- \u6765\u81eawaist_yaw Lxx/Lyy/Lzz -->\n      <inertia\n        ixx=\"0.34143343\"\n        ixy=\"0.0\"\n        ixz=\"0.0\"\n        iyy=\"0.25757527\"\n        iyz=\"0.0\"\n        izz=\"0.20167280\" />\n    </inertial>\n    <visual>\n      <origin xyz=\"0 0 0\" rpy=\"0 0 0\" />\n      <geometry>\n        <mesh filename=\"package://kuavo_assets/models/biped_s52/meshes/waist_yaw.STL\" />\n      </geometry>\n      <material name=\"\">\n        <color rgba=\"1 1 1 1\" />\n      </material>\n    </visual>\n  </link>\n  <joint name=\"waist_yaw_joint\" type=\"revolute\">\n    <origin xyz=\"0 0 0.1114\" rpy=\"0 0 0\" />\n    <parent link=\"base_link\" />\n    <child link=\"waist_yaw_link\" />\n    <axis xyz=\"0 0 1\" />\n    <limit lower=\"-3.14159\" upper=\"3.14159\" effort=\"102.0\" velocity=\"8.7\" />\n    <dynamics damping=\"0.02\" friction=\"0.0\" />\n  </joint>\n  <!-- ============ l_arm_pitch ============ -->\n  <!-- \u5750\u6807\u7cfb\uff1al_arm_pitch_roll_yaw -->\n  <link\n    name=\"zarm_l1_link\">\n    <inertial>\n      <!-- \u8d28\u5fc3\uff1a( 0.00080154, -0.00930333, 0.00031203 ) -->\n      <origin xyz=\"0.00080154 -0.00930333 0.00031203\" rpy=\"0 0 0\" />\n      <!-- \u8d28\u91cf\uff1a0.94520767 kg -->\n      <mass value=\"0.94521\" />\n      <!-- \u2705 \u7531\u91cd\u5fc3\u51b3\u5b9a\uff0c\u5e76\u4e14\u5bf9\u9f50\u8f93\u51fa\u7684\u5750\u6807\u7cfb\uff08\u4f7f\u7528\u8d1f\u5f20\u91cf\u8bb0\u6570\u6cd5\uff09 -->\n      <inertia\n        ixx=\"0.00133347\"\n        ixy=\"-0.00000676\"\n        ixz=\"0.00000067\"\n        iyy=\"0.00088618\"\n        iyz=\"-0.00000295\"\n        izz=\"0.00133859\" />\n    </inertial>\n    <visual>\n      <origin xyz=\"0 0 0\" rpy=\"0 0 0\" />\n      <geometry>\n        <mesh\n          filename=\"package://kuavo_assets/models/biped_s52/meshes/l_arm_pitch.STL\" />\n      </geometry>\n      <material\n        name=\"\">\n        <color\n          rgba=\"1 1 1 1\" />\n      </material>\n    </visual>\n  </link>\n  <joint\n    name=\"zarm_l1_joint\"\n    type=\"revolute\">\n    <origin\n      xyz=\"-0.003 0.2527 0.283\"\n      rpy=\"0 0 0\" />\n    <parent\n      link=\"waist_yaw_link\" />\n    <child\n      link=\"zarm_l1_link\" />\n    <axis\n      xyz=\"0 1 0\" />\n    <limit lower=\"-3.14159265358979\" upper=\"1.5707963267949\" effort=\"66.0\" velocity=\"18.8\" />\n    <dynamics damping=\"0.02\" friction=\"0.0\" />\n  </joint>\n  <!-- ============ l_arm_roll ============ -->\n  <!-- \u5750\u6807\u7cfb\uff1al_arm_pitch_roll_yaw -->\n  <link\n    name=\"zarm_l2_link\">\n    <inertial>\n      <!-- \u8d28\u5fc3\uff1a( -0.00087383, -0.00000389, -0.04690210 ) -->\n      <origin xyz=\"-0.00087383 -0.00000389 -0.04690210\" rpy=\"0 0 0\" />\n      <!-- \u8d28\u91cf\uff1a0.41921257 kg -->\n      <mass value=\"0.41921\" />\n      <!-- \u2705 \u7531\u91cd\u5fc3\u51b3\u5b9a\uff0c\u5e76\u4e14\u5bf9\u9f50\u8f93\u51fa\u7684\u5750\u6807\u7cfb\uff08\u4f7f\u7528\u8d1f\u5f20\u91cf\u8bb0\u6570\u6cd5\uff09 -->\n      <inertia\n        ixx=\"0.00084950\"\n        ixy=\"0.00000011\"\n        ixz=\"-0.00002039\"\n        iyy=\"0.00123033\"\n        iyz=\"0.00000014\"\n        izz=\"0.00074285\" />\n    </inertial>\n    <visual>\n      <origin\n        xyz=\"0 0 0\"\n        rpy=\"0 0 0\" />\n      <geometry>\n        <mesh\n          filename=\"package://kuavo_assets/models/biped_s52/meshes/l_arm_roll.STL\" />\n      </geometry>\n      <material\n        name=\"\">\n        <color\n          rgba=\"1 1 1 1\" />\n      </material>\n    </visual>\n  </link>\n  <joint\n    name=\"zarm_l2_joint\"\n    type=\"revolute\">\n    <origin\n      xyz=\"0 0 0\"\n      rpy=\"0 0 0\" />\n    <parent\n      link=\"zarm_l1_link\" />\n    <child\n      link=\"zarm_l2_link\" />\n    <axis\n      xyz=\"1 0 0\" />\n    <limit lower=\"-0.349065850398866\" upper=\"3.49065850398866\" effort=\"75.0\" velocity=\"8.0\" />\n    <dynamics damping=\"0.02\" friction=\"0.0\" />\n  </joint>\n\n  <!-- ============ l_arm_yaw ============ -->\n  <!-- \u5750\u6807\u7cfb\uff1al_arm_pitch_roll_yaw -->\n  <link\n    name=\"zarm_l3_link\">\n    <inertial>\n      <!-- \u8d28\u5fc3\uff1a( 0.00961457, 0.00303320, -0.22991934 ) -->\n      <origin xyz=\"0.00961457 0.00303320 -0.22991934\" rpy=\"0 0 0\" />\n      <!-- \u8d28\u91cf\uff1a1.78857489 kg -->\n      <mass value=\"1.78857\" />\n      <!-- \u2705 \u7531\u91cd\u5fc3\u51b3\u5b9a\uff0c\u5e76\u4e14\u5bf9\u9f50\u8f93\u51fa\u7684\u5750\u6807\u7cfb\uff08\u4f7f\u7528\u8d1f\u5f20\u91cf\u8bb0\u6570\u6cd5\uff09 -->\n      <inertia\n        ixx=\"0.00709279\"\n        ixy=\"-0.00006786\"\n        ixz=\"0.00082655\"\n        iyy=\"0.00718506\"\n        iyz=\"0.00029056\"\n        izz=\"0.00191640\" />\n    </inertial>\n    <visual>\n      <origin\n        xyz=\"0 0 0\"\n        rpy=\"0 0 0\" />\n      <geometry>\n        <mesh\n          filename=\"package://kuavo_assets/models/biped_s52/meshes/l_arm_yaw.STL\" />\n      </geometry>\n      <material\n        name=\"\">\n        <color\n          rgba=\"1 1 1 1\" />\n      </material>\n    </visual>\n  </link>\n  <joint\n    name=\"zarm_l3_joint\"\n    type=\"revolute\">\n    <origin\n      xyz=\"0 0 0\"\n      rpy=\"0 0 0\" />\n    <parent\n      link=\"zarm_l2_link\" />\n    <child\n      link=\"zarm_l3_link\" />\n    <axis\n      xyz=\"0 0 1\" />\n    <limit lower=\"-1.48352986419518\" upper=\"1.48352986419518\" effort=\"57.0\" velocity=\"7.5\" />\n    <dynamics damping=\"0.02\" friction=\"0.0\" />\n  </joint>\n\n  <!-- ============ l_foream ============ -->\n  <!-- \u5750\u6807\u7cfb\uff1al_foream -->\n  <link\n    name=\"zarm_l4_link\">\n    <inertial>\n      <!-- \u8d28\u5fc3\uff1a( -0.01815271, 0.00143762, -0.06748280 ) -->\n      <origin xyz=\"-0.01815271 0.00143762 -0.06748280\" rpy=\"0 0 0\" />\n      <!-- \u8d28\u91cf\uff1a0.63148736 kg -->\n      <mass value=\"0.63149\" />\n      <!-- \u2705 \u7531\u91cd\u5fc3\u51b3\u5b9a\uff0c\u5e76\u4e14\u5bf9\u9f50\u8f93\u51fa\u7684\u5750\u6807\u7cfb\uff08\u4f7f\u7528\u8d1f\u5f20\u91cf\u8bb0\u6570\u6cd5\uff09 -->\n      <inertia\n        ixx=\"0.00152253\"\n        ixy=\"-0.00000788\"\n        ixz=\"-0.00012859\"\n        iyy=\"0.00131180\"\n        iyz=\"-0.00003238\"\n        izz=\"0.00069075\" />\n    </inertial>\n    <visual>\n      <origin\n        xyz=\"0 0 0\"\n        rpy=\"0 0 0\" />\n      <geometry>\n        <mesh\n          filename=\"package://kuavo_assets/models/biped_s52/meshes/l_forearm.STL\" />\n      </geometry>\n      <material\n        name=\"\">\n        <color\n          rgba=\"1 1 1 1\" />\n      </material>\n    </visual>\n  </link>\n  <joint\n    name=\"zarm_l4_joint\"\n    type=\"revolute\">\n    <origin\n      xyz=\"0.02 0 -0.2837\"\n      rpy=\"0 0 0\" />\n    <parent\n      link=\"zarm_l3_link\" />\n    <child\n      link=\"zarm_l4_link\" />\n    <axis\n      xyz=\"0 1 0\" />\n    <limit lower=\"-2.61799387799149\" upper=\"0.0\" effort=\"75.0\" velocity=\"8.0\" />\n    <dynamics damping=\"0.02\" friction=\"0.0\" />\n  </joint>\n\n  <!-- ============ l_hand_yaw ============ -->\n  <!-- \u5750\u6807\u7cfb\uff1al_hand_yaw -->\n  <link\n    name=\"zarm_l5_link\">\n    <inertial>\n      <!-- \u8d28\u5fc3\uff1a( -0.00516386, 0.00001560, -0.05589705 ) -->\n      <origin xyz=\"-0.00516386 0.00001560 -0.05589705\" rpy=\"0 0 0\" />\n      <!-- \u8d28\u91cf\uff1a0.60827684 kg -->\n      <mass value=\"0.60828\" />\n      <!-- \u2705 \u7531\u91cd\u5fc3\u51b3\u5b9a\uff0c\u5e76\u4e14\u5bf9\u9f50\u8f93\u51fa\u7684\u5750\u6807\u7cfb\uff08\u4f7f\u7528\u8d1f\u5f20\u91cf\u8bb0\u6570\u6cd5\uff09 -->\n      <inertia\n        ixx=\"0.00065900\"\n        ixy=\"0.00000008\"\n        ixz=\"-0.00002661\"\n        iyy=\"0.00092404\"\n        iyz=\"0.00000000\"\n        izz=\"0.00049898\" />\n    </inertial>\n    <visual>\n      <origin\n        xyz=\"0 0 0\"\n        rpy=\"0 0 0\" />\n      <geometry>\n        <mesh\n          filename=\"package://kuavo_assets/models/biped_s52/meshes/l_hand_yaw.STL\" />\n      </geometry>\n      <material\n        name=\"\">\n        <color\n          rgba=\"1 1 1 1\" />\n      </material>\n    </visual>\n  </link>\n  <joint\n    name=\"zarm_l5_joint\"\n    type=\"revolute\">\n    <origin xyz=\"-0.02 0 -0.1201\" rpy=\"0 0 0\" />\n    <parent\n      link=\"zarm_l4_link\" />\n    <child\n      link=\"zarm_l5_link\" />\n    <axis\n      xyz=\"0 0 1\" />\n    <limit lower=\"-1.5707963267949\" upper=\"1.5707963267949\" effort=\"14.1\" velocity=\"17.5\" />\n    <dynamics damping=\"0.02\" friction=\"0.0\" />\n  </joint>\n\n  <!-- ============ l_hand_roll ============ -->\n  <!-- \u5750\u6807\u7cfb\uff1al_hand_roll -->\n  <link\n    name=\"zarm_l6_link\">\n    <inertial>\n      <!-- \u8d28\u5fc3\uff1a( -0.00674799, 0.00638282, -0.00862654 ) -->\n      <origin xyz=\"-0.00674799 0.00638282 -0.00862654\" rpy=\"0 0 0\" />\n      <!-- \u8d28\u91cf\uff1a0.50616416 kg -->\n      <mass value=\"0.50616\" />\n      <!-- \u2705 \u7531\u91cd\u5fc3\u51b3\u5b9a\uff0c\u5e76\u4e14\u5bf9\u9f50\u8f93\u51fa\u7684\u5750\u6807\u7cfb\uff08\u4f7f\u7528\u8d1f\u5f20\u91cf\u8bb0\u6570\u6cd5\uff09- \u7b2c\u4e00\u4e2a\u5f20\u91cf -->\n      <inertia\n        ixx=\"0.00038064\"\n        ixy=\"-0.00002132\"\n        ixz=\"0.00013787\"\n        iyy=\"0.00052077\"\n        iyz=\"0.00003086\"\n        izz=\"0.00032724\" />\n    </inertial>\n    <visual>\n      <origin\n        xyz=\"0 0 0\"\n        rpy=\"0 0 0\" />\n      <geometry>\n        <mesh\n          filename=\"package://kuavo_assets/models/biped_s52/meshes/l_hand_roll.STL\" />\n      </geometry>\n      <material\n        name=\"\">\n        <color\n          rgba=\"1 1 1 1\" />\n      </material>\n    </visual>\n  </link>\n  <joint\n    name=\"zarm_l6_joint\"\n    type=\"revolute\">\n    <origin\n      xyz=\"0.0 0 -0.114\"\n      rpy=\"0 0 0\" />\n    <parent\n      link=\"zarm_l5_link\" />\n    <child\n      link=\"zarm_l6_link\" />\n    <axis\n      xyz=\"1 0 0\" />\n    <limit lower=\"-1.30899693899575\" upper=\"0.698131700797732\" effort=\"14.1\" velocity=\"17.5\" />\n    <dynamics damping=\"0.02\" friction=\"0.0\" />\n  </joint>\n\n  <!-- ============ l_hand_pitch ============ -->\n  <!-- \u5750\u6807\u7cfb\uff1al_hand_pitch -->\n  <link\n    name=\"zarm_l7_link\">\n    <inertial>\n      <!-- \u8d28\u5fc3\uff1a( 0.03810742, 0.00267575, -0.05086389 ) -->\n      <origin xyz=\"0.00481393 0.00873606 -0.0837543\" rpy=\"0 0 0\" />\n      <!-- \u8d28\u91cf\uff1a0.18939501 kg -->\n      <mass value=\"0.7374\" />\n      <!-- \u2705 \u7531\u91cd\u5fc3\u51b3\u5b9a\uff0c\u5e76\u4e14\u5bf9\u9f50\u8f93\u51fa\u7684\u5750\u6807\u7cfb\uff08\u4f7f\u7528\u8d1f\u5f20\u91cf\u8bb0\u6570\u6cd5\uff09 -->\n      <inertia\n        ixx=\"0.00112502\"\n        ixy=\"0\"\n        ixz=\"0\"\n        iyy=\"0.00133239\"\n        iyz=\"0\"\n        izz=\"0.000373427\" />\n    </inertial>\n  </link>\n  <joint\n    name=\"zarm_l7_joint\"\n    type=\"revolute\">\n    <origin\n      xyz=\"0 0 -0.021\"\n      rpy=\"0 0 0\" />\n    <parent\n      link=\"zarm_l6_link\" />\n    <child\n      link=\"zarm_l7_link\" />\n    <axis\n      xyz=\"0 1 0\" />\n    <limit lower=\"-0.698131700797732\" upper=\"0.698131700797732\" effort=\"14.1\" velocity=\"17.5\" />\n    <dynamics damping=\"0.02\" friction=\"0.0\" />\n  </joint>\n<link name=\"left_wrist_camera_link\">\n    <visual>\n      <origin xyz=\"0 0 0\" rpy=\"0 0 0\" />\n      <geometry>\n        <mesh filename=\"package://challenge_cup_simulator/models/biped_s52/meshes/D405.stl\" scale=\"0.001 0.001 0.001\" />\n      </geometry>\n      <material name=\"\">\n        <color rgba=\"1 1 1 1\" />\n      </material>\n    </visual>\n  </link>\n  <joint name=\"left_wrist_camera_joint\" type=\"fixed\">\n    <origin xyz=\"0 0.06 0\" rpy=\"3.14159 0 3.14159\" />\n    <parent link=\"zarm_l7_link\" />\n    <child link=\"left_wrist_camera_link\" />\n  </joint>\n  <!-- \u5de6\u624b\u5939\u722a\u5e95\u5ea7 -->\n  <link name=\"left_gripper_base\">\n    <visual>\n      <origin xyz=\"0 0 0\" rpy=\"0 0 0\" />\n      <geometry>\n        <mesh filename=\"package://challenge_cup_simulator/models/biped_s52/meshes/2f85/robotiq_85_base_link_fine_new.STL\"  />\n      </geometry>\n      <material name=\"\">\n        <color rgba=\"0.149 0.149 0.149 1\" />\n      </material>\n    </visual>\n  </link>\n  <joint name=\"left_gripper_base_joint\" type=\"fixed\">\n    <origin xyz=\"0 0 -0.0038\" rpy=\"3.14159 0 1.5708\" />\n    <parent link=\"zarm_l7_link\" />\n    <child link=\"left_gripper_base\" />\n  </joint>\n  <!-- \u5de6\u5939\u722a\u5de6\u4fa7\u624b\u6307\u94fe -->\n  <link name=\"left_gripper_left_outer_knuckle\">\n    <visual>\n      <geometry>\n        <mesh filename=\"package://challenge_cup_simulator/models/biped_s52/meshes/2f85/outer_knuckle_fine_new.STL\"  />\n      </geometry>\n      <material name=\"\"><color rgba=\"0.149 0.149 0.149 1\" /></material>\n    </visual>\n  </link>\n  <joint name=\"left_gripper_left_outer_knuckle_joint\" type=\"revolute\">\n    <origin xyz=\"0 -0.0306011 0.054904\" rpy=\"0 0 3.14159\" />\n    <parent link=\"left_gripper_base\" />\n    <child link=\"left_gripper_left_outer_knuckle\" />\n    <axis xyz=\"1 0 0\" />\n    <limit lower=\"0\" upper=\"0.8\" effort=\"5\" velocity=\"2\" />\n    <mimic joint=\"left_gripper_joint\" multiplier=\"1\" offset=\"0\" />\n  </joint>\n  <link name=\"left_gripper_left_outer_finger\">\n    <visual>\n      <geometry>\n        <mesh filename=\"package://challenge_cup_simulator/models/biped_s52/meshes/2f85/outer_finger_fine_new.STL\"  />\n      </geometry>\n      <material name=\"\"><color rgba=\"0.149 0.149 0.149 1\" /></material>\n    </visual>\n  </link>\n  <joint name=\"left_gripper_left_outer_finger_joint\" type=\"fixed\">\n    <origin xyz=\"0 0.0315 -0.0041\" rpy=\"0 0 0\" />\n    <parent link=\"left_gripper_left_outer_knuckle\" />\n    <child link=\"left_gripper_left_outer_finger\" />\n  </joint>\n  <link name=\"left_gripper_left_inner_finger\">\n    <visual>\n      <geometry>\n        <mesh filename=\"package://challenge_cup_simulator/models/biped_s52/meshes/2f85/inner_finger_fine_new.STL\"  />\n      </geometry>\n      <material name=\"\"><color rgba=\"0.149 0.149 0.149 1\" /></material>\n    </visual>\n  </link>\n  <joint name=\"left_gripper_left_inner_finger_joint\" type=\"fixed\">\n    <origin xyz=\"0 0.0061 0.0471\" rpy=\"0 0 0\" />\n    <parent link=\"left_gripper_left_outer_finger\" />\n    <child link=\"left_gripper_left_inner_finger\" />\n  </joint>\n  <link name=\"left_gripper_left_inner_knuckle\">\n    <visual>\n      <geometry>\n        <mesh filename=\"package://challenge_cup_simulator/models/biped_s52/meshes/2f85/inner_knuckle_fine_new.STL\"  />\n      </geometry>\n      <material name=\"\"><color rgba=\"0.149 0.149 0.149 1\" /></material>\n    </visual>\n  </link>\n  <joint name=\"left_gripper_left_inner_knuckle_joint\" type=\"fixed\">\n    <origin xyz=\"0 -0.0127 0.06142\" rpy=\"0 0 3.14159\" />\n    <parent link=\"left_gripper_base\" />\n    <child link=\"left_gripper_left_inner_knuckle\" />\n  </joint>\n  <!-- \u5de6\u5939\u722a\u53f3\u4fa7\u624b\u6307\u94fe -->\n  <link name=\"left_gripper_right_outer_knuckle\">\n    <visual>\n      <geometry>\n        <mesh filename=\"package://challenge_cup_simulator/models/biped_s52/meshes/2f85/outer_knuckle_fine_new.STL\"  />\n      </geometry>\n      <material name=\"\"><color rgba=\"0.149 0.149 0.149 1\" /></material>\n    </visual>\n  </link>\n  <joint name=\"left_gripper_joint\" type=\"revolute\">\n    <origin xyz=\"0 0.0306011 0.054904\" rpy=\"0 0 0\" />\n    <parent link=\"left_gripper_base\" />\n    <child link=\"left_gripper_right_outer_knuckle\" />\n    <axis xyz=\"1 0 0\" />\n    <limit lower=\"0\" upper=\"0.8\" effort=\"5\" velocity=\"2\" />\n  </joint>\n  <link name=\"left_gripper_right_outer_finger\">\n    <visual>\n      <geometry>\n        <mesh filename=\"package://challenge_cup_simulator/models/biped_s52/meshes/2f85/outer_finger_fine_new.STL\"  />\n      </geometry>\n      <material name=\"\"><color rgba=\"0.149 0.149 0.149 1\" /></material>\n    </visual>\n  </link>\n  <joint name=\"left_gripper_right_outer_finger_joint\" type=\"fixed\">\n    <origin xyz=\"0 0.0315 -0.0041\" rpy=\"0 0 0\" />\n    <parent link=\"left_gripper_right_outer_knuckle\" />\n    <child link=\"left_gripper_right_outer_finger\" />\n  </joint>\n  <link name=\"left_gripper_right_inner_finger\">\n    <visual>\n      <geometry>\n        <mesh filename=\"package://challenge_cup_simulator/models/biped_s52/meshes/2f85/inner_finger_fine_new.STL\"  />\n      </geometry>\n      <material name=\"\"><color rgba=\"0.149 0.149 0.149 1\" /></material>\n    </visual>\n  </link>\n  <joint name=\"left_gripper_right_inner_finger_joint\" type=\"fixed\">\n    <origin xyz=\"0 0.0061 0.0471\" rpy=\"0 0 0\" />\n    <parent link=\"left_gripper_right_outer_finger\" />\n    <child link=\"left_gripper_right_inner_finger\" />\n  </joint>\n  <link name=\"left_gripper_right_inner_knuckle\">\n    <visual>\n      <geometry>\n        <mesh filename=\"package://challenge_cup_simulator/models/biped_s52/meshes/2f85/inner_knuckle_fine_new.STL\"  />\n      </geometry>\n      <material name=\"\"><color rgba=\"0.149 0.149 0.149 1\" /></material>\n    </visual>\n  </link>\n  <joint name=\"left_gripper_right_inner_knuckle_joint\" type=\"fixed\">\n    <origin xyz=\"0 0.0127 0.06142\" rpy=\"0 0 0\" />\n    <parent link=\"left_gripper_base\" />\n    <child link=\"left_gripper_right_inner_knuckle\" />\n  </joint>\n    <link name=\"zarm_l7_end_effector\">\n  </link>\n  <joint name=\"zarm_l7_end_effector_joint\" type=\"fixed\">\n    <origin xyz=\"0 0.0 -0.17\" rpy=\"0 0 0\" />\n    <parent link=\"zarm_l7_link\" />\n    <child link=\"zarm_l7_end_effector\" />\n  </joint>\n  <!-- ============ r_arm_pitch ============ -->\n  <!-- \u5750\u6807\u7cfb\uff1ar_arm_pitch_roll_yaw -->\n  <link\n    name=\"zarm_r1_link\">\n    <inertial>\n      <!-- \u8d28\u5fc3\uff1a( 0.00162594, 0.00950442, -0.00031733 ) -->\n      <origin xyz=\"0.00162594 0.00950442 -0.00031733\" rpy=\"0 0 0\" />\n      <!-- \u8d28\u91cf\uff1a0.92946504 kg -->\n      <mass value=\"0.92947\" />\n      <!-- \u2705 \u7531\u91cd\u5fc3\u51b3\u5b9a\uff0c\u5e76\u4e14\u5bf9\u9f50\u8f93\u51fa\u7684\u5750\u6807\u7cfb\uff08\u4f7f\u7528\u8d1f\u5f20\u91cf\u8bb0\u6570\u6cd5\uff09 -->\n      <inertia\n        ixx=\"0.00132776\"\n        ixy=\"0.00001398\"\n        ixz=\"-0.00000091\"\n        iyy=\"0.00084780\"\n        iyz=\"-0.00000301\"\n        izz=\"0.00130062\" />\n    </inertial>\n    <visual>\n      <origin\n        xyz=\"0 0 0\"\n        rpy=\"0 0 0\" />\n      <geometry>\n        <mesh\n          filename=\"package://kuavo_assets/models/biped_s52/meshes/r_arm_pitch.STL\" />\n      </geometry>\n      <material\n        name=\"\">\n        <color\n          rgba=\"1 1 1 1\" />\n      </material>\n    </visual>\n  </link>\n  <joint\n    name=\"zarm_r1_joint\"\n    type=\"revolute\">\n    <origin\n      xyz=\"-0.003 -0.2527 0.283\"\n      rpy=\"0 0 0\" />\n    <parent\n      link=\"waist_yaw_link\" />\n    <child\n      link=\"zarm_r1_link\" />\n    <axis\n      xyz=\"0 1 0\" />\n    <limit lower=\"-3.14159265358979\" upper=\"1.5707963267949\" effort=\"66.0\" velocity=\"18.8\" />\n    <dynamics damping=\"0.02\" friction=\"0.0\" />\n  </joint>\n\n  <!-- ============ r_arm_roll ============ -->\n  <!-- \u5750\u6807\u7cfb\uff1ar_arm_pitch_roll_yaw -->\n  <link\n    name=\"zarm_r2_link\">\n    <inertial>\n      <!-- \u8d28\u5fc3\uff1a( -0.00082502, -0.00000618, -0.04699917 ) -->\n      <origin xyz=\"-0.00082502 -0.00000618 -0.04699917\" rpy=\"0 0 0\" />\n      <!-- \u8d28\u91cf\uff1a0.41522857 kg -->\n      <mass value=\"0.41523\" />\n      <!-- \u2705 \u7531\u91cd\u5fc3\u51b3\u5b9a\uff0c\u5e76\u4e14\u5bf9\u9f50\u8f93\u51fa\u7684\u5750\u6807\u7cfb\uff08\u4f7f\u7528\u8d1f\u5f20\u91cf\u8bb0\u6570\u6cd5\uff09 -->\n      <inertia\n        ixx=\"0.00084475\"\n        ixy=\"0.00000011\"\n        ixz=\"-0.00002054\"\n        iyy=\"0.00122057\"\n        iyz=\"0.00000014\"\n        izz=\"0.00073617\" />\n    </inertial>\n    <visual>\n      <origin\n        xyz=\"0 0 0\"\n        rpy=\"0 0 0\" />\n      <geometry>\n        <mesh\n          filename=\"package://kuavo_assets/models/biped_s52/meshes/r_arm_roll.STL\" />\n      </geometry>\n      <material\n        name=\"\">\n        <color\n          rgba=\"1 1 1 1\" />\n      </material>\n    </visual>\n  </link>\n  <joint\n    name=\"zarm_r2_joint\"\n    type=\"revolute\">\n    <origin\n      xyz=\"0 0 0\"\n      rpy=\"0 0 0\" />\n    <parent\n      link=\"zarm_r1_link\" />\n    <child\n      link=\"zarm_r2_link\" />\n    <axis\n      xyz=\"1 0 0\" />\n    <limit lower=\"-3.49065850398866\" upper=\"0.349065850398866\" effort=\"75.0\" velocity=\"8.0\" />\n    <dynamics damping=\"0.02\" friction=\"0.0\" />\n  </joint>\n\n  <!-- ============ r_arm_yaw ============ -->\n  <!-- \u5750\u6807\u7cfb\uff1ar_arm_pitch_roll_yaw -->\n  <link\n    name=\"zarm_r3_link\">\n    <inertial>\n      <!-- \u8d28\u5fc3\uff1a( 0.00936686, -0.00338228, -0.22947022 ) -->\n      <origin xyz=\"0.00936686 -0.00338228 -0.22947022\" rpy=\"0 0 0\" />\n      <!-- \u8d28\u91cf\uff1a1.78472650 kg -->\n      <mass value=\"1.78473\" />\n      <!-- \u2705 \u7531\u91cd\u5fc3\u51b3\u5b9a\uff0c\u5e76\u4e14\u5bf9\u9f50\u8f93\u51fa\u7684\u5750\u6807\u7cfb\uff08\u4f7f\u7528\u8d1f\u5f20\u91cf\u8bb0\u6570\u6cd5\uff09 -->\n      <inertia\n        ixx=\"0.00706267\"\n        ixy=\"0.00007037\"\n        ixz=\"0.00081612\"\n        iyy=\"0.00715549\"\n        iyz=\"-0.00033921\"\n        izz=\"0.00187467\" />\n    </inertial>\n    <visual>\n      <origin\n        xyz=\"0 0 0\"\n        rpy=\"0 0 0\" />\n      <geometry>\n        <mesh\n          filename=\"package://kuavo_assets/models/biped_s52/meshes/r_arm_yaw.STL\" />\n      </geometry>\n      <material\n        name=\"\">\n        <color\n          rgba=\"1 1 1 1\" />\n      </material>\n    </visual>\n  </link>\n  <joint\n    name=\"zarm_r3_joint\"\n    type=\"revolute\">\n    <origin\n      xyz=\"0 0 0\"\n      rpy=\"0 0 0\" />\n    <parent\n      link=\"zarm_r2_link\" />\n    <child\n      link=\"zarm_r3_link\" />\n    <axis\n      xyz=\"0 0 1\" />\n    <limit lower=\"-1.48352986419518\" upper=\"1.48352986419518\" effort=\"57.0\" velocity=\"7.5\" />\n    <dynamics damping=\"0.02\" friction=\"0.0\" />\n  </joint>\n\n  <!-- ============ r_foream ============ -->\n  <!-- \u5750\u6807\u7cfb\uff1ar_foream -->\n  <link\n    name=\"zarm_r4_link\">\n    <inertial>\n      <!-- \u8d28\u5fc3\uff1a( -0.01808595, -0.00140005, -0.06722746 ) -->\n      <origin xyz=\"-0.01808595 -0.00140005 -0.06722746\" rpy=\"0 0 0\" />\n      <!-- \u8d28\u91cf\uff1a0.63548283 kg -->\n      <mass value=\"0.63548\" />\n      <!-- \u2705 \u7531\u91cd\u5fc3\u51b3\u5b9a\uff0c\u5e76\u4e14\u5bf9\u9f50\u8f93\u51fa\u7684\u5750\u6807\u7cfb\uff08\u4f7f\u7528\u8d1f\u5f20\u91cf\u8bb0\u6570\u6cd5\uff09 -->\n      <inertia\n        ixx=\"0.00154594\"\n        ixy=\"0.00000786\"\n        ixz=\"-0.00013011\"\n        iyy=\"0.00133341\"\n        iyz=\"0.00003163\"\n        izz=\"0.00070186\" />\n    </inertial>\n    <visual>\n      <origin\n        xyz=\"0 0 0\"\n        rpy=\"0 0 0\" />\n      <geometry>\n        <mesh\n          filename=\"package://kuavo_assets/models/biped_s52/meshes/r_forearm.STL\" />\n      </geometry>\n      <material\n        name=\"\">\n        <color\n          rgba=\"1 1 1 1\" />\n      </material>\n    </visual>\n  </link>\n  <joint\n    name=\"zarm_r4_joint\"\n    type=\"revolute\">\n    <origin\n      xyz=\"0.02 0 -0.2837\"\n      rpy=\"0 0 0\" />\n    <parent\n      link=\"zarm_r3_link\" />\n    <child\n      link=\"zarm_r4_link\" />\n    <axis\n      xyz=\"0 1 0\" />\n    <limit lower=\"-2.61799387799149\" upper=\"0.0\" effort=\"75.0\" velocity=\"8.0\" />\n    <dynamics damping=\"0.02\" friction=\"0.0\" />\n  </joint>\n\n  <!-- ============ r_hand_yaw ============ -->\n  <!-- \u5750\u6807\u7cfb\uff1ar_hand_yaw -->\n  <link\n    name=\"zarm_r5_link\">\n    <inertial>\n      <!-- \u8d28\u5fc3\uff1a( -0.00505317, 0.00001432, -0.05619135 ) -->\n      <origin xyz=\"-0.00505317 0.00001432 -0.05619135\" rpy=\"0 0 0\" />\n      <!-- \u8d28\u91cf\uff1a0.61020748 kg -->\n      <mass value=\"0.61021\" />\n      <!-- \u2705 \u7531\u91cd\u5fc3\u51b3\u5b9a\uff0c\u5e76\u4e14\u5bf9\u9f50\u8f93\u51fa\u7684\u5750\u6807\u7cfb\uff08\u4f7f\u7528\u8d1f\u5f20\u91cf\u8bb0\u6570\u6cd5\uff09 -->\n      <inertia\n        ixx=\"0.00065686\"\n        ixy=\"0.00000010\"\n        ixz=\"-0.00002535\"\n        iyy=\"0.00092519\"\n        iyz=\"0.00000000\"\n        izz=\"0.00050244\" />\n    </inertial>\n    <visual>\n      <origin\n        xyz=\"0 0 0\"\n        rpy=\"0 0 0\" />\n      <geometry>\n        <mesh\n          filename=\"package://kuavo_assets/models/biped_s52/meshes/r_hand_yaw.STL\" />\n      </geometry>\n      <material\n        name=\"\">\n        <color\n          rgba=\"1 1 1 1\" />\n      </material>\n    </visual>\n  </link>\n  <joint\n    name=\"zarm_r5_joint\"\n    type=\"revolute\">\n    <origin xyz=\"-0.02 0 -0.1201\" rpy=\"0 0 0\" />\n    <parent\n      link=\"zarm_r4_link\" />\n    <child\n      link=\"zarm_r5_link\" />\n    <axis\n      xyz=\"0 0 1\" />\n    <limit lower=\"-1.5707963267949\" upper=\"1.5707963267949\" effort=\"14.1\" velocity=\"17.5\" />\n    <dynamics damping=\"0.02\" friction=\"0.0\" />\n  </joint>\n\n  <!-- ============ r_hand_roll ============ -->\n  <!-- \u5750\u6807\u7cfb\uff1ar_hand_roll -->\n  <link\n    name=\"zarm_r6_link\">\n    <inertial>\n      <!-- \u8d28\u5fc3\uff1a( -0.00633080, -0.00581708, -0.00833296 ) -->\n      <origin xyz=\"-0.00633080 -0.00581708 -0.00833296\" rpy=\"0 0 0\" />\n      <!-- \u8d28\u91cf\uff1a0.53821377 kg -->\n      <mass value=\"0.53821\" />\n      <!-- \u2705 \u7531\u91cd\u5fc3\u51b3\u5b9a\uff0c\u5e76\u4e14\u5bf9\u9f50\u8f93\u51fa\u7684\u5750\u6807\u7cfb\uff08\u4f7f\u7528\u8d1f\u5f20\u91cf\u8bb0\u6570\u6cd5\uff09 -->\n      <inertia\n        ixx=\"0.00039845\"\n        ixy=\"0.00001950\"\n        ixz=\"0.00013771\"\n        iyy=\"0.00056523\"\n        iyz=\"-0.00003046\"\n        izz=\"0.00037323\" />\n    </inertial>\n    <visual>\n      <origin\n        xyz=\"0 0 0\"\n        rpy=\"0 0 0\" />\n      <geometry>\n        <mesh\n          filename=\"package://kuavo_assets/models/biped_s52/meshes/r_hand_roll.STL\" />\n      </geometry>\n      <material\n        name=\"\">\n        <color\n          rgba=\"1 1 1 1\" />\n      </material>\n    </visual>\n  </link>\n  <joint\n    name=\"zarm_r6_joint\"\n    type=\"revolute\">\n    <origin\n      xyz=\"0.0 0 -0.114\"\n      rpy=\"0 0 0\" />\n    <parent\n      link=\"zarm_r5_link\" />\n    <child\n      link=\"zarm_r6_link\" />\n    <axis\n      xyz=\"1 0 0\" />\n    <limit lower=\"-0.698131700797732\" upper=\"1.30899693899575\" effort=\"14.1\" velocity=\"17.5\" />\n    <dynamics damping=\"0.02\" friction=\"0.0\" />\n  </joint>\n\n  <!-- ============ r_hand_pitch ============ -->\n  <!-- \u5750\u6807\u7cfb\uff1ar_hand_pitch -->\n  <link\n    name=\"zarm_r7_link\">\n    <inertial>\n      <!-- \u8d28\u5fc3\uff1a( 0.03616769, -0.00232464, -0.04975256 ) -->\n      <origin xyz=\"0.00481393 -0.00870857 -0.0836411\" rpy=\"0 0 0\" />\n      <!-- \u8d28\u91cf\uff1a0.19960270 kg -->\n      <mass value=\"0.7374\" />\n      <!-- \u2705 \u7531\u91cd\u5fc3\u51b3\u5b9a\uff0c\u5e76\u4e14\u5bf9\u9f50\u8f93\u51fa\u7684\u5750\u6807\u7cfb\uff08\u4f7f\u7528\u8d1f\u5f20\u91cf\u8bb0\u6570\u6cd5\uff09 -->\n      <inertia\n        ixx=\"0.00110836\"\n        ixy=\"0\"\n        ixz=\"0\"\n        iyy=\"0.00131607\"\n        iyz=\"0\"\n        izz=\"0.000374168\" />\n    </inertial>\n  </link>\n  <joint\n    name=\"zarm_r7_joint\"\n    type=\"revolute\">\n    <origin\n      xyz=\"0.0 0 -0.021\"\n      rpy=\"0 0 0\" />\n    <parent\n      link=\"zarm_r6_link\" />\n    <child\n      link=\"zarm_r7_link\" />\n    <axis\n      xyz=\"0 1 0\" />\n    <limit lower=\"-0.698131700797732\" upper=\"0.698131700797732\" effort=\"14.1\" velocity=\"17.5\" />\n    <dynamics damping=\"0.02\" friction=\"0.0\" />\n  </joint>\n<link name=\"right_wrist_camera_link\">\n    <visual>\n      <origin xyz=\"0 0 0\" rpy=\"0 0 0\" />\n      <geometry>\n        <mesh filename=\"package://challenge_cup_simulator/models/biped_s52/meshes/D405.stl\" scale=\"0.001 0.001 0.001\" />\n      </geometry>\n      <material name=\"\">\n        <color rgba=\"1 1 1 1\" />\n      </material>\n    </visual>\n  </link>\n  <joint name=\"right_wrist_camera_joint\" type=\"fixed\">\n    <origin xyz=\"0 -0.06 0\" rpy=\"3.14159 0 0\" />\n    <parent link=\"zarm_r7_link\" />\n    <child link=\"right_wrist_camera_link\" />\n  </joint>\n  <!-- \u53f3\u624b\u5939\u722a\u5e95\u5ea7 -->\n  <link name=\"right_gripper_base\">\n    <visual>\n      <origin xyz=\"0 0 0\" rpy=\"0 0 0\" />\n      <geometry>\n        <mesh filename=\"package://challenge_cup_simulator/models/biped_s52/meshes/2f85/robotiq_85_base_link_fine_new.STL\"  />\n      </geometry>\n      <material name=\"\">\n        <color rgba=\"0.149 0.149 0.149 1\" />\n      </material>\n    </visual>\n  </link>\n  <joint name=\"right_gripper_base_joint\" type=\"fixed\">\n    <origin xyz=\"0 0 -0.0038\" rpy=\"3.14159 0 1.5708\" />\n    <parent link=\"zarm_r7_link\" />\n    <child link=\"right_gripper_base\" />\n  </joint>\n  <!-- \u53f3\u5939\u722a\u5de6\u4fa7\u624b\u6307\u94fe -->\n  <link name=\"right_gripper_left_outer_knuckle\">\n    <visual>\n      <geometry>\n        <mesh filename=\"package://challenge_cup_simulator/models/biped_s52/meshes/2f85/outer_knuckle_fine_new.STL\"  />\n      </geometry>\n      <material name=\"\"><color rgba=\"0.149 0.149 0.149 1\" /></material>\n    </visual>\n  </link>\n  <joint name=\"right_gripper_left_outer_knuckle_joint\" type=\"revolute\">\n    <origin xyz=\"0 -0.0306011 0.054904\" rpy=\"0 0 3.14159\" />\n    <parent link=\"right_gripper_base\" />\n    <child link=\"right_gripper_left_outer_knuckle\" />\n    <axis xyz=\"1 0 0\" />\n    <limit lower=\"0\" upper=\"0.8\" effort=\"5\" velocity=\"2\" />\n    <mimic joint=\"right_gripper_joint\" multiplier=\"1\" offset=\"0\" />\n  </joint>\n  <link name=\"right_gripper_left_outer_finger\">\n    <visual>\n      <geometry>\n        <mesh filename=\"package://challenge_cup_simulator/models/biped_s52/meshes/2f85/outer_finger_fine_new.STL\"  />\n      </geometry>\n      <material name=\"\"><color rgba=\"0.149 0.149 0.149 1\" /></material>\n    </visual>\n  </link>\n  <joint name=\"right_gripper_left_outer_finger_joint\" type=\"fixed\">\n    <origin xyz=\"0 0.0315 -0.0041\" rpy=\"0 0 0\" />\n    <parent link=\"right_gripper_left_outer_knuckle\" />\n    <child link=\"right_gripper_left_outer_finger\" />\n  </joint>\n  <link name=\"right_gripper_left_inner_finger\">\n    <visual>\n      <geometry>\n        <mesh filename=\"package://challenge_cup_simulator/models/biped_s52/meshes/2f85/inner_finger_fine_new.STL\"  />\n      </geometry>\n      <material name=\"\"><color rgba=\"0.149 0.149 0.149 1\" /></material>\n    </visual>\n  </link>\n  <joint name=\"right_gripper_left_inner_finger_joint\" type=\"fixed\">\n    <origin xyz=\"0 0.0061 0.0471\" rpy=\"0 0 0\" />\n    <parent link=\"right_gripper_left_outer_finger\" />\n    <child link=\"right_gripper_left_inner_finger\" />\n  </joint>\n  <link name=\"right_gripper_left_inner_knuckle\">\n    <visual>\n      <geometry>\n        <mesh filename=\"package://challenge_cup_simulator/models/biped_s52/meshes/2f85/inner_knuckle_fine_new.STL\"  />\n      </geometry>\n      <material name=\"\"><color rgba=\"0.149 0.149 0.149 1\" /></material>\n    </visual>\n  </link>\n  <joint name=\"right_gripper_left_inner_knuckle_joint\" type=\"fixed\">\n    <origin xyz=\"0 -0.0127 0.06142\" rpy=\"0 0 3.14159\" />\n    <parent link=\"right_gripper_base\" />\n    <child link=\"right_gripper_left_inner_knuckle\" />\n  </joint>\n  <!-- \u53f3\u5939\u722a\u53f3\u4fa7\u624b\u6307\u94fe -->\n  <link name=\"right_gripper_right_outer_knuckle\">\n    <visual>\n      <geometry>\n        <mesh filename=\"package://challenge_cup_simulator/models/biped_s52/meshes/2f85/outer_knuckle_fine_new.STL\"  />\n      </geometry>\n      <material name=\"\"><color rgba=\"0.149 0.149 0.149 1\" /></material>\n    </visual>\n  </link>\n  <joint name=\"right_gripper_joint\" type=\"revolute\">\n    <origin xyz=\"0 0.0306011 0.054904\" rpy=\"0 0 0\" />\n    <parent link=\"right_gripper_base\" />\n    <child link=\"right_gripper_right_outer_knuckle\" />\n    <axis xyz=\"1 0 0\" />\n    <limit lower=\"0\" upper=\"0.8\" effort=\"5\" velocity=\"2\" />\n  </joint>\n  <link name=\"right_gripper_right_outer_finger\">\n    <visual>\n      <geometry>\n        <mesh filename=\"package://challenge_cup_simulator/models/biped_s52/meshes/2f85/outer_finger_fine_new.STL\"  />\n      </geometry>\n      <material name=\"\"><color rgba=\"0.149 0.149 0.149 1\" /></material>\n    </visual>\n  </link>\n  <joint name=\"right_gripper_right_outer_finger_joint\" type=\"fixed\">\n    <origin xyz=\"0 0.0315 -0.0041\" rpy=\"0 0 0\" />\n    <parent link=\"right_gripper_right_outer_knuckle\" />\n    <child link=\"right_gripper_right_outer_finger\" />\n  </joint>\n  <link name=\"right_gripper_right_inner_finger\">\n    <visual>\n      <geometry>\n        <mesh filename=\"package://challenge_cup_simulator/models/biped_s52/meshes/2f85/inner_finger_fine_new.STL\"  />\n      </geometry>\n      <material name=\"\"><color rgba=\"0.149 0.149 0.149 1\" /></material>\n    </visual>\n  </link>\n  <joint name=\"right_gripper_right_inner_finger_joint\" type=\"fixed\">\n    <origin xyz=\"0 0.0061 0.0471\" rpy=\"0 0 0\" />\n    <parent link=\"right_gripper_right_outer_finger\" />\n    <child link=\"right_gripper_right_inner_finger\" />\n  </joint>\n  <link name=\"right_gripper_right_inner_knuckle\">\n    <visual>\n      <geometry>\n        <mesh filename=\"package://challenge_cup_simulator/models/biped_s52/meshes/2f85/inner_knuckle_fine_new.STL\"  />\n      </geometry>\n      <material name=\"\"><color rgba=\"0.149 0.149 0.149 1\" /></material>\n    </visual>\n  </link>\n  <joint name=\"right_gripper_right_inner_knuckle_joint\" type=\"fixed\">\n    <origin xyz=\"0 0.0127 0.06142\" rpy=\"0 0 0\" />\n    <parent link=\"right_gripper_base\" />\n    <child link=\"right_gripper_right_inner_knuckle\" />\n  </joint>\n    <link name=\"zarm_r7_end_effector\">\n  </link>\n  <joint name=\"zarm_r7_end_effector_joint\" type=\"fixed\">\n    <origin xyz=\"0 0.0 -0.17\" rpy=\"0 0 0\" />\n    <parent link=\"zarm_r7_link\" />\n    <child link=\"zarm_r7_end_effector\" />\n  </joint>\n  <link name=\"zhead_1_link\">\n    <inertial>\n      <!-- \u8d28\u5fc3\uff1a( -0.00023727, -0.00370647, -0.03459039 ) -->\n      <origin xyz=\"-0.00023727 -0.00370647 -0.03459039\" rpy=\"0 0 0\" />\n      <!-- \u8d28\u91cf\uff1a0.57249607 kg -->\n      <mass value=\"0.57250\" />\n      <!-- \u2705 \u7531\u91cd\u5fc3\u51b3\u5b9a\uff0c\u5e76\u4e14\u5bf9\u9f50\u8f93\u51fa\u7684\u5750\u6807\u7cfb\uff08\u4f7f\u7528\u8d1f\u5f20\u91cf\u8bb0\u6570\u6cd5\uff09- \u6765\u81eahead_yaw Lxx/Lxy/Lxz... -->\n      <inertia\n        ixx=\"0.00158340\"\n        ixy=\"0.00000121\"\n        ixz=\"-0.00000972\"\n        iyy=\"0.00149398\"\n        iyz=\"0.00007274\"\n        izz=\"0.00035213\" />\n    </inertial>\n    <visual>\n      <origin xyz=\"0 0 0\" rpy=\"0 0 0\" />\n      <geometry>\n        <mesh filename=\"package://kuavo_assets/models/biped_s52/meshes/head_yaw.STL\" />\n      </geometry>\n      <material name=\"\">\n        <color rgba=\"1 1 1 1\" />\n      </material>\n    </visual>\n  </link>\n  <joint name=\"zhead_1_joint\" type=\"revolute\">\n    <origin xyz=\"-0.003 0.0 0.49535\" rpy=\"0 0 0\" />\n    <parent link=\"waist_yaw_link\" />\n    <child link=\"zhead_1_link\" />\n    <axis xyz=\"0 0 1\" />\n    <limit lower=\"-1.5707963267949\" upper=\"1.5707963267949\" effort=\"1.5\" velocity=\"5.23\" />\n    <dynamics damping=\"0.02\" friction=\"0.0\" />\n  </joint>\n  <link name=\"zhead_2_link\">\n    <inertial>\n      <!-- \u8d28\u5fc3\uff1a( 0.02805157, 0.00056300, 0.03552405 ) -->\n      <origin xyz=\"0.02805157 0.00056300 0.03552405\" rpy=\"0 0 0\" />\n      <!-- \u8d28\u91cf\uff08\u7528\u6237\u8986\u76d6\uff09\uff1a0.73448153 kg -->\n      <mass value=\"0.73448\" />\n      <!-- \u2705 \u7531\u91cd\u5fc3\u51b3\u5b9a\uff0c\u5e76\u4e14\u5bf9\u9f50\u8f93\u51fa\u7684\u5750\u6807\u7cfb\uff08\u4f7f\u7528\u8d1f\u5f20\u91cf\u8bb0\u6570\u6cd5\uff09- \u6765\u81eahead_pitch Lxx/Lxy/Lxz... -->\n      <inertia\n        ixx=\"0.00411867\"\n        ixy=\"0.0\"\n        ixz=\"0.00042644\"\n        iyy=\"0.00457039\"\n        iyz=\"0.0\"\n        izz=\"0.00467067\" />\n    </inertial>\n    <visual>\n      <origin xyz=\"0 0 0\" rpy=\"0 0 0\" />\n      <geometry>\n        <mesh filename=\"package://kuavo_assets/models/biped_s52/meshes/head_pitch.STL\" />\n      </geometry>\n      <material name=\"\">\n        <color rgba=\"1 1 1 1\" />\n      </material>\n    </visual>\n    <collision>\n      <origin xyz=\"0.04 0 0.01\" rpy=\"0 0 0\" />\n      <geometry>\n        <sphere radius=\"0.1\"/>\n      </geometry>\n    </collision>\n  </link>\n  <joint name=\"zhead_2_joint\" type=\"revolute\">\n    <origin xyz=\"0 0 0\" rpy=\"0 0 0\" />\n    <parent link=\"zhead_1_link\" />\n    <child link=\"zhead_2_link\" />\n    <axis xyz=\"0 1 0\" />\n    <limit lower=\"-0.523598775598299\" upper=\"0.523598775598299\" effort=\"12.0\" velocity=\"5.23\" />\n    <dynamics damping=\"0.02\" friction=\"0.0\" />\n  </joint>\n\n  <!-- ============ head_camera - \u5b8c\u5168\u6309\u7167txt\u6587\u4ef6 ============ -->\n  <link name=\"camera_base\">\n    <inertial>\n      <!-- \u8d28\u5fc3\uff1a( 0.01583173, -0.04712613, -0.00019589 ) \u5b8c\u5168\u6309\u7167txt -->\n      <origin xyz=\"0.01583173 -0.04712613 -0.00019589\" rpy=\"0 0 0\" />\n      <!-- \u8d28\u91cf\uff08\u7528\u6237\u8986\u76d6\uff09= 0.00000000 \u5343\u514b\uff0c\u5b8c\u5168\u6309\u7167txt -->\n      <mass value=\"0.00000000\" />\n      <!-- txt\u4e2d\u6ca1\u6709\u60ef\u6027\u5f20\u91cf\u6570\u636e\uff0c\u8bbe\u7f6e\u4e3a0 -->\n      <inertia\n        ixx=\"0.0\"\n        ixy=\"0.0\"\n        ixz=\"0.0\"\n        iyy=\"0.0\"\n        iyz=\"0.0\"\n        izz=\"0.0\" />\n    </inertial>\n    <visual>\n      <origin xyz=\"0 0 0\" rpy=\"0 0 0\" />\n      <geometry>\n        <mesh filename=\"package://kuavo_assets/models/biped_s52/meshes/head_camera.STL\" />\n      </geometry>\n      <material name=\"\">\n        <color rgba=\"1 1 1 1\" />\n      </material>\n    </visual>\n  </link>\n  <joint name=\"camera_base\" type=\"fixed\">\n    <origin xyz=\"0.093839 0.0475 0.050077\" rpy=\"0 0.3406 0\" />\n    <parent link=\"zhead_2_link\" />\n    <child link=\"camera_base\" />\n  </joint>\n\n  <link name=\"head_rader\">\n    <inertial>\n      <!-- \u8d28\u5fc3\uff1a( 0.00018505, -0.00000652, 0.01776962 ) -->\n      <origin xyz=\"0.00018505 -0.00000652 0.01776962\" rpy=\"0 0 0\" />\n      <!-- \u8d28\u91cf\uff08\u7528\u6237\u8986\u76d6\uff09\uff1a0.26500000 kg -->\n      <mass value=\"0.26500\" />\n      <!-- \u2705 \u7531\u91cd\u5fc3\u51b3\u5b9a\uff0c\u5e76\u4e14\u5bf9\u9f50\u8f93\u51fa\u7684\u5750\u6807\u7cfb\uff08\u4f7f\u7528\u8d1f\u5f20\u91cf\u8bb0\u6570\u6cd5\uff09- \u6765\u81eahead_radar Lxx/Lxy/Lxz... -->\n      <inertia\n        ixx=\"0.00012489\"\n        ixy=\"0.0\"\n        ixz=\"0.0\"\n        iyy=\"0.00013451\"\n        iyz=\"0.0\"\n        izz=\"0.00013326\" />\n    </inertial>\n    <visual>\n      <origin xyz=\"0 0 0\" rpy=\"0 0 0\" />\n      <geometry>\n        <mesh filename=\"package://kuavo_assets/models/biped_s52/meshes/head_rader.STL\" />\n      </geometry>\n      <material name=\"\">\n        <color rgba=\"0.61176 0.65882 0.67059 1\" />\n      </material>\n    </visual>\n  </link>\n  \n  <joint name=\"head_rader_joint\" type=\"fixed\">\n    <origin xyz=\"0 0 -0.078253\" rpy=\"0 0 0\" />\n    <parent link=\"zhead_1_link\" />\n    <child link=\"head_rader\" />\n    <axis xyz=\"0 0 0\" />\n  </joint>\n  <link\n    name=\"waist_camera\">\n    <inertial>\n      <origin\n        xyz=\"0.0048485 0.00025646 0.013977\"\n        rpy=\"0 0 0\" />\n      <mass\n        value=\"0.048238\" />\n      <inertia\n        ixx=\"5.9781E-05\"\n        ixy=\"-2.4765E-07\"\n        ixz=\"1.0778E-07\"\n        iyy=\"5.8328E-06\"\n        iyz=\"-1.0739E-07\"\n        izz=\"5.9293E-05\" />\n    </inertial>\n    <visual>\n      <origin\n        xyz=\"0 0 0\"\n        rpy=\"0 0 0\" />\n      <geometry>\n        <mesh\n          filename=\"package://kuavo_assets/models/biped_s52/meshes/waist_camera.STL\" />\n      </geometry>\n      <material\n        name=\"\">\n        <color\n          rgba=\"1 1 1 1\" />\n      </material>\n    </visual>\n  </link>\n  <joint\n    name=\"waist_camera\"\n    type=\"fixed\">\n    <origin\n      xyz=\"0.0787 0 -0.028449\"\n      rpy=\"0 0.59341 0\" />\n    <parent\n      link=\"waist_yaw_link\" />\n    <child\n      link=\"waist_camera\" />\n    <axis\n      xyz=\"0 0 0\" />\n  </joint>\n</robot>\n",
+  "cases": [
+    {
+      "tag": "20261016-174644_2",
+      "template": {
+        "extent": [
+          0.11221415427454196,
+          0.04074807112517925,
+          0.10289107837527402
+        ],
+        "rotation_xyzw": [
+          0.4287968959565779,
+          -0.45154676473944755,
+          0.5274816421329445,
+          0.5779289389570954
+        ],
+        "box_to_tool_m": [
+          0.03645698414590771,
+          0.0006527686224703404,
+          0.0
+        ],
+        "position_source": "first_requested_grasp_target"
+      },
+      "frame": {
+        "step": 3148,
+        "measured": [
+          0.5239613652229309,
+          0.18696631491184235,
+          0.16058531403541565,
+          -2.429121494293213,
+          -1.5498497486114502,
+          -0.22642940282821655,
+          -0.11722555756568909,
+          0.003245870815590024,
+          0.20854446291923523,
+          -0.0011743009090423584,
+          0.5743255615234375,
+          -1.4554572105407715,
+          1.5708214044570923,
+          -0.04746363312005997,
+          0.5667084455490112,
+          0.003278926247730851
+        ],
+        "previous_command": [
+          0.5161966138867367,
+          0.1856243837592601,
+          0.16777774525132833,
+          -2.460355361021525,
+          -1.4341773463005063,
+          -0.1732327717815105,
+          -0.06768530501221663,
+          0.0,
+          0.2096075355078173,
+          0.00721905462874185,
+          0.5662280707560293,
+          -1.4329032671354118,
+          1.2913408029635232,
+          -0.47495159654898966,
+          0.4677949836651211,
+          0.0
+        ],
+        "goal": [
+          [
+            -0.016504395014669944,
+            -0.2587837865118271,
+            -0.9657942394371963,
+            0.2946762384735359
+          ],
+          [
+            0.9998637712666019,
+            -0.004271651757691679,
+            -0.015942021391946247,
+            -0.10297859505361097
+          ],
+          [
+            0.0,
+            -0.9659258262890684,
+            0.25881904510252074,
+            -0.027253968947461408
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "target": {
+          "position_base_m": [
+            0.3308052991542323,
+            -0.10176400218354237,
+            -0.009062382336695068
+          ],
+          "extent_xy_m": [
+            0.11115306225533916,
+            0.039010785830082134
+          ],
+          "points": 71,
+          "minor_extent_m": 0.03858637962827677,
+          "major_axis_xy": [
+            -0.9998637712666019,
+            -0.016504395014669944
+          ],
+          "oriented_extent_m": [
+            0.11125136713643796,
+            0.03858637962827677
+          ],
+          "top_z_base_m": 0.01917141931081412,
+          "uv": [
+            424.0,
+            300.0
+          ],
+          "bbox": [
+            408,
+            272,
+            29,
+            57
+          ],
+          "extra_insertion_m": 0.015,
+          "grasp_goal_xy": [
+            0.3096741950425349,
+            -0.10273102912839092
+          ],
+          "_reference_centers_xy": []
+        },
+        "plane": -0.08367935720573694
+      },
+      "visual_config": {
+        "enabled": true,
+        "max_parcels": 4,
+        "visual_after_first_parcel": true,
+        "weighing_gain_scale": 0.4,
+        "first_weighing_lower_gain_scale": 1.0,
+        "first_weighing_roof_offset_m": 0.008,
+        "first_weighing_roof_axis": 0,
+        "weighing_posture_bias": false,
+        "weighing_posture_reserve": true,
+        "settlement_spatial_components": true,
+        "pickup_level_grasp": true,
+        "pickup_pitch_offset_degrees": 2.5,
+        "pickup_pitch_offsets_degrees": [
+          0.0,
+          2.5,
+          2.5,
+          5.0
+        ],
+        "weighing_pose_search": true,
+        "weighing_coupled_pose_request": true,
+        "weighing_live_support_height": true,
+        "weighing_prepare_tilt_degrees": 10.0,
+        "pickup_extra_insertion_m": 0.015,
+        "lift_m": 0.16,
+        "max_joint_step_rad": 0.012,
+        "stage_timeout_steps": 500,
+        "servo_gain": 0.18,
+        "bin_tool_rpy_degrees": [
+          80.0,
+          5.0,
+          -90.0
+        ],
+        "bin_lateral_offsets_m": [
+          -0.105,
+          -0.035,
+          0.035,
+          0.105
+        ],
+        "bin_depth_offsets_m": [
+          0.0,
+          0.0,
+          0.0,
+          -0.025
+        ]
+      },
+      "rgbd_config": {
+        "enabled": true,
+        "strategy": "act_residual",
+        "base_frame": "base_link",
+        "camera_frame": "Head Camera View",
+        "camera_mount_frame": "camera_base",
+        "description_param": "/humanoid_description",
+        "head_joint_indices": [
+          -2,
+          -1
+        ],
+        "fixed_ik_waist": true,
+        "rgb_topic": "/cam_h/color/image_raw/compressed",
+        "depth_topic": "/cam_h/depth/image_raw/compressedDepth",
+        "info_topic": "/cam_h/color/camera_info",
+        "image_wh": [
+          848,
+          480
+        ],
+        "max_sensor_age_s": 1.0,
+        "max_rgb_depth_dt_s": 0.1,
+        "max_rgb_joint_dt_s": 0.035,
+        "workspace_min": [
+          0.1,
+          -0.8,
+          -0.4
+        ],
+        "workspace_max": [
+          1.2,
+          0.8,
+          0.3
+        ],
+        "table_hsv": [
+          [
+            40,
+            100,
+            15
+          ],
+          [
+            85,
+            255,
+            255
+          ]
+        ],
+        "min_object_height_m": 0.025,
+        "max_object_height_m": 0.14,
+        "grid_resolution_m": 0.0075,
+        "min_component_points": 30,
+        "max_object_extent_m": 0.19,
+        "max_object_width_m": 0.065,
+        "close_threshold": 0.6,
+        "open_threshold": 0.25,
+        "other_arm_closed_threshold": 0.55,
+        "skip_initial_grasps": 0,
+        "max_target_distance_m": 0.12,
+        "max_xy_correction_m": 0.1,
+        "max_joint_residual_rad": 0.5,
+        "alignment_tolerance_m": 0.012,
+        "alignment_timeout_steps": 50,
+        "loaded_alignment_timeout_steps": 90,
+        "clearance_m": 0.07,
+        "alignment_z_tolerance_m": 0.015,
+        "orientation_tolerance_rad": 0.15,
+        "stable_steps": 3,
+        "settle_motion_m": 0.003,
+        "close_dwell_steps": 6,
+        "release_dwell_steps": 8,
+        "release_tolerance_m": 0.02,
+        "closed_command": 0.98,
+        "approach_joint_velocity_rad_s": 0.6,
+        "transport_offset_decay": 0.8,
+        "lift_before_offset_decay_m": 0.06,
+        "target_memory_steps": 40,
+        "target_stable_frames": 3,
+        "target_association_distance_m": 0.025,
+        "placement_margin_m": 0.025,
+        "weighing_release_height_m": 0.08,
+        "max_weighing_release_height_m": 0.16,
+        "placement_vertical_step_m": 0.035,
+        "tracking_compensation_gain": 2.0,
+        "tracking_compensation_alpha": 0.1,
+        "max_tracking_compensation_rad": 0.2,
+        "max_loaded_tracking_compensation_rad": 1.2,
+        "max_loaded_feedforward_rad": 1.2,
+        "loaded_tracking_compensation_gain": 1.0,
+        "loaded_tracking_compensation_alpha": 0.08,
+        "side_grasp_insertion_m": 0.02
+      },
+      "config": {
+        "close_event_threshold": 0.25,
+        "max_translation_m": 0.02,
+        "max_joint_offset_rad": 0.2617993878,
+        "max_placement_joint_offset_rad": 0.5235987756,
+        "max_joint_step_rad": 0.012,
+        "gain": 0.25,
+        "grasp_tolerance_m": 0.012,
+        "grasp_z_tolerance_m": 0.01,
+        "placement_tolerance_m": 0.015,
+        "placement_margin_m": 0.025,
+        "max_release_error_m": 0.08,
+        "max_release_gap_m": 0.002,
+        "level_target_degrees": 10.0,
+        "level_target_bottom_spread_m": 0.023,
+        "level_tolerance_degrees": 15.0,
+        "max_bottom_height_spread_m": 0.034,
+        "placement_heading_settle_degrees": 10.0,
+        "placement_heading_tolerance_degrees": 15.0,
+        "max_grasp_steps": 45,
+        "max_initial_pregrasp_steps": 160,
+        "max_close_settle_steps": 40,
+        "max_release_steps": 450
+      },
+      "wrist_config": {
+        "enabled": true,
+        "act_after_regrasp": false,
+        "handover_grip_guard": false,
+        "handover_contact_frames": 3,
+        "trace_act_handover": false,
+        "refresh_stale_handover_ensemble": false,
+        "max_regrasp_joint_offset_rad": 0.5235987756,
+        "regrasp_pitch_degrees": 12.5,
+        "regrasp_finger_tilt_degrees": 5.0,
+        "regrasp_descent_request_m": 0.012,
+        "require_edges": true,
+        "use_parcel_outline": true,
+        "centering_deadband_px": 4,
+        "regrasp_aligned_error_px": 10,
+        "min_edge_support": 0.64,
+        "min_area_px": 600,
+        "max_bbox_px": 320,
+        "max_center_error_px": 25,
+        "max_regrasp_center_error_px": 45,
+        "aligned_error_px": 22,
+        "max_correction_m": 0.012,
+        "stable_frames": 3,
+        "max_pregrasp_align_steps": 320,
+        "max_level_regrasp_steps": 900,
+        "regrasp_visible_v_fraction": 0.67,
+        "release_open_dwell_steps": 12,
+        "release_short_retreat_m": 0.05,
+        "release_clearance_rise_m": 0.02,
+        "release_retreat_ready_m": 0.014,
+        "max_short_retreat_steps": 140,
+        "max_open_joint_delta_rad": 0.025,
+        "max_handover_align_steps": 80,
+        "act_after_first_grasp": false
+      },
+      "source_raw": "sensors-3148.npz",
+      "source_run": "20261016-174644",
+      "source_raw_sha256": "cedff4d427760a6c922eae21b6dca739f2c35b1580a3a615855c49ffdb0d11c4",
+      "source_steps_sha256": "0a06927ea08436e07cc6a0c685c3dd229f6827af8e32630e21f228e7d5b957b5"
+    },
+    {
+      "tag": "20261016-174644_3",
+      "template": {
+        "extent": [
+          0.11221415427454196,
+          0.04074807112517925,
+          0.10289107837527402
+        ],
+        "rotation_xyzw": [
+          0.4287968959565779,
+          -0.45154676473944755,
+          0.5274816421329445,
+          0.5779289389570954
+        ],
+        "box_to_tool_m": [
+          0.03645698414590771,
+          0.0006527686224703404,
+          0.0
+        ],
+        "position_source": "first_requested_grasp_target"
+      },
+      "frame": {
+        "step": 6301,
+        "measured": [
+          0.5237901210784912,
+          0.18631133437156677,
+          0.16192634403705597,
+          -2.4248573780059814,
+          -1.5322798490524292,
+          -0.2054285854101181,
+          -0.12554185092449188,
+          0.003244441468268633,
+          -0.21439844369888306,
+          -0.2338751256465912,
+          0.1309332251548767,
+          -1.0030264854431152,
+          1.3075982332229614,
+          -0.10827652364969254,
+          -0.06486861407756805,
+          0.003278645221143961
+        ],
+        "previous_command": [
+          0.5162278802289403,
+          0.17602742707606817,
+          0.19328529206742245,
+          -2.44001768898495,
+          -1.5623063360199705,
+          -0.05604208356472775,
+          -0.2252111895443351,
+          0.0,
+          -0.2216392834750691,
+          -0.23311507607029794,
+          0.1323963211673784,
+          -0.9829952700610793,
+          1.0994925199460064,
+          -0.3447732552551467,
+          -0.15369083568426617,
+          0.0
+        ],
+        "goal": [
+          [
+            -0.06139770874647443,
+            -0.2583307517026518,
+            -0.9641034905117568,
+            0.45144864686252384
+          ],
+          [
+            0.9981133791770402,
+            -0.015890896349245197,
+            -0.05930563255319387,
+            -0.31680272333344145
+          ],
+          [
+            0.0,
+            -0.9659258262890683,
+            0.25881904510252074,
+            -0.026882136691943042
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "target": {
+          "position_base_m": [
+            0.4884470549033978,
+            -0.31386156662377357,
+            -0.013592589135210692
+          ],
+          "extent_xy_m": [
+            0.11271593275828257,
+            0.04073601338174876
+          ],
+          "points": 66,
+          "minor_extent_m": 0.0414485722006645,
+          "major_axis_xy": [
+            -0.9981133791770402,
+            -0.06139770874647443
+          ],
+          "oriented_extent_m": [
+            0.11422162517515522,
+            0.0414485722006645
+          ],
+          "top_z_base_m": 0.020019943688315833,
+          "uv": [
+            424.0,
+            232.0
+          ],
+          "bbox": [
+            408,
+            208,
+            33,
+            45
+          ],
+          "extra_insertion_m": 0.015,
+          "grasp_goal_xy": [
+            0.4664203475501795,
+            -0.3158817577022443
+          ],
+          "_reference_centers_xy": []
+        },
+        "plane": -0.0837842170722019
+      },
+      "visual_config": {
+        "enabled": true,
+        "max_parcels": 4,
+        "visual_after_first_parcel": true,
+        "weighing_gain_scale": 0.4,
+        "first_weighing_lower_gain_scale": 1.0,
+        "first_weighing_roof_offset_m": 0.008,
+        "first_weighing_roof_axis": 0,
+        "weighing_posture_bias": false,
+        "weighing_posture_reserve": true,
+        "settlement_spatial_components": true,
+        "pickup_level_grasp": true,
+        "pickup_pitch_offset_degrees": 2.5,
+        "pickup_pitch_offsets_degrees": [
+          0.0,
+          2.5,
+          2.5,
+          5.0
+        ],
+        "weighing_pose_search": true,
+        "weighing_coupled_pose_request": true,
+        "weighing_live_support_height": true,
+        "weighing_prepare_tilt_degrees": 10.0,
+        "pickup_extra_insertion_m": 0.015,
+        "lift_m": 0.16,
+        "max_joint_step_rad": 0.012,
+        "stage_timeout_steps": 500,
+        "servo_gain": 0.18,
+        "bin_tool_rpy_degrees": [
+          80.0,
+          5.0,
+          -90.0
+        ],
+        "bin_lateral_offsets_m": [
+          -0.105,
+          -0.035,
+          0.035,
+          0.105
+        ],
+        "bin_depth_offsets_m": [
+          0.0,
+          0.0,
+          0.0,
+          -0.025
+        ]
+      },
+      "rgbd_config": {
+        "enabled": true,
+        "strategy": "act_residual",
+        "base_frame": "base_link",
+        "camera_frame": "Head Camera View",
+        "camera_mount_frame": "camera_base",
+        "description_param": "/humanoid_description",
+        "head_joint_indices": [
+          -2,
+          -1
+        ],
+        "fixed_ik_waist": true,
+        "rgb_topic": "/cam_h/color/image_raw/compressed",
+        "depth_topic": "/cam_h/depth/image_raw/compressedDepth",
+        "info_topic": "/cam_h/color/camera_info",
+        "image_wh": [
+          848,
+          480
+        ],
+        "max_sensor_age_s": 1.0,
+        "max_rgb_depth_dt_s": 0.1,
+        "max_rgb_joint_dt_s": 0.035,
+        "workspace_min": [
+          0.1,
+          -0.8,
+          -0.4
+        ],
+        "workspace_max": [
+          1.2,
+          0.8,
+          0.3
+        ],
+        "table_hsv": [
+          [
+            40,
+            100,
+            15
+          ],
+          [
+            85,
+            255,
+            255
+          ]
+        ],
+        "min_object_height_m": 0.025,
+        "max_object_height_m": 0.14,
+        "grid_resolution_m": 0.0075,
+        "min_component_points": 30,
+        "max_object_extent_m": 0.19,
+        "max_object_width_m": 0.065,
+        "close_threshold": 0.6,
+        "open_threshold": 0.25,
+        "other_arm_closed_threshold": 0.55,
+        "skip_initial_grasps": 0,
+        "max_target_distance_m": 0.12,
+        "max_xy_correction_m": 0.1,
+        "max_joint_residual_rad": 0.5,
+        "alignment_tolerance_m": 0.012,
+        "alignment_timeout_steps": 50,
+        "loaded_alignment_timeout_steps": 90,
+        "clearance_m": 0.07,
+        "alignment_z_tolerance_m": 0.015,
+        "orientation_tolerance_rad": 0.15,
+        "stable_steps": 3,
+        "settle_motion_m": 0.003,
+        "close_dwell_steps": 6,
+        "release_dwell_steps": 8,
+        "release_tolerance_m": 0.02,
+        "closed_command": 0.98,
+        "approach_joint_velocity_rad_s": 0.6,
+        "transport_offset_decay": 0.8,
+        "lift_before_offset_decay_m": 0.06,
+        "target_memory_steps": 40,
+        "target_stable_frames": 3,
+        "target_association_distance_m": 0.025,
+        "placement_margin_m": 0.025,
+        "weighing_release_height_m": 0.08,
+        "max_weighing_release_height_m": 0.16,
+        "placement_vertical_step_m": 0.035,
+        "tracking_compensation_gain": 2.0,
+        "tracking_compensation_alpha": 0.1,
+        "max_tracking_compensation_rad": 0.2,
+        "max_loaded_tracking_compensation_rad": 1.2,
+        "max_loaded_feedforward_rad": 1.2,
+        "loaded_tracking_compensation_gain": 1.0,
+        "loaded_tracking_compensation_alpha": 0.08,
+        "side_grasp_insertion_m": 0.02
+      },
+      "config": {
+        "close_event_threshold": 0.25,
+        "max_translation_m": 0.02,
+        "max_joint_offset_rad": 0.2617993878,
+        "max_placement_joint_offset_rad": 0.5235987756,
+        "max_joint_step_rad": 0.012,
+        "gain": 0.25,
+        "grasp_tolerance_m": 0.012,
+        "grasp_z_tolerance_m": 0.01,
+        "placement_tolerance_m": 0.015,
+        "placement_margin_m": 0.025,
+        "max_release_error_m": 0.08,
+        "max_release_gap_m": 0.002,
+        "level_target_degrees": 10.0,
+        "level_target_bottom_spread_m": 0.023,
+        "level_tolerance_degrees": 15.0,
+        "max_bottom_height_spread_m": 0.034,
+        "placement_heading_settle_degrees": 10.0,
+        "placement_heading_tolerance_degrees": 15.0,
+        "max_grasp_steps": 45,
+        "max_initial_pregrasp_steps": 160,
+        "max_close_settle_steps": 40,
+        "max_release_steps": 450
+      },
+      "wrist_config": {
+        "enabled": true,
+        "act_after_regrasp": false,
+        "handover_grip_guard": false,
+        "handover_contact_frames": 3,
+        "trace_act_handover": false,
+        "refresh_stale_handover_ensemble": false,
+        "max_regrasp_joint_offset_rad": 0.5235987756,
+        "regrasp_pitch_degrees": 12.5,
+        "regrasp_finger_tilt_degrees": 5.0,
+        "regrasp_descent_request_m": 0.012,
+        "require_edges": true,
+        "use_parcel_outline": true,
+        "centering_deadband_px": 4,
+        "regrasp_aligned_error_px": 10,
+        "min_edge_support": 0.64,
+        "min_area_px": 600,
+        "max_bbox_px": 320,
+        "max_center_error_px": 25,
+        "max_regrasp_center_error_px": 45,
+        "aligned_error_px": 22,
+        "max_correction_m": 0.012,
+        "stable_frames": 3,
+        "max_pregrasp_align_steps": 320,
+        "max_level_regrasp_steps": 900,
+        "regrasp_visible_v_fraction": 0.67,
+        "release_open_dwell_steps": 12,
+        "release_short_retreat_m": 0.05,
+        "release_clearance_rise_m": 0.02,
+        "release_retreat_ready_m": 0.014,
+        "max_short_retreat_steps": 140,
+        "max_open_joint_delta_rad": 0.025,
+        "max_handover_align_steps": 80,
+        "act_after_first_grasp": false
+      },
+      "source_raw": "sensors-6301.npz",
+      "source_run": "20261016-174644",
+      "source_raw_sha256": "060da5e13773065b9c5c71568636345fd82601f431390280c205202066cbfc41",
+      "source_steps_sha256": "0a06927ea08436e07cc6a0c685c3dd229f6827af8e32630e21f228e7d5b957b5"
+    },
+    {
+      "tag": "20261016-174644_4",
+      "template": {
+        "extent": [
+          0.11221415427454196,
+          0.04074807112517925,
+          0.10289107837527402
+        ],
+        "rotation_xyzw": [
+          0.4287968959565779,
+          -0.45154676473944755,
+          0.5274816421329445,
+          0.5779289389570954
+        ],
+        "box_to_tool_m": [
+          0.03645698414590771,
+          0.0006527686224703404,
+          0.0
+        ],
+        "position_source": "first_requested_grasp_target"
+      },
+      "frame": {
+        "step": 9404,
+        "measured": [
+          0.4993661940097809,
+          0.19330090284347534,
+          0.14444106817245483,
+          -2.408444404602051,
+          -1.5708023309707642,
+          -0.21658025681972504,
+          -0.10999452322721481,
+          0.0032447820995002985,
+          -0.2893041968345642,
+          0.19627457857131958,
+          0.3124621510505676,
+          -0.8821324706077576,
+          1.570817470550537,
+          -0.04496754705905914,
+          0.3559828996658325,
+          0.0032833488658070564
+        ],
+        "previous_command": [
+          0.48981507997054446,
+          0.18461263144960122,
+          0.17686395291062865,
+          -2.4369164879227094,
+          -1.4347617222160771,
+          -0.15059172319009592,
+          -0.18749147883548994,
+          0.0,
+          -0.2915566499895883,
+          0.20747595904066463,
+          0.28726876287621306,
+          -0.860540820316867,
+          1.3772334505794326,
+          -0.3789442151966822,
+          0.26167597264013587,
+          0.0
+        ],
+        "goal": [
+          [
+            -0.020601185464939234,
+            -0.300641971286204,
+            -0.9535145135035549,
+            0.45135018875676897
+          ],
+          [
+            0.9997877386529481,
+            -0.006194895945970362,
+            -0.019647699783420538,
+            -0.09839234687539362
+          ],
+          [
+            0.0,
+            -0.9537169507482267,
+            0.3007057995042731,
+            -0.02735002287524912
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "target": {
+          "position_base_m": [
+            0.4864275022654746,
+            -0.09704644142694124,
+            -0.014840465349342647
+          ],
+          "extent_xy_m": [
+            0.10830801893680098,
+            0.03881767443915357
+          ],
+          "points": 58,
+          "minor_extent_m": 0.03888890993826098,
+          "major_axis_xy": [
+            -0.9997877386529481,
+            -0.020601185464939234
+          ],
+          "oriented_extent_m": [
+            0.10802997904260242,
+            0.03888890993826098
+          ],
+          "top_z_base_m": 0.01923849265358325,
+          "uv": [
+            424.0,
+            248.0
+          ],
+          "bbox": [
+            412,
+            224,
+            21,
+            49
+          ],
+          "extra_insertion_m": 0.015,
+          "grasp_goal_xy": [
+            0.46634700483656316,
+            -0.09808332909341953
+          ],
+          "_reference_centers_xy": []
+        },
+        "plane": -0.0839385384040815
+      },
+      "visual_config": {
+        "enabled": true,
+        "max_parcels": 4,
+        "visual_after_first_parcel": true,
+        "weighing_gain_scale": 0.4,
+        "first_weighing_lower_gain_scale": 1.0,
+        "first_weighing_roof_offset_m": 0.008,
+        "first_weighing_roof_axis": 0,
+        "weighing_posture_bias": false,
+        "weighing_posture_reserve": true,
+        "settlement_spatial_components": true,
+        "pickup_level_grasp": true,
+        "pickup_pitch_offset_degrees": 2.5,
+        "pickup_pitch_offsets_degrees": [
+          0.0,
+          2.5,
+          2.5,
+          5.0
+        ],
+        "weighing_pose_search": true,
+        "weighing_coupled_pose_request": true,
+        "weighing_live_support_height": true,
+        "weighing_prepare_tilt_degrees": 10.0,
+        "pickup_extra_insertion_m": 0.015,
+        "lift_m": 0.16,
+        "max_joint_step_rad": 0.012,
+        "stage_timeout_steps": 500,
+        "servo_gain": 0.18,
+        "bin_tool_rpy_degrees": [
+          80.0,
+          5.0,
+          -90.0
+        ],
+        "bin_lateral_offsets_m": [
+          -0.105,
+          -0.035,
+          0.035,
+          0.105
+        ],
+        "bin_depth_offsets_m": [
+          0.0,
+          0.0,
+          0.0,
+          -0.025
+        ]
+      },
+      "rgbd_config": {
+        "enabled": true,
+        "strategy": "act_residual",
+        "base_frame": "base_link",
+        "camera_frame": "Head Camera View",
+        "camera_mount_frame": "camera_base",
+        "description_param": "/humanoid_description",
+        "head_joint_indices": [
+          -2,
+          -1
+        ],
+        "fixed_ik_waist": true,
+        "rgb_topic": "/cam_h/color/image_raw/compressed",
+        "depth_topic": "/cam_h/depth/image_raw/compressedDepth",
+        "info_topic": "/cam_h/color/camera_info",
+        "image_wh": [
+          848,
+          480
+        ],
+        "max_sensor_age_s": 1.0,
+        "max_rgb_depth_dt_s": 0.1,
+        "max_rgb_joint_dt_s": 0.035,
+        "workspace_min": [
+          0.1,
+          -0.8,
+          -0.4
+        ],
+        "workspace_max": [
+          1.2,
+          0.8,
+          0.3
+        ],
+        "table_hsv": [
+          [
+            40,
+            100,
+            15
+          ],
+          [
+            85,
+            255,
+            255
+          ]
+        ],
+        "min_object_height_m": 0.025,
+        "max_object_height_m": 0.14,
+        "grid_resolution_m": 0.0075,
+        "min_component_points": 30,
+        "max_object_extent_m": 0.19,
+        "max_object_width_m": 0.065,
+        "close_threshold": 0.6,
+        "open_threshold": 0.25,
+        "other_arm_closed_threshold": 0.55,
+        "skip_initial_grasps": 0,
+        "max_target_distance_m": 0.12,
+        "max_xy_correction_m": 0.1,
+        "max_joint_residual_rad": 0.5,
+        "alignment_tolerance_m": 0.012,
+        "alignment_timeout_steps": 50,
+        "loaded_alignment_timeout_steps": 90,
+        "clearance_m": 0.07,
+        "alignment_z_tolerance_m": 0.015,
+        "orientation_tolerance_rad": 0.15,
+        "stable_steps": 3,
+        "settle_motion_m": 0.003,
+        "close_dwell_steps": 6,
+        "release_dwell_steps": 8,
+        "release_tolerance_m": 0.02,
+        "closed_command": 0.98,
+        "approach_joint_velocity_rad_s": 0.6,
+        "transport_offset_decay": 0.8,
+        "lift_before_offset_decay_m": 0.06,
+        "target_memory_steps": 40,
+        "target_stable_frames": 3,
+        "target_association_distance_m": 0.025,
+        "placement_margin_m": 0.025,
+        "weighing_release_height_m": 0.08,
+        "max_weighing_release_height_m": 0.16,
+        "placement_vertical_step_m": 0.035,
+        "tracking_compensation_gain": 2.0,
+        "tracking_compensation_alpha": 0.1,
+        "max_tracking_compensation_rad": 0.2,
+        "max_loaded_tracking_compensation_rad": 1.2,
+        "max_loaded_feedforward_rad": 1.2,
+        "loaded_tracking_compensation_gain": 1.0,
+        "loaded_tracking_compensation_alpha": 0.08,
+        "side_grasp_insertion_m": 0.02
+      },
+      "config": {
+        "close_event_threshold": 0.25,
+        "max_translation_m": 0.02,
+        "max_joint_offset_rad": 0.2617993878,
+        "max_placement_joint_offset_rad": 0.5235987756,
+        "max_joint_step_rad": 0.012,
+        "gain": 0.25,
+        "grasp_tolerance_m": 0.012,
+        "grasp_z_tolerance_m": 0.01,
+        "placement_tolerance_m": 0.015,
+        "placement_margin_m": 0.025,
+        "max_release_error_m": 0.08,
+        "max_release_gap_m": 0.002,
+        "level_target_degrees": 10.0,
+        "level_target_bottom_spread_m": 0.023,
+        "level_tolerance_degrees": 15.0,
+        "max_bottom_height_spread_m": 0.034,
+        "placement_heading_settle_degrees": 10.0,
+        "placement_heading_tolerance_degrees": 15.0,
+        "max_grasp_steps": 45,
+        "max_initial_pregrasp_steps": 160,
+        "max_close_settle_steps": 40,
+        "max_release_steps": 450
+      },
+      "wrist_config": {
+        "enabled": true,
+        "act_after_regrasp": false,
+        "handover_grip_guard": false,
+        "handover_contact_frames": 3,
+        "trace_act_handover": false,
+        "refresh_stale_handover_ensemble": false,
+        "max_regrasp_joint_offset_rad": 0.5235987756,
+        "regrasp_pitch_degrees": 12.5,
+        "regrasp_finger_tilt_degrees": 5.0,
+        "regrasp_descent_request_m": 0.012,
+        "require_edges": true,
+        "use_parcel_outline": true,
+        "centering_deadband_px": 4,
+        "regrasp_aligned_error_px": 10,
+        "min_edge_support": 0.64,
+        "min_area_px": 600,
+        "max_bbox_px": 320,
+        "max_center_error_px": 25,
+        "max_regrasp_center_error_px": 45,
+        "aligned_error_px": 22,
+        "max_correction_m": 0.012,
+        "stable_frames": 3,
+        "max_pregrasp_align_steps": 320,
+        "max_level_regrasp_steps": 900,
+        "regrasp_visible_v_fraction": 0.67,
+        "release_open_dwell_steps": 12,
+        "release_short_retreat_m": 0.05,
+        "release_clearance_rise_m": 0.02,
+        "release_retreat_ready_m": 0.014,
+        "max_short_retreat_steps": 140,
+        "max_open_joint_delta_rad": 0.025,
+        "max_handover_align_steps": 80,
+        "act_after_first_grasp": false
+      },
+      "source_raw": "sensors-9404.npz",
+      "source_run": "20261016-174644",
+      "source_raw_sha256": "4862545fc3df7d16b3c3431523277897b10f07f76f3bada288bddeb069fa4466",
+      "source_steps_sha256": "0a06927ea08436e07cc6a0c685c3dd229f6827af8e32630e21f228e7d5b957b5"
+    },
+    {
+      "tag": "20261016-182823_2",
+      "template": {
+        "extent": [
+          0.11322562205707898,
+          0.04011191417841736,
+          0.10255712400545458
+        ],
+        "rotation_xyzw": [
+          0.424775102703447,
+          -0.4491299349380256,
+          0.5386147475700299,
+          0.5724880499765164
+        ],
+        "box_to_tool_m": [
+          0.03749092518291541,
+          0.0018599379642937784,
+          0.005369423024514729
+        ],
+        "position_source": "first_requested_grasp_target"
+      },
+      "frame": {
+        "step": 3156,
+        "measured": [
+          0.5284671783447266,
+          0.19242286682128906,
+          0.1494365781545639,
+          -2.413414239883423,
+          -1.555014967918396,
+          -0.1564444601535797,
+          -0.0368795245885849,
+          0.003239984158426523,
+          0.21402829885482788,
+          0.002568857977166772,
+          0.570484459400177,
+          -1.4701168537139893,
+          1.570820927619934,
+          -0.054934483021497726,
+          0.5767583250999451,
+          0.0032777669839560986
+        ],
+        "previous_command": [
+          0.5218763873746356,
+          0.19340486181313804,
+          0.1491987421639734,
+          -2.432127680510989,
+          -1.3698619002648418,
+          -0.033482043573516605,
+          0.04683183256878225,
+          0.0,
+          0.2158097977374879,
+          0.009275131634603594,
+          0.5647469585831706,
+          -1.4566740903119926,
+          1.2948506163664697,
+          -0.45181775754535614,
+          0.48116060570304386,
+          0.0
+        ],
+        "goal": [
+          [
+            -0.006378469910669816,
+            -0.25881377890704965,
+            -0.9659061725800077,
+            0.29488126172686724
+          ],
+          [
+            0.9999796529831527,
+            -0.0016508694914947224,
+            -0.0061611288189237015,
+            -0.1034995112906735
+          ],
+          [
+            0.0,
+            -0.9659258262890683,
+            0.25881904510252074,
+            -0.021703085071089024
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "target": {
+          "position_base_m": [
+            0.33064328655536374,
+            -0.10140042304705058,
+            -0.009582183758430354
+          ],
+          "extent_xy_m": [
+            0.10802611111560884,
+            0.04045812673183828
+          ],
+          "points": 73,
+          "minor_extent_m": 0.04034915573028508,
+          "major_axis_xy": [
+            -0.9999796529831526,
+            -0.006378469910669815
+          ],
+          "oriented_extent_m": [
+            0.10804244250527911,
+            0.04034915573028508
+          ],
+          "top_z_base_m": 0.0194618607837111,
+          "uv": [
+            424.0,
+            300.0
+          ],
+          "bbox": [
+            412,
+            272,
+            29,
+            57
+          ],
+          "extra_insertion_m": 0.015,
+          "grasp_goal_xy": [
+            0.30988095652161457,
+            -0.10340383424201346
+          ],
+          "_reference_centers_xy": []
+        },
+        "plane": -0.08366671409508897
+      },
+      "visual_config": {
+        "enabled": true,
+        "max_parcels": 4,
+        "visual_after_first_parcel": true,
+        "weighing_gain_scale": 0.4,
+        "first_weighing_lower_gain_scale": 1.0,
+        "first_weighing_roof_offset_m": 0.008,
+        "first_weighing_roof_axis": 0,
+        "weighing_posture_bias": false,
+        "weighing_posture_reserve": true,
+        "settlement_spatial_components": true,
+        "pickup_level_grasp": true,
+        "pickup_pitch_offset_degrees": 2.5,
+        "pickup_pitch_offsets_degrees": [
+          0.0,
+          2.5,
+          2.5,
+          5.0
+        ],
+        "weighing_pose_search": true,
+        "weighing_coupled_pose_request": true,
+        "weighing_live_support_height": true,
+        "weighing_prepare_tilt_degrees": 10.0,
+        "pickup_extra_insertion_m": 0.015,
+        "lift_m": 0.16,
+        "max_joint_step_rad": 0.012,
+        "stage_timeout_steps": 500,
+        "servo_gain": 0.18,
+        "bin_tool_rpy_degrees": [
+          80.0,
+          5.0,
+          -90.0
+        ],
+        "bin_lateral_offsets_m": [
+          -0.105,
+          -0.035,
+          0.035,
+          0.105
+        ],
+        "bin_depth_offsets_m": [
+          0.0,
+          0.0,
+          0.0,
+          -0.025
+        ]
+      },
+      "rgbd_config": {
+        "enabled": true,
+        "strategy": "act_residual",
+        "base_frame": "base_link",
+        "camera_frame": "Head Camera View",
+        "camera_mount_frame": "camera_base",
+        "description_param": "/humanoid_description",
+        "head_joint_indices": [
+          -2,
+          -1
+        ],
+        "fixed_ik_waist": true,
+        "rgb_topic": "/cam_h/color/image_raw/compressed",
+        "depth_topic": "/cam_h/depth/image_raw/compressedDepth",
+        "info_topic": "/cam_h/color/camera_info",
+        "image_wh": [
+          848,
+          480
+        ],
+        "max_sensor_age_s": 1.0,
+        "max_rgb_depth_dt_s": 0.1,
+        "max_rgb_joint_dt_s": 0.035,
+        "workspace_min": [
+          0.1,
+          -0.8,
+          -0.4
+        ],
+        "workspace_max": [
+          1.2,
+          0.8,
+          0.3
+        ],
+        "table_hsv": [
+          [
+            40,
+            100,
+            15
+          ],
+          [
+            85,
+            255,
+            255
+          ]
+        ],
+        "min_object_height_m": 0.025,
+        "max_object_height_m": 0.14,
+        "grid_resolution_m": 0.0075,
+        "min_component_points": 30,
+        "max_object_extent_m": 0.19,
+        "max_object_width_m": 0.065,
+        "close_threshold": 0.6,
+        "open_threshold": 0.25,
+        "other_arm_closed_threshold": 0.55,
+        "skip_initial_grasps": 0,
+        "max_target_distance_m": 0.12,
+        "max_xy_correction_m": 0.1,
+        "max_joint_residual_rad": 0.5,
+        "alignment_tolerance_m": 0.012,
+        "alignment_timeout_steps": 50,
+        "loaded_alignment_timeout_steps": 90,
+        "clearance_m": 0.07,
+        "alignment_z_tolerance_m": 0.015,
+        "orientation_tolerance_rad": 0.15,
+        "stable_steps": 3,
+        "settle_motion_m": 0.003,
+        "close_dwell_steps": 6,
+        "release_dwell_steps": 8,
+        "release_tolerance_m": 0.02,
+        "closed_command": 0.98,
+        "approach_joint_velocity_rad_s": 0.6,
+        "transport_offset_decay": 0.8,
+        "lift_before_offset_decay_m": 0.06,
+        "target_memory_steps": 40,
+        "target_stable_frames": 3,
+        "target_association_distance_m": 0.025,
+        "placement_margin_m": 0.025,
+        "weighing_release_height_m": 0.08,
+        "max_weighing_release_height_m": 0.16,
+        "placement_vertical_step_m": 0.035,
+        "tracking_compensation_gain": 2.0,
+        "tracking_compensation_alpha": 0.1,
+        "max_tracking_compensation_rad": 0.2,
+        "max_loaded_tracking_compensation_rad": 1.2,
+        "max_loaded_feedforward_rad": 1.2,
+        "loaded_tracking_compensation_gain": 1.0,
+        "loaded_tracking_compensation_alpha": 0.08,
+        "side_grasp_insertion_m": 0.02
+      },
+      "config": {
+        "close_event_threshold": 0.25,
+        "max_translation_m": 0.02,
+        "max_joint_offset_rad": 0.2617993878,
+        "max_placement_joint_offset_rad": 0.5235987756,
+        "max_joint_step_rad": 0.012,
+        "gain": 0.25,
+        "grasp_tolerance_m": 0.012,
+        "grasp_z_tolerance_m": 0.01,
+        "placement_tolerance_m": 0.015,
+        "placement_margin_m": 0.025,
+        "max_release_error_m": 0.08,
+        "max_release_gap_m": 0.002,
+        "level_target_degrees": 10.0,
+        "level_target_bottom_spread_m": 0.023,
+        "level_tolerance_degrees": 15.0,
+        "max_bottom_height_spread_m": 0.034,
+        "placement_heading_settle_degrees": 10.0,
+        "placement_heading_tolerance_degrees": 15.0,
+        "max_grasp_steps": 45,
+        "max_initial_pregrasp_steps": 160,
+        "max_close_settle_steps": 40,
+        "max_release_steps": 450
+      },
+      "wrist_config": {
+        "enabled": true,
+        "act_after_regrasp": false,
+        "handover_grip_guard": false,
+        "handover_contact_frames": 3,
+        "trace_act_handover": false,
+        "refresh_stale_handover_ensemble": false,
+        "max_regrasp_joint_offset_rad": 0.5235987756,
+        "regrasp_pitch_degrees": 12.5,
+        "regrasp_finger_tilt_degrees": 5.0,
+        "regrasp_descent_request_m": 0.012,
+        "require_edges": true,
+        "use_parcel_outline": true,
+        "centering_deadband_px": 4,
+        "regrasp_aligned_error_px": 10,
+        "min_edge_support": 0.64,
+        "min_area_px": 600,
+        "max_bbox_px": 320,
+        "max_center_error_px": 25,
+        "max_regrasp_center_error_px": 45,
+        "aligned_error_px": 22,
+        "max_correction_m": 0.012,
+        "stable_frames": 3,
+        "max_pregrasp_align_steps": 320,
+        "max_level_regrasp_steps": 900,
+        "regrasp_visible_v_fraction": 0.67,
+        "release_open_dwell_steps": 12,
+        "release_short_retreat_m": 0.05,
+        "release_clearance_rise_m": 0.02,
+        "release_retreat_ready_m": 0.014,
+        "max_short_retreat_steps": 140,
+        "max_open_joint_delta_rad": 0.025,
+        "max_handover_align_steps": 80,
+        "act_after_first_grasp": false
+      },
+      "source_raw": "sensors-3156.npz",
+      "source_run": "20261016-182823",
+      "source_raw_sha256": "d4c0a0c39d11f6cd5e62d78955d7dac239d6f3be0c0a52b8ca274a57f43d04d4",
+      "source_steps_sha256": "1548d58a40b788e4641707dd90772db0fbb506c6b4253753fc1228c616994538"
+    },
+    {
+      "tag": "20261016-182823_3",
+      "template": {
+        "extent": [
+          0.11322562205707898,
+          0.04011191417841736,
+          0.10255712400545458
+        ],
+        "rotation_xyzw": [
+          0.424775102703447,
+          -0.4491299349380256,
+          0.5386147475700299,
+          0.5724880499765164
+        ],
+        "box_to_tool_m": [
+          0.03749092518291541,
+          0.0018599379642937784,
+          0.005369423024514729
+        ],
+        "position_source": "first_requested_grasp_target"
+      },
+      "frame": {
+        "step": 6338,
+        "measured": [
+          0.5274386405944824,
+          0.19068244099617004,
+          0.15485478937625885,
+          -2.408216953277588,
+          -1.5637974739074707,
+          -0.13357670605182648,
+          -0.056083377450704575,
+          0.0032386488746851683,
+          -0.1962054818868637,
+          -0.21942199766635895,
+          0.08755399286746979,
+          -1.045581579208374,
+          1.3406661748886108,
+          -0.07405358552932739,
+          -0.05676351487636566,
+          0.0032790068071335554
+        ],
+        "previous_command": [
+          0.5200689077341175,
+          0.1867842454011632,
+          0.1643305254507816,
+          -2.4433456605168575,
+          -1.382703456202453,
+          -0.0988757152610423,
+          -0.020567847053898664,
+          0.0,
+          -0.20183496161424203,
+          -0.21795402295673877,
+          0.08528359471436056,
+          -1.0241693842283544,
+          1.1301216082367054,
+          -0.31566495274214157,
+          -0.14884938328908404,
+          0.0
+        ],
+        "goal": [
+          [
+            -0.042773884456201075,
+            -0.25858217458661725,
+            -0.9650418134889016,
+            0.44929394544396944
+          ],
+          [
+            0.9990848026048098,
+            -0.011070695930279517,
+            -0.041316399686949154,
+            -0.32044381473835126
+          ],
+          [
+            0.0,
+            -0.9659258262890684,
+            0.25881904510252074,
+            -0.023458962961200713
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "target": {
+          "position_base_m": [
+            0.48796112534222574,
+            -0.31697791746494897,
+            -0.016697567540612128
+          ],
+          "extent_xy_m": [
+            0.11618176779553668,
+            0.03915711720503545
+          ],
+          "points": 67,
+          "minor_extent_m": 0.03900862197480193,
+          "major_axis_xy": [
+            -0.9990848026048097,
+            -0.04277388445620107
+          ],
+          "oriented_extent_m": [
+            0.11711885239170655,
+            0.03900862197480193
+          ],
+          "top_z_base_m": 0.0177697076942555,
+          "uv": [
+            424.0,
+            232.0
+          ],
+          "bbox": [
+            408,
+            208,
+            33,
+            45
+          ],
+          "extra_insertion_m": 0.015,
+          "grasp_goal_xy": [
+            0.4642802174830415,
+            -0.3198022064715082
+          ],
+          "_reference_centers_xy": []
+        },
+        "plane": -0.0855012229862121
+      },
+      "visual_config": {
+        "enabled": true,
+        "max_parcels": 4,
+        "visual_after_first_parcel": true,
+        "weighing_gain_scale": 0.4,
+        "first_weighing_lower_gain_scale": 1.0,
+        "first_weighing_roof_offset_m": 0.008,
+        "first_weighing_roof_axis": 0,
+        "weighing_posture_bias": false,
+        "weighing_posture_reserve": true,
+        "settlement_spatial_components": true,
+        "pickup_level_grasp": true,
+        "pickup_pitch_offset_degrees": 2.5,
+        "pickup_pitch_offsets_degrees": [
+          0.0,
+          2.5,
+          2.5,
+          5.0
+        ],
+        "weighing_pose_search": true,
+        "weighing_coupled_pose_request": true,
+        "weighing_live_support_height": true,
+        "weighing_prepare_tilt_degrees": 10.0,
+        "pickup_extra_insertion_m": 0.015,
+        "lift_m": 0.16,
+        "max_joint_step_rad": 0.012,
+        "stage_timeout_steps": 500,
+        "servo_gain": 0.18,
+        "bin_tool_rpy_degrees": [
+          80.0,
+          5.0,
+          -90.0
+        ],
+        "bin_lateral_offsets_m": [
+          -0.105,
+          -0.035,
+          0.035,
+          0.105
+        ],
+        "bin_depth_offsets_m": [
+          0.0,
+          0.0,
+          0.0,
+          -0.025
+        ]
+      },
+      "rgbd_config": {
+        "enabled": true,
+        "strategy": "act_residual",
+        "base_frame": "base_link",
+        "camera_frame": "Head Camera View",
+        "camera_mount_frame": "camera_base",
+        "description_param": "/humanoid_description",
+        "head_joint_indices": [
+          -2,
+          -1
+        ],
+        "fixed_ik_waist": true,
+        "rgb_topic": "/cam_h/color/image_raw/compressed",
+        "depth_topic": "/cam_h/depth/image_raw/compressedDepth",
+        "info_topic": "/cam_h/color/camera_info",
+        "image_wh": [
+          848,
+          480
+        ],
+        "max_sensor_age_s": 1.0,
+        "max_rgb_depth_dt_s": 0.1,
+        "max_rgb_joint_dt_s": 0.035,
+        "workspace_min": [
+          0.1,
+          -0.8,
+          -0.4
+        ],
+        "workspace_max": [
+          1.2,
+          0.8,
+          0.3
+        ],
+        "table_hsv": [
+          [
+            40,
+            100,
+            15
+          ],
+          [
+            85,
+            255,
+            255
+          ]
+        ],
+        "min_object_height_m": 0.025,
+        "max_object_height_m": 0.14,
+        "grid_resolution_m": 0.0075,
+        "min_component_points": 30,
+        "max_object_extent_m": 0.19,
+        "max_object_width_m": 0.065,
+        "close_threshold": 0.6,
+        "open_threshold": 0.25,
+        "other_arm_closed_threshold": 0.55,
+        "skip_initial_grasps": 0,
+        "max_target_distance_m": 0.12,
+        "max_xy_correction_m": 0.1,
+        "max_joint_residual_rad": 0.5,
+        "alignment_tolerance_m": 0.012,
+        "alignment_timeout_steps": 50,
+        "loaded_alignment_timeout_steps": 90,
+        "clearance_m": 0.07,
+        "alignment_z_tolerance_m": 0.015,
+        "orientation_tolerance_rad": 0.15,
+        "stable_steps": 3,
+        "settle_motion_m": 0.003,
+        "close_dwell_steps": 6,
+        "release_dwell_steps": 8,
+        "release_tolerance_m": 0.02,
+        "closed_command": 0.98,
+        "approach_joint_velocity_rad_s": 0.6,
+        "transport_offset_decay": 0.8,
+        "lift_before_offset_decay_m": 0.06,
+        "target_memory_steps": 40,
+        "target_stable_frames": 3,
+        "target_association_distance_m": 0.025,
+        "placement_margin_m": 0.025,
+        "weighing_release_height_m": 0.08,
+        "max_weighing_release_height_m": 0.16,
+        "placement_vertical_step_m": 0.035,
+        "tracking_compensation_gain": 2.0,
+        "tracking_compensation_alpha": 0.1,
+        "max_tracking_compensation_rad": 0.2,
+        "max_loaded_tracking_compensation_rad": 1.2,
+        "max_loaded_feedforward_rad": 1.2,
+        "loaded_tracking_compensation_gain": 1.0,
+        "loaded_tracking_compensation_alpha": 0.08,
+        "side_grasp_insertion_m": 0.02
+      },
+      "config": {
+        "close_event_threshold": 0.25,
+        "max_translation_m": 0.02,
+        "max_joint_offset_rad": 0.2617993878,
+        "max_placement_joint_offset_rad": 0.5235987756,
+        "max_joint_step_rad": 0.012,
+        "gain": 0.25,
+        "grasp_tolerance_m": 0.012,
+        "grasp_z_tolerance_m": 0.01,
+        "placement_tolerance_m": 0.015,
+        "placement_margin_m": 0.025,
+        "max_release_error_m": 0.08,
+        "max_release_gap_m": 0.002,
+        "level_target_degrees": 10.0,
+        "level_target_bottom_spread_m": 0.023,
+        "level_tolerance_degrees": 15.0,
+        "max_bottom_height_spread_m": 0.034,
+        "placement_heading_settle_degrees": 10.0,
+        "placement_heading_tolerance_degrees": 15.0,
+        "max_grasp_steps": 45,
+        "max_initial_pregrasp_steps": 160,
+        "max_close_settle_steps": 40,
+        "max_release_steps": 450
+      },
+      "wrist_config": {
+        "enabled": true,
+        "act_after_regrasp": false,
+        "handover_grip_guard": false,
+        "handover_contact_frames": 3,
+        "trace_act_handover": false,
+        "refresh_stale_handover_ensemble": false,
+        "max_regrasp_joint_offset_rad": 0.5235987756,
+        "regrasp_pitch_degrees": 12.5,
+        "regrasp_finger_tilt_degrees": 5.0,
+        "regrasp_descent_request_m": 0.012,
+        "require_edges": true,
+        "use_parcel_outline": true,
+        "centering_deadband_px": 4,
+        "regrasp_aligned_error_px": 10,
+        "min_edge_support": 0.64,
+        "min_area_px": 600,
+        "max_bbox_px": 320,
+        "max_center_error_px": 25,
+        "max_regrasp_center_error_px": 45,
+        "aligned_error_px": 22,
+        "max_correction_m": 0.012,
+        "stable_frames": 3,
+        "max_pregrasp_align_steps": 320,
+        "max_level_regrasp_steps": 900,
+        "regrasp_visible_v_fraction": 0.67,
+        "release_open_dwell_steps": 12,
+        "release_short_retreat_m": 0.05,
+        "release_clearance_rise_m": 0.02,
+        "release_retreat_ready_m": 0.014,
+        "max_short_retreat_steps": 140,
+        "max_open_joint_delta_rad": 0.025,
+        "max_handover_align_steps": 80,
+        "act_after_first_grasp": false
+      },
+      "source_raw": "sensors-6338.npz",
+      "source_run": "20261016-182823",
+      "source_raw_sha256": "3e97fea7f3db796dad32f3dafa54177f5d62431137ae499247f555fd7fdfc6a3",
+      "source_steps_sha256": "1548d58a40b788e4641707dd90772db0fbb506c6b4253753fc1228c616994538"
+    },
+    {
+      "tag": "20261016-182823_4",
+      "template": {
+        "extent": [
+          0.11322562205707898,
+          0.04011191417841736,
+          0.10255712400545458
+        ],
+        "rotation_xyzw": [
+          0.424775102703447,
+          -0.4491299349380256,
+          0.5386147475700299,
+          0.5724880499765164
+        ],
+        "box_to_tool_m": [
+          0.03749092518291541,
+          0.0018599379642937784,
+          0.005369423024514729
+        ],
+        "position_source": "first_requested_grasp_target"
+      },
+      "frame": {
+        "step": 9555,
+        "measured": [
+          0.527982234954834,
+          0.1900133192539215,
+          0.15612074732780457,
+          -2.4091856479644775,
+          -1.565629482269287,
+          -0.13391591608524323,
+          -0.05253671109676361,
+          0.0032385678496211767,
+          -0.26751214265823364,
+          0.17795979976654053,
+          0.308467835187912,
+          -0.9433658123016357,
+          1.57081139087677,
+          -0.025239940732717514,
+          0.3223553001880646,
+          0.0032826652750372887
+        ],
+        "previous_command": [
+          0.5217513351881742,
+          0.18722531345516738,
+          0.1641137619178476,
+          -2.4243445409278235,
+          -1.325020505447297,
+          0.007910097120695986,
+          0.0004665066666214451,
+          0.0,
+          -0.27101936644329205,
+          0.18455329141267865,
+          0.3079436331454167,
+          -0.9262430698435209,
+          1.3149287803390932,
+          -0.33336791230604773,
+          0.3104912089979183,
+          0.0
+        ],
+        "goal": [
+          [
+            -0.04932515511247025,
+            -0.30033978210124423,
+            -0.9525560918552063,
+            0.45074894254377296
+          ],
+          [
+            0.998782805640489,
+            -0.01483236020376765,
+            -0.04704223652904844,
+            -0.10230351792585221
+          ],
+          [
+            0.0,
+            -0.9537169507482273,
+            0.3007057995042731,
+            -0.021755389324094848
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "target": {
+          "position_base_m": [
+            0.48624226292378725,
+            -0.09862248221255498,
+            -0.01316779813061475
+          ],
+          "extent_xy_m": [
+            0.10772581581396345,
+            0.04213386502084729
+          ],
+          "points": 61,
+          "minor_extent_m": 0.04153320772506877,
+          "major_axis_xy": [
+            -0.998782805640489,
+            -0.04932515511247025
+          ],
+          "oriented_extent_m": [
+            0.10761056199830238,
+            0.04153320772506877
+          ],
+          "top_z_base_m": 0.019654622564011515,
+          "uv": [
+            424.0,
+            248.0
+          ],
+          "bbox": [
+            412,
+            224,
+            25,
+            49
+          ],
+          "extra_insertion_m": 0.015,
+          "grasp_goal_xy": [
+            0.4657306846283803,
+            -0.10156364059916516
+          ],
+          "_reference_centers_xy": []
+        },
+        "plane": -0.08402140905492128
+      },
+      "visual_config": {
+        "enabled": true,
+        "max_parcels": 4,
+        "visual_after_first_parcel": true,
+        "weighing_gain_scale": 0.4,
+        "first_weighing_lower_gain_scale": 1.0,
+        "first_weighing_roof_offset_m": 0.008,
+        "first_weighing_roof_axis": 0,
+        "weighing_posture_bias": false,
+        "weighing_posture_reserve": true,
+        "settlement_spatial_components": true,
+        "pickup_level_grasp": true,
+        "pickup_pitch_offset_degrees": 2.5,
+        "pickup_pitch_offsets_degrees": [
+          0.0,
+          2.5,
+          2.5,
+          5.0
+        ],
+        "weighing_pose_search": true,
+        "weighing_coupled_pose_request": true,
+        "weighing_live_support_height": true,
+        "weighing_prepare_tilt_degrees": 10.0,
+        "pickup_extra_insertion_m": 0.015,
+        "lift_m": 0.16,
+        "max_joint_step_rad": 0.012,
+        "stage_timeout_steps": 500,
+        "servo_gain": 0.18,
+        "bin_tool_rpy_degrees": [
+          80.0,
+          5.0,
+          -90.0
+        ],
+        "bin_lateral_offsets_m": [
+          -0.105,
+          -0.035,
+          0.035,
+          0.105
+        ],
+        "bin_depth_offsets_m": [
+          0.0,
+          0.0,
+          0.0,
+          -0.025
+        ]
+      },
+      "rgbd_config": {
+        "enabled": true,
+        "strategy": "act_residual",
+        "base_frame": "base_link",
+        "camera_frame": "Head Camera View",
+        "camera_mount_frame": "camera_base",
+        "description_param": "/humanoid_description",
+        "head_joint_indices": [
+          -2,
+          -1
+        ],
+        "fixed_ik_waist": true,
+        "rgb_topic": "/cam_h/color/image_raw/compressed",
+        "depth_topic": "/cam_h/depth/image_raw/compressedDepth",
+        "info_topic": "/cam_h/color/camera_info",
+        "image_wh": [
+          848,
+          480
+        ],
+        "max_sensor_age_s": 1.0,
+        "max_rgb_depth_dt_s": 0.1,
+        "max_rgb_joint_dt_s": 0.035,
+        "workspace_min": [
+          0.1,
+          -0.8,
+          -0.4
+        ],
+        "workspace_max": [
+          1.2,
+          0.8,
+          0.3
+        ],
+        "table_hsv": [
+          [
+            40,
+            100,
+            15
+          ],
+          [
+            85,
+            255,
+            255
+          ]
+        ],
+        "min_object_height_m": 0.025,
+        "max_object_height_m": 0.14,
+        "grid_resolution_m": 0.0075,
+        "min_component_points": 30,
+        "max_object_extent_m": 0.19,
+        "max_object_width_m": 0.065,
+        "close_threshold": 0.6,
+        "open_threshold": 0.25,
+        "other_arm_closed_threshold": 0.55,
+        "skip_initial_grasps": 0,
+        "max_target_distance_m": 0.12,
+        "max_xy_correction_m": 0.1,
+        "max_joint_residual_rad": 0.5,
+        "alignment_tolerance_m": 0.012,
+        "alignment_timeout_steps": 50,
+        "loaded_alignment_timeout_steps": 90,
+        "clearance_m": 0.07,
+        "alignment_z_tolerance_m": 0.015,
+        "orientation_tolerance_rad": 0.15,
+        "stable_steps": 3,
+        "settle_motion_m": 0.003,
+        "close_dwell_steps": 6,
+        "release_dwell_steps": 8,
+        "release_tolerance_m": 0.02,
+        "closed_command": 0.98,
+        "approach_joint_velocity_rad_s": 0.6,
+        "transport_offset_decay": 0.8,
+        "lift_before_offset_decay_m": 0.06,
+        "target_memory_steps": 40,
+        "target_stable_frames": 3,
+        "target_association_distance_m": 0.025,
+        "placement_margin_m": 0.025,
+        "weighing_release_height_m": 0.08,
+        "max_weighing_release_height_m": 0.16,
+        "placement_vertical_step_m": 0.035,
+        "tracking_compensation_gain": 2.0,
+        "tracking_compensation_alpha": 0.1,
+        "max_tracking_compensation_rad": 0.2,
+        "max_loaded_tracking_compensation_rad": 1.2,
+        "max_loaded_feedforward_rad": 1.2,
+        "loaded_tracking_compensation_gain": 1.0,
+        "loaded_tracking_compensation_alpha": 0.08,
+        "side_grasp_insertion_m": 0.02
+      },
+      "config": {
+        "close_event_threshold": 0.25,
+        "max_translation_m": 0.02,
+        "max_joint_offset_rad": 0.2617993878,
+        "max_placement_joint_offset_rad": 0.5235987756,
+        "max_joint_step_rad": 0.012,
+        "gain": 0.25,
+        "grasp_tolerance_m": 0.012,
+        "grasp_z_tolerance_m": 0.01,
+        "placement_tolerance_m": 0.015,
+        "placement_margin_m": 0.025,
+        "max_release_error_m": 0.08,
+        "max_release_gap_m": 0.002,
+        "level_target_degrees": 10.0,
+        "level_target_bottom_spread_m": 0.023,
+        "level_tolerance_degrees": 15.0,
+        "max_bottom_height_spread_m": 0.034,
+        "placement_heading_settle_degrees": 10.0,
+        "placement_heading_tolerance_degrees": 15.0,
+        "max_grasp_steps": 45,
+        "max_initial_pregrasp_steps": 160,
+        "max_close_settle_steps": 40,
+        "max_release_steps": 450
+      },
+      "wrist_config": {
+        "enabled": true,
+        "act_after_regrasp": false,
+        "handover_grip_guard": false,
+        "handover_contact_frames": 3,
+        "trace_act_handover": false,
+        "refresh_stale_handover_ensemble": false,
+        "max_regrasp_joint_offset_rad": 0.5235987756,
+        "regrasp_pitch_degrees": 12.5,
+        "regrasp_finger_tilt_degrees": 5.0,
+        "regrasp_descent_request_m": 0.012,
+        "require_edges": true,
+        "use_parcel_outline": true,
+        "centering_deadband_px": 4,
+        "regrasp_aligned_error_px": 10,
+        "min_edge_support": 0.64,
+        "min_area_px": 600,
+        "max_bbox_px": 320,
+        "max_center_error_px": 25,
+        "max_regrasp_center_error_px": 45,
+        "aligned_error_px": 22,
+        "max_correction_m": 0.012,
+        "stable_frames": 3,
+        "max_pregrasp_align_steps": 320,
+        "max_level_regrasp_steps": 900,
+        "regrasp_visible_v_fraction": 0.67,
+        "release_open_dwell_steps": 12,
+        "release_short_retreat_m": 0.05,
+        "release_clearance_rise_m": 0.02,
+        "release_retreat_ready_m": 0.014,
+        "max_short_retreat_steps": 140,
+        "max_open_joint_delta_rad": 0.025,
+        "max_handover_align_steps": 80,
+        "act_after_first_grasp": false
+      },
+      "source_raw": "sensors-9555.npz",
+      "source_run": "20261016-182823",
+      "source_raw_sha256": "22071af40fea72c58c64fc723af2976c2c0bd2fc0a428236a97195fecef82ddd",
+      "source_steps_sha256": "1548d58a40b788e4641707dd90772db0fbb506c6b4253753fc1228c616994538"
+    }
+  ],
+  "limitation": "Only recorded RGB-D, calibration/TF and public robot joint feedback. Solver replay assumes recorded time-varying bias then freezes it; no new contact/dynamics/rendering model."
+}

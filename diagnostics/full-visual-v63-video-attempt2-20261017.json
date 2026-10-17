@@ -1,0 +1,668 @@
+{
+  "read_only": true,
+  "runs": [
+    {
+      "run": "20261017-012700",
+      "task": "go_run",
+      "continuation_from": null,
+      "summary": {
+        "steps": 12487,
+        "reason": "visual_cycle_target_reached",
+        "task_success": null,
+        "error": null,
+        "handover_contract_stop": null,
+        "last_sensor_receipts": {
+          "/gripper/state": {
+            "receipt_monotonic_s": 4378.273605416,
+            "source_stamp_s": 1792203214.639474,
+            "receipts": 1993411
+          },
+          "/sensors_data_raw": {
+            "receipt_monotonic_s": 4378.266612607,
+            "source_stamp_s": 1792203214.6302714,
+            "receipts": 667739
+          },
+          "/cam_l/color/image_raw/compressed": {
+            "receipt_monotonic_s": 4378.243902381,
+            "source_stamp_s": 1792203214.5560539,
+            "receipts": 71749
+          },
+          "/cam_r/color/image_raw/compressed": {
+            "receipt_monotonic_s": 4378.227810211,
+            "source_stamp_s": 1792203214.5595264,
+            "receipts": 68861
+          },
+          "/cam_h/color/image_raw/compressed": {
+            "receipt_monotonic_s": 4378.225971159,
+            "source_stamp_s": 1792203214.5526752,
+            "receipts": 69919
+          }
+        },
+        "trace_manifest_error": null,
+        "visual_confirmed_parcels": 4,
+        "note": "Original KuavoSimEnv returns reward=0 and does not judge scene1 success."
+      },
+      "visual_steps": 7917,
+      "all_visual_steps_freeze_policy": true,
+      "stage_steps": {
+        "lift": 657,
+        "transport": 1201,
+        "left_approach": 1038,
+        "left_insert": 1067,
+        "close_left": 23,
+        "release_right": 22,
+        "right_retreat": 917,
+        "left_clear": 618,
+        "bin_transport": 1078,
+        "release_left": 19,
+        "left_retreat": 271,
+        "verify_bin": 30,
+        "return_home": 976
+      },
+      "transitions": [
+        {
+          "step": 971,
+          "source": "lift",
+          "target": "transport"
+        },
+        {
+          "step": 1275,
+          "source": "transport",
+          "target": "left_approach"
+        },
+        {
+          "step": 1537,
+          "source": "left_approach",
+          "target": "left_insert"
+        },
+        {
+          "step": 1807,
+          "source": "left_insert",
+          "target": "close_left"
+        },
+        {
+          "step": 1812,
+          "source": "close_left",
+          "target": "release_right"
+        },
+        {
+          "step": 1818,
+          "source": "release_right",
+          "target": "right_retreat"
+        },
+        {
+          "step": 2098,
+          "source": "right_retreat",
+          "target": "left_clear"
+        },
+        {
+          "step": 2253,
+          "source": "left_clear",
+          "target": "bin_transport"
+        },
+        {
+          "step": 2500,
+          "source": "bin_transport",
+          "target": "release_left"
+        },
+        {
+          "step": 2505,
+          "source": "release_left",
+          "target": "left_retreat"
+        },
+        {
+          "step": 2577,
+          "source": "left_retreat",
+          "target": "verify_bin"
+        },
+        {
+          "step": 2582,
+          "source": "verify_bin",
+          "target": "return_home"
+        },
+        {
+          "step": 4166,
+          "source": "lift",
+          "target": "transport"
+        },
+        {
+          "step": 4463,
+          "source": "transport",
+          "target": "left_approach"
+        },
+        {
+          "step": 4720,
+          "source": "left_approach",
+          "target": "left_insert"
+        },
+        {
+          "step": 4988,
+          "source": "left_insert",
+          "target": "close_left"
+        },
+        {
+          "step": 4994,
+          "source": "close_left",
+          "target": "release_right"
+        },
+        {
+          "step": 4999,
+          "source": "release_right",
+          "target": "right_retreat"
+        },
+        {
+          "step": 5169,
+          "source": "right_retreat",
+          "target": "left_clear"
+        },
+        {
+          "step": 5324,
+          "source": "left_clear",
+          "target": "bin_transport"
+        },
+        {
+          "step": 5584,
+          "source": "bin_transport",
+          "target": "release_left"
+        },
+        {
+          "step": 5589,
+          "source": "release_left",
+          "target": "left_retreat"
+        },
+        {
+          "step": 5665,
+          "source": "left_retreat",
+          "target": "verify_bin"
+        },
+        {
+          "step": 5670,
+          "source": "verify_bin",
+          "target": "return_home"
+        },
+        {
+          "step": 7210,
+          "source": "lift",
+          "target": "transport"
+        },
+        {
+          "step": 7510,
+          "source": "transport",
+          "target": "left_approach"
+        },
+        {
+          "step": 7763,
+          "source": "left_approach",
+          "target": "left_insert"
+        },
+        {
+          "step": 8028,
+          "source": "left_insert",
+          "target": "close_left"
+        },
+        {
+          "step": 8035,
+          "source": "close_left",
+          "target": "release_right"
+        },
+        {
+          "step": 8041,
+          "source": "release_right",
+          "target": "right_retreat"
+        },
+        {
+          "step": 8270,
+          "source": "right_retreat",
+          "target": "left_clear"
+        },
+        {
+          "step": 8424,
+          "source": "left_clear",
+          "target": "bin_transport"
+        },
+        {
+          "step": 8710,
+          "source": "bin_transport",
+          "target": "release_left"
+        },
+        {
+          "step": 8715,
+          "source": "release_left",
+          "target": "left_retreat"
+        },
+        {
+          "step": 8785,
+          "source": "left_retreat",
+          "target": "verify_bin"
+        },
+        {
+          "step": 8790,
+          "source": "verify_bin",
+          "target": "return_home"
+        },
+        {
+          "step": 10571,
+          "source": "lift",
+          "target": "transport"
+        },
+        {
+          "step": 10871,
+          "source": "transport",
+          "target": "left_approach"
+        },
+        {
+          "step": 11137,
+          "source": "left_approach",
+          "target": "left_insert"
+        },
+        {
+          "step": 11401,
+          "source": "left_insert",
+          "target": "close_left"
+        },
+        {
+          "step": 11406,
+          "source": "close_left",
+          "target": "release_right"
+        },
+        {
+          "step": 11411,
+          "source": "release_right",
+          "target": "right_retreat"
+        },
+        {
+          "step": 11649,
+          "source": "right_retreat",
+          "target": "left_clear"
+        },
+        {
+          "step": 11803,
+          "source": "left_clear",
+          "target": "bin_transport"
+        },
+        {
+          "step": 12088,
+          "source": "bin_transport",
+          "target": "release_left"
+        },
+        {
+          "step": 12092,
+          "source": "release_left",
+          "target": "left_retreat"
+        },
+        {
+          "step": 12145,
+          "source": "left_retreat",
+          "target": "verify_bin"
+        },
+        {
+          "step": 12160,
+          "source": "verify_bin",
+          "target": "return_home"
+        }
+      ],
+      "gripper_events": [
+        {
+          "step": 1807,
+          "side": "left",
+          "command": "close",
+          "stage": "left_insert",
+          "feedback_before_send": [
+            0.0032551262993365526,
+            0.5074582099914551
+          ],
+          "receiver_contact_frames": null,
+          "bin_footprint_clear": null
+        },
+        {
+          "step": 1812,
+          "side": "right",
+          "command": "open",
+          "stage": "close_left",
+          "feedback_before_send": [
+            0.49440979957580566,
+            0.5074290633201599
+          ],
+          "receiver_contact_frames": 3,
+          "bin_footprint_clear": null
+        },
+        {
+          "step": 2500,
+          "side": "left",
+          "command": "open",
+          "stage": "bin_transport",
+          "feedback_before_send": [
+            0.5075591206550598,
+            0.00326310726813972
+          ],
+          "receiver_contact_frames": null,
+          "bin_footprint_clear": true
+        },
+        {
+          "step": 4988,
+          "side": "left",
+          "command": "close",
+          "stage": "left_insert",
+          "feedback_before_send": [
+            0.003254642942920327,
+            0.5077546238899231
+          ],
+          "receiver_contact_frames": null,
+          "bin_footprint_clear": null
+        },
+        {
+          "step": 4994,
+          "side": "right",
+          "command": "open",
+          "stage": "close_left",
+          "feedback_before_send": [
+            0.48714157938957214,
+            0.5077231526374817
+          ],
+          "receiver_contact_frames": 3,
+          "bin_footprint_clear": null
+        },
+        {
+          "step": 5584,
+          "side": "left",
+          "command": "open",
+          "stage": "bin_transport",
+          "feedback_before_send": [
+            0.5077879428863525,
+            0.0032699485309422016
+          ],
+          "receiver_contact_frames": null,
+          "bin_footprint_clear": true
+        },
+        {
+          "step": 8028,
+          "side": "left",
+          "command": "close",
+          "stage": "left_insert",
+          "feedback_before_send": [
+            0.0032548229210078716,
+            0.5075851678848267
+          ],
+          "receiver_contact_frames": null,
+          "bin_footprint_clear": null
+        },
+        {
+          "step": 8035,
+          "side": "right",
+          "command": "open",
+          "stage": "close_left",
+          "feedback_before_send": [
+            0.48719722032546997,
+            0.5075532793998718
+          ],
+          "receiver_contact_frames": 3,
+          "bin_footprint_clear": null
+        },
+        {
+          "step": 8710,
+          "side": "left",
+          "command": "open",
+          "stage": "bin_transport",
+          "feedback_before_send": [
+            0.5075269341468811,
+            0.0032642025034874678
+          ],
+          "receiver_contact_frames": null,
+          "bin_footprint_clear": true
+        },
+        {
+          "step": 11401,
+          "side": "left",
+          "command": "close",
+          "stage": "left_insert",
+          "feedback_before_send": [
+            0.003254491603001952,
+            0.5073680877685547
+          ],
+          "receiver_contact_frames": null,
+          "bin_footprint_clear": null
+        },
+        {
+          "step": 11406,
+          "side": "right",
+          "command": "open",
+          "stage": "close_left",
+          "feedback_before_send": [
+            0.48598712682724,
+            0.5073400139808655
+          ],
+          "receiver_contact_frames": 3,
+          "bin_footprint_clear": null
+        },
+        {
+          "step": 12088,
+          "side": "left",
+          "command": "open",
+          "stage": "bin_transport",
+          "feedback_before_send": [
+            0.5073595643043518,
+            0.003268467728048563
+          ],
+          "receiver_contact_frames": null,
+          "bin_footprint_clear": true
+        }
+      ],
+      "whole_run_gripper_events": [
+        {
+          "step": 130,
+          "side": "right",
+          "command": "close",
+          "state": "small_grasp"
+        },
+        {
+          "step": 386,
+          "side": "right",
+          "command": "open",
+          "state": "weighing_release"
+        },
+        {
+          "step": 797,
+          "side": "right",
+          "command": "close",
+          "state": "regrasp_pose_verified"
+        },
+        {
+          "step": 1807,
+          "side": "left",
+          "command": "close",
+          "state": "visual_cycle_left_insert"
+        },
+        {
+          "step": 1812,
+          "side": "right",
+          "command": "open",
+          "state": "visual_cycle_close_left"
+        },
+        {
+          "step": 2500,
+          "side": "left",
+          "command": "open",
+          "state": "visual_cycle_bin_transport"
+        },
+        {
+          "step": 3167,
+          "side": "right",
+          "command": "close",
+          "state": "small_grasp"
+        },
+        {
+          "step": 3714,
+          "side": "right",
+          "command": "open",
+          "state": "weighing_release"
+        },
+        {
+          "step": 4007,
+          "side": "right",
+          "command": "close",
+          "state": "regrasp_pose_verified"
+        },
+        {
+          "step": 4988,
+          "side": "left",
+          "command": "close",
+          "state": "visual_cycle_left_insert"
+        },
+        {
+          "step": 4994,
+          "side": "right",
+          "command": "open",
+          "state": "visual_cycle_close_left"
+        },
+        {
+          "step": 5584,
+          "side": "left",
+          "command": "open",
+          "state": "visual_cycle_bin_transport"
+        },
+        {
+          "step": 6259,
+          "side": "right",
+          "command": "close",
+          "state": "small_grasp"
+        },
+        {
+          "step": 6707,
+          "side": "right",
+          "command": "open",
+          "state": "weighing_release"
+        },
+        {
+          "step": 7045,
+          "side": "right",
+          "command": "close",
+          "state": "regrasp_pose_verified"
+        },
+        {
+          "step": 8028,
+          "side": "left",
+          "command": "close",
+          "state": "visual_cycle_left_insert"
+        },
+        {
+          "step": 8035,
+          "side": "right",
+          "command": "open",
+          "state": "visual_cycle_close_left"
+        },
+        {
+          "step": 8710,
+          "side": "left",
+          "command": "open",
+          "state": "visual_cycle_bin_transport"
+        },
+        {
+          "step": 9441,
+          "side": "right",
+          "command": "close",
+          "state": "small_grasp"
+        },
+        {
+          "step": 10010,
+          "side": "right",
+          "command": "open",
+          "state": "weighing_release"
+        },
+        {
+          "step": 10386,
+          "side": "right",
+          "command": "close",
+          "state": "regrasp_pose_verified"
+        },
+        {
+          "step": 11401,
+          "side": "left",
+          "command": "close",
+          "state": "visual_cycle_left_insert"
+        },
+        {
+          "step": 11406,
+          "side": "right",
+          "command": "open",
+          "state": "visual_cycle_close_left"
+        },
+        {
+          "step": 12088,
+          "side": "left",
+          "command": "open",
+          "state": "visual_cycle_bin_transport"
+        }
+      ],
+      "visual_confirmations": [
+        {
+          "step": 2582,
+          "points": 150
+        },
+        {
+          "step": 5670,
+          "points": 115
+        },
+        {
+          "step": 8790,
+          "points": 122
+        },
+        {
+          "step": 12160,
+          "points": 82
+        }
+      ],
+      "configured_target_parcels": 4,
+      "requested_target_parcels": 4,
+      "control_elapsed_s": 2760.3123237770005,
+      "policy_reentries": [],
+      "expected_gripper_sequence_matches": true,
+      "whole_run_gripper_sequence_matches": true,
+      "expected_policy_reentries_match": true,
+      "visual_pickup_steps": 3766,
+      "independent_visual_sequence_complete": true,
+      "completion_prefixes": [
+        {
+          "completed": 1,
+          "step": 2799,
+          "elapsed_s": 588.551297839,
+          "gripper_events": 6,
+          "exact_gripper_sequence": true,
+          "confirmations": 1,
+          "policy_frozen_after_first": true,
+          "independent_prefix_verified": true
+        },
+        {
+          "completed": 2,
+          "step": 5879,
+          "elapsed_s": 1284.2678311480001,
+          "gripper_events": 12,
+          "exact_gripper_sequence": true,
+          "confirmations": 2,
+          "policy_frozen_after_first": true,
+          "independent_prefix_verified": true
+        },
+        {
+          "completed": 3,
+          "step": 9013,
+          "elapsed_s": 1985.4914390229999,
+          "gripper_events": 18,
+          "exact_gripper_sequence": true,
+          "confirmations": 3,
+          "policy_frozen_after_first": true,
+          "independent_prefix_verified": true
+        },
+        {
+          "completed": 4,
+          "step": 12487,
+          "elapsed_s": 2760.3123237770005,
+          "gripper_events": 24,
+          "exact_gripper_sequence": true,
+          "confirmations": 4,
+          "policy_frozen_after_first": true,
+          "independent_prefix_verified": true
+        }
+      ]
+    }
+  ],
+  "limitation": "Visual and feedback evidence does not replace the official task judge."
+}

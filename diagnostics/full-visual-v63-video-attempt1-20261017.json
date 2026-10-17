@@ -1,0 +1,78 @@
+{
+  "read_only": true,
+  "runs": [
+    {
+      "run": "20261017-011742",
+      "task": "go_run",
+      "continuation_from": null,
+      "summary": {
+        "steps": 527,
+        "reason": "error",
+        "task_success": null,
+        "error": "Released parcel has no stable support observation; regrasp withheld",
+        "handover_contract_stop": null,
+        "last_sensor_receipts": {
+          "/sensors_data_raw": {
+            "receipt_monotonic_s": 1172.265675847,
+            "source_stamp_s": 1792200008.6318936,
+            "receipts": 48640
+          },
+          "/gripper/state": {
+            "receipt_monotonic_s": 1172.26581573,
+            "source_stamp_s": 1792200008.6319087,
+            "receipts": 115839
+          },
+          "/cam_l/color/image_raw/compressed": {
+            "receipt_monotonic_s": 1172.251586591,
+            "source_stamp_s": 1792200008.5721302,
+            "receipts": 4006
+          },
+          "/cam_h/color/image_raw/compressed": {
+            "receipt_monotonic_s": 1172.250303557,
+            "source_stamp_s": 1792200008.5853035,
+            "receipts": 4053
+          },
+          "/cam_r/color/image_raw/compressed": {
+            "receipt_monotonic_s": 1172.240280694,
+            "source_stamp_s": 1792200008.5752146,
+            "receipts": 3888
+          }
+        },
+        "trace_manifest_error": null,
+        "visual_confirmed_parcels": 0,
+        "note": "Original KuavoSimEnv returns reward=0 and does not judge scene1 success."
+      },
+      "visual_steps": 0,
+      "all_visual_steps_freeze_policy": true,
+      "stage_steps": {},
+      "transitions": [],
+      "gripper_events": [],
+      "whole_run_gripper_events": [
+        {
+          "step": 120,
+          "side": "right",
+          "command": "close",
+          "state": "small_grasp"
+        },
+        {
+          "step": 391,
+          "side": "right",
+          "command": "open",
+          "state": "weighing_release"
+        }
+      ],
+      "visual_confirmations": [],
+      "configured_target_parcels": 4,
+      "requested_target_parcels": 4,
+      "control_elapsed_s": 113.49855201299988,
+      "policy_reentries": [],
+      "expected_gripper_sequence_matches": false,
+      "whole_run_gripper_sequence_matches": false,
+      "expected_policy_reentries_match": true,
+      "visual_pickup_steps": 0,
+      "independent_visual_sequence_complete": false,
+      "completion_prefixes": []
+    }
+  ],
+  "limitation": "Visual and feedback evidence does not replace the official task judge."
+}

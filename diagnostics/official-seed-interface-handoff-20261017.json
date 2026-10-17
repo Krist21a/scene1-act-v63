@@ -1,0 +1,44 @@
+{
+  "checked_at": "2026-10-17T10:26:54.090498+08:00",
+  "read_only": true,
+  "scope": "Public official entry and launcher interface only; no protected module, generated scene, layout values, or object truth inspected.",
+  "findings": [
+    "Official entry passes --seed unchanged to launcher.",
+    "Builder --no-randomize is intentional: scene instance is assigned by protected initialization, which receives the seed. Do not remove the flag or bypass the official entry.",
+    "Changing official --seed is the interface for future multi-seed trials; no new seed has been run."
+  ],
+  "sources": [
+    {
+      "path": "/root/kuavo_ws/src/challenge_cup_task_template/scripts/challenge_task.py",
+      "sha256": "88f145851c37a45107897b40fd4a999cd19b0318a442442e6496debc9889ba53",
+      "excerpts": [
+        {
+          "start_line": 46,
+          "end_line": 59,
+          "text": "def run_scene(scene, seed, node_name=None, timeout=120,\n              time_limit=None, timer_gui=True):\n    if scene not in SCENE_CONFIGS:\n        raise ValueError(\"unknown scene: {}\".format(scene))\n\n    config = SCENE_CONFIGS[scene]\n    ChallengeSimLauncher = _load_launcher()\n\n    launcher = ChallengeSimLauncher(\n        scene=scene,\n        seed=seed,\n        match_time_limit=time_limit,\n        timer_gui=timer_gui,\n    )"
+        },
+        {
+          "start_line": 103,
+          "end_line": 123,
+          "text": "    parser = argparse.ArgumentParser(description=\"挑战杯三场景统一任务入口\")\n    parser.add_argument(\"--scene\", choices=sorted(SCENE_CONFIGS), default=\"scene1\",\n                        help=\"要启动的比赛场景\")\n    parser.add_argument(\"--seed\", type=int, default=0,\n                        help=\"场景种子；正式评测 seed 由组委会指定\")\n    parser.add_argument(\"--node-name\", default=None,\n                        help=\"ROS 节点名；默认按 scene 自动设置\")\n    parser.add_argument(\"--timeout\", type=int, default=120,\n                        help=\"等待仿真就绪的超时时间，单位秒\")\n    parser.add_argument(\"--time-limit\", type=float, default=None,\n                        help=\"比赛时长，单位秒；默认读取 CHALLENGE_TIME_LIMIT，未设置则不限时\")\n    parser.add_argument(\"--no-timer-gui\", action=\"store_true\",\n                        help=\"不弹出计时器窗口，仅保留后台计时日志\")\n    args = parser.parse_args()\n\n    run_scene(\n        scene=args.scene,\n        seed=args.seed,\n        node_name=args.node_name,\n        timeout=args.timeout,\n        time_limit=args.time_limit,"
+        }
+      ]
+    },
+    {
+      "path": "/root/kuavo_ws/src/challenge_cup_simulator/utils/challenge_sim_launcher.py",
+      "sha256": "2a8d9e5a4d0061c2fb9a3e268b5ec49aa132aac4455a4bbc2d2c591aec1609f5",
+      "excerpts": [
+        {
+          "start_line": 238,
+          "end_line": 251,
+          "text": "        # 文件名不带 seed，避免从文件名泄露评测 seed。\n        out_path = os.path.join(xml_dir, f\"_scene_{self.scene}_active.xml\")\n\n        for path in (builder, config):\n            if not os.path.isfile(path):\n                print(f\"[FATAL] challenge_sim_launcher: 缺少文件 {path}\")\n                sys.exit(1)\n\n        # --no-randomize：场景实例由受保护初始化流程完成。\n        cmd = [\n            sys.executable, builder, config,\n            \"--seed\", str(self.seed),\n            \"--no-randomize\",\n            \"-o\", out_path,"
+        },
+        {
+          "start_line": 304,
+          "end_line": 313,
+          "text": "\n        lib_dir = os.path.join(self._sim_pkg_path, \"lib\")\n        if lib_dir not in sys.path:\n            sys.path.insert(0, lib_dir)\n        try:\n            from challenge_secret import get_object_layout\n        except ImportError:\n            return self._fail_placement(\"未找到 challenge_secret，无法初始化场景实例\", required)\n\n        layout = get_object_layout(self.scene, self.seed)"
+        }
+      ]
+    }
+  ]
+}

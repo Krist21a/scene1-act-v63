@@ -1,0 +1,14 @@
+{
+  "checked_at": "2026-10-17T11:18:07.981276+08:00",
+  "tests": 332,
+  "test_result": "OK",
+  "test_elapsed_s": 10.731,
+  "test_environment": "isolated /root/scene1_act_v63_github_verify; no ROS controller started",
+  "initial_staging_issue": "Initial snapshot-only test directory lacked calibrate_servo.py. Added the unchanged helper already present in the repository, then all 332 tests passed. No frozen file changed.",
+  "credential_pattern_findings": [],
+  "files_above_100_MiB": [],
+  "v64_new_test_or_fixture_included": false,
+  "algorithm_image": "sha256:a0403e3ab7d651f5b87dfe9b2cccc23a2cb8f73dd030611190da2a0a0cecd97b",
+  "simulator_image": "sha256:8eafa6a83f9edeb93e28da7cabe6b930fcccd88f02b4c3b57668549b6bae7e50",
+  "runtime_containers_not_included": true
+}

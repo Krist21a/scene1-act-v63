@@ -1,0 +1,37 @@
+{
+  "steps": 527,
+  "reason": "error",
+  "task_success": null,
+  "error": "Released parcel has no stable support observation; regrasp withheld",
+  "handover_contract_stop": null,
+  "last_sensor_receipts": {
+    "/sensors_data_raw": {
+      "receipt_monotonic_s": 1172.265675847,
+      "source_stamp_s": 1792200008.6318936,
+      "receipts": 48640
+    },
+    "/gripper/state": {
+      "receipt_monotonic_s": 1172.26581573,
+      "source_stamp_s": 1792200008.6319087,
+      "receipts": 115839
+    },
+    "/cam_l/color/image_raw/compressed": {
+      "receipt_monotonic_s": 1172.251586591,
+      "source_stamp_s": 1792200008.5721302,
+      "receipts": 4006
+    },
+    "/cam_h/color/image_raw/compressed": {
+      "receipt_monotonic_s": 1172.250303557,
+      "source_stamp_s": 1792200008.5853035,
+      "receipts": 4053
+    },
+    "/cam_r/color/image_raw/compressed": {
+      "receipt_monotonic_s": 1172.240280694,
+      "source_stamp_s": 1792200008.5752146,
+      "receipts": 3888
+    }
+  },
+  "trace_manifest_error": null,
+  "visual_confirmed_parcels": 0,
+  "note": "Original KuavoSimEnv returns reward=0 and does not judge scene1 success."
+}

@@ -1,0 +1,50 @@
+{
+  "version": "v63",
+  "tests": 332,
+  "files": 115,
+  "same_seed": 0,
+  "independent_complete_runs": 3,
+  "all_complete": true,
+  "task_success": null,
+  "runs": [
+    {
+      "run": "20261016-200019",
+      "steps": 12426,
+      "elapsed_s": 2332.934749082997,
+      "homes": [
+        2838,
+        5979,
+        9093,
+        12426
+      ],
+      "gripper_events": 24,
+      "policy_reentries": 0
+    },
+    {
+      "run": "20261016-204228",
+      "steps": 12271,
+      "elapsed_s": 2304.227128614002,
+      "homes": [
+        2779,
+        5886,
+        9011,
+        12271
+      ],
+      "gripper_events": 24,
+      "policy_reentries": 0
+    },
+    {
+      "run": "20261016-212331",
+      "steps": 12832,
+      "elapsed_s": 2428.0488294700044,
+      "homes": [
+        2851,
+        6009,
+        9128,
+        12832
+      ],
+      "gripper_events": 24,
+      "policy_reentries": 0
+    }
+  ]
+}

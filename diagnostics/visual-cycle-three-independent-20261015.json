@@ -1,0 +1,639 @@
+{
+  "read_only": true,
+  "runs": [
+    {
+      "run": "20261015-094728",
+      "task": "go_run",
+      "continuation_from": null,
+      "summary": {
+        "steps": 2995,
+        "reason": "visual_cycle_target_reached",
+        "task_success": null,
+        "error": null,
+        "handover_contract_stop": null,
+        "last_sensor_receipts": {
+          "/sensors_data_raw": {
+            "receipt_monotonic_s": 10400.102550365,
+            "source_stamp_s": 1792058275.1884193,
+            "receipts": 164732
+          },
+          "/gripper/state": {
+            "receipt_monotonic_s": 10400.118996414,
+            "source_stamp_s": 1792058275.2052088,
+            "receipts": 457902
+          },
+          "/cam_h/color/image_raw/compressed": {
+            "receipt_monotonic_s": 10400.073170776,
+            "source_stamp_s": 1792058275.1371403,
+            "receipts": 15646
+          },
+          "/cam_r/color/image_raw/compressed": {
+            "receipt_monotonic_s": 10400.102753312,
+            "source_stamp_s": 1792058275.1488585,
+            "receipts": 15829
+          },
+          "/cam_l/color/image_raw/compressed": {
+            "receipt_monotonic_s": 10400.100262616,
+            "source_stamp_s": 1792058275.1423886,
+            "receipts": 15532
+          }
+        },
+        "trace_manifest_error": null,
+        "visual_confirmed_parcels": 1,
+        "note": "Original KuavoSimEnv returns reward=0 and does not judge scene1 success."
+      },
+      "visual_steps": 2113,
+      "all_visual_steps_freeze_policy": true,
+      "stage_steps": {
+        "lift": 165,
+        "transport": 303,
+        "left_approach": 271,
+        "left_insert": 270,
+        "close_left": 6,
+        "release_right": 6,
+        "right_retreat": 284,
+        "left_clear": 157,
+        "bin_transport": 300,
+        "release_left": 5,
+        "left_retreat": 72,
+        "verify_bin": 5,
+        "return_home": 269
+      },
+      "transitions": [
+        {
+          "step": 1047,
+          "source": "lift",
+          "target": "transport"
+        },
+        {
+          "step": 1350,
+          "source": "transport",
+          "target": "left_approach"
+        },
+        {
+          "step": 1621,
+          "source": "left_approach",
+          "target": "left_insert"
+        },
+        {
+          "step": 1891,
+          "source": "left_insert",
+          "target": "close_left"
+        },
+        {
+          "step": 1897,
+          "source": "close_left",
+          "target": "release_right"
+        },
+        {
+          "step": 1903,
+          "source": "release_right",
+          "target": "right_retreat"
+        },
+        {
+          "step": 2187,
+          "source": "right_retreat",
+          "target": "left_clear"
+        },
+        {
+          "step": 2344,
+          "source": "left_clear",
+          "target": "bin_transport"
+        },
+        {
+          "step": 2644,
+          "source": "bin_transport",
+          "target": "release_left"
+        },
+        {
+          "step": 2649,
+          "source": "release_left",
+          "target": "left_retreat"
+        },
+        {
+          "step": 2721,
+          "source": "left_retreat",
+          "target": "verify_bin"
+        },
+        {
+          "step": 2726,
+          "source": "verify_bin",
+          "target": "return_home"
+        }
+      ],
+      "gripper_events": [
+        {
+          "step": 1891,
+          "side": "left",
+          "command": "close",
+          "stage": "left_insert",
+          "feedback_before_send": [
+            0.0032555267680436373,
+            0.5074561834335327
+          ],
+          "receiver_contact_frames": null,
+          "bin_footprint_clear": null
+        },
+        {
+          "step": 1897,
+          "side": "right",
+          "command": "open",
+          "stage": "close_left",
+          "feedback_before_send": [
+            0.4907985329627991,
+            0.507426917552948
+          ],
+          "receiver_contact_frames": 3,
+          "bin_footprint_clear": null
+        },
+        {
+          "step": 2644,
+          "side": "left",
+          "command": "open",
+          "stage": "bin_transport",
+          "feedback_before_send": [
+            0.5075036883354187,
+            0.0032632523216307163
+          ],
+          "receiver_contact_frames": null,
+          "bin_footprint_clear": true
+        }
+      ],
+      "whole_run_gripper_events": [
+        {
+          "step": 127,
+          "side": "right",
+          "command": "close",
+          "state": "small_grasp"
+        },
+        {
+          "step": 430,
+          "side": "right",
+          "command": "open",
+          "state": "weighing_release"
+        },
+        {
+          "step": 875,
+          "side": "right",
+          "command": "close",
+          "state": "regrasp_pose_verified"
+        },
+        {
+          "step": 1891,
+          "side": "left",
+          "command": "close",
+          "state": "visual_cycle_left_insert"
+        },
+        {
+          "step": 1897,
+          "side": "right",
+          "command": "open",
+          "state": "visual_cycle_close_left"
+        },
+        {
+          "step": 2644,
+          "side": "left",
+          "command": "open",
+          "state": "visual_cycle_bin_transport"
+        }
+      ],
+      "visual_confirmations": [
+        {
+          "step": 2726,
+          "points": 174
+        }
+      ],
+      "configured_target_parcels": 1,
+      "requested_target_parcels": 1,
+      "control_elapsed_s": 593.1625423090009,
+      "policy_reentries": [],
+      "expected_gripper_sequence_matches": true,
+      "whole_run_gripper_sequence_matches": true,
+      "expected_policy_reentries_match": true,
+      "independent_visual_sequence_complete": true
+    },
+    {
+      "run": "20261015-095914",
+      "task": "go_run",
+      "continuation_from": null,
+      "summary": {
+        "steps": 3144,
+        "reason": "visual_cycle_target_reached",
+        "task_success": null,
+        "error": null,
+        "handover_contract_stop": null,
+        "last_sensor_receipts": {
+          "/cam_h/color/image_raw/compressed": {
+            "receipt_monotonic_s": 11135.730201568,
+            "source_stamp_s": 1792059010.789923,
+            "receipts": 16508
+          },
+          "/gripper/state": {
+            "receipt_monotonic_s": 11135.729737338,
+            "source_stamp_s": 1792059010.8162086,
+            "receipts": 477606
+          },
+          "/sensors_data_raw": {
+            "receipt_monotonic_s": 11135.719817773,
+            "source_stamp_s": 1792059010.8065753,
+            "receipts": 160109
+          },
+          "/cam_r/color/image_raw/compressed": {
+            "receipt_monotonic_s": 11135.734560817,
+            "source_stamp_s": 1792059010.7670546,
+            "receipts": 16369
+          },
+          "/cam_l/color/image_raw/compressed": {
+            "receipt_monotonic_s": 11135.689740499,
+            "source_stamp_s": 1792059010.728584,
+            "receipts": 16196
+          }
+        },
+        "trace_manifest_error": null,
+        "visual_confirmed_parcels": 1,
+        "note": "Original KuavoSimEnv returns reward=0 and does not judge scene1 success."
+      },
+      "visual_steps": 2132,
+      "all_visual_steps_freeze_policy": true,
+      "stage_steps": {
+        "lift": 174,
+        "transport": 308,
+        "left_approach": 269,
+        "left_insert": 269,
+        "close_left": 6,
+        "release_right": 5,
+        "right_retreat": 281,
+        "left_clear": 155,
+        "bin_transport": 307,
+        "release_left": 5,
+        "left_retreat": 75,
+        "verify_bin": 5,
+        "return_home": 273
+      },
+      "transitions": [
+        {
+          "step": 1186,
+          "source": "lift",
+          "target": "transport"
+        },
+        {
+          "step": 1494,
+          "source": "transport",
+          "target": "left_approach"
+        },
+        {
+          "step": 1763,
+          "source": "left_approach",
+          "target": "left_insert"
+        },
+        {
+          "step": 2032,
+          "source": "left_insert",
+          "target": "close_left"
+        },
+        {
+          "step": 2038,
+          "source": "close_left",
+          "target": "release_right"
+        },
+        {
+          "step": 2043,
+          "source": "release_right",
+          "target": "right_retreat"
+        },
+        {
+          "step": 2324,
+          "source": "right_retreat",
+          "target": "left_clear"
+        },
+        {
+          "step": 2479,
+          "source": "left_clear",
+          "target": "bin_transport"
+        },
+        {
+          "step": 2786,
+          "source": "bin_transport",
+          "target": "release_left"
+        },
+        {
+          "step": 2791,
+          "source": "release_left",
+          "target": "left_retreat"
+        },
+        {
+          "step": 2866,
+          "source": "left_retreat",
+          "target": "verify_bin"
+        },
+        {
+          "step": 2871,
+          "source": "verify_bin",
+          "target": "return_home"
+        }
+      ],
+      "gripper_events": [
+        {
+          "step": 2032,
+          "side": "left",
+          "command": "close",
+          "stage": "left_insert",
+          "feedback_before_send": [
+            0.0032559288665652275,
+            0.5074663758277893
+          ],
+          "receiver_contact_frames": null,
+          "bin_footprint_clear": null
+        },
+        {
+          "step": 2038,
+          "side": "right",
+          "command": "open",
+          "stage": "close_left",
+          "feedback_before_send": [
+            0.500687301158905,
+            0.5074406266212463
+          ],
+          "receiver_contact_frames": 3,
+          "bin_footprint_clear": null
+        },
+        {
+          "step": 2786,
+          "side": "left",
+          "command": "open",
+          "stage": "bin_transport",
+          "feedback_before_send": [
+            0.507567822933197,
+            0.0032656006515026093
+          ],
+          "receiver_contact_frames": null,
+          "bin_footprint_clear": true
+        }
+      ],
+      "whole_run_gripper_events": [
+        {
+          "step": 119,
+          "side": "right",
+          "command": "close",
+          "state": "small_grasp"
+        },
+        {
+          "step": 542,
+          "side": "right",
+          "command": "open",
+          "state": "weighing_release"
+        },
+        {
+          "step": 1006,
+          "side": "right",
+          "command": "close",
+          "state": "regrasp_pose_verified"
+        },
+        {
+          "step": 2032,
+          "side": "left",
+          "command": "close",
+          "state": "visual_cycle_left_insert"
+        },
+        {
+          "step": 2038,
+          "side": "right",
+          "command": "open",
+          "state": "visual_cycle_close_left"
+        },
+        {
+          "step": 2786,
+          "side": "left",
+          "command": "open",
+          "state": "visual_cycle_bin_transport"
+        }
+      ],
+      "visual_confirmations": [
+        {
+          "step": 2871,
+          "points": 154
+        }
+      ],
+      "configured_target_parcels": 1,
+      "requested_target_parcels": 1,
+      "control_elapsed_s": 623.4698073220006,
+      "policy_reentries": [],
+      "expected_gripper_sequence_matches": true,
+      "whole_run_gripper_sequence_matches": true,
+      "expected_policy_reentries_match": true,
+      "independent_visual_sequence_complete": true
+    },
+    {
+      "run": "20261015-104115",
+      "task": "go_run",
+      "continuation_from": null,
+      "summary": {
+        "steps": 2926,
+        "reason": "visual_cycle_target_reached",
+        "task_success": null,
+        "error": null,
+        "handover_contract_stop": null,
+        "last_sensor_receipts": {
+          "/sensors_data_raw": {
+            "receipt_monotonic_s": 961.264968462,
+            "source_stamp_s": 1792061410.2266622,
+            "receipts": 144188
+          },
+          "/gripper/state": {
+            "receipt_monotonic_s": 961.265185657,
+            "source_stamp_s": 1792061410.2266786,
+            "receipts": 400806
+          },
+          "/cam_l/color/image_raw/compressed": {
+            "receipt_monotonic_s": 961.245934319,
+            "source_stamp_s": 1792061410.1770642,
+            "receipts": 13838
+          },
+          "/cam_h/color/image_raw/compressed": {
+            "receipt_monotonic_s": 961.254773554,
+            "source_stamp_s": 1792061410.173933,
+            "receipts": 14381
+          },
+          "/cam_r/color/image_raw/compressed": {
+            "receipt_monotonic_s": 961.256876801,
+            "source_stamp_s": 1792061410.1803834,
+            "receipts": 13519
+          }
+        },
+        "trace_manifest_error": null,
+        "visual_confirmed_parcels": 1,
+        "note": "Original KuavoSimEnv returns reward=0 and does not judge scene1 success."
+      },
+      "visual_steps": 2075,
+      "all_visual_steps_freeze_policy": true,
+      "stage_steps": {
+        "lift": 176,
+        "transport": 300,
+        "left_approach": 264,
+        "left_insert": 269,
+        "close_left": 6,
+        "release_right": 6,
+        "right_retreat": 275,
+        "left_clear": 156,
+        "bin_transport": 296,
+        "release_left": 5,
+        "left_retreat": 72,
+        "verify_bin": 5,
+        "return_home": 245
+      },
+      "transitions": [
+        {
+          "step": 1027,
+          "source": "lift",
+          "target": "transport"
+        },
+        {
+          "step": 1327,
+          "source": "transport",
+          "target": "left_approach"
+        },
+        {
+          "step": 1591,
+          "source": "left_approach",
+          "target": "left_insert"
+        },
+        {
+          "step": 1860,
+          "source": "left_insert",
+          "target": "close_left"
+        },
+        {
+          "step": 1866,
+          "source": "close_left",
+          "target": "release_right"
+        },
+        {
+          "step": 1872,
+          "source": "release_right",
+          "target": "right_retreat"
+        },
+        {
+          "step": 2147,
+          "source": "right_retreat",
+          "target": "left_clear"
+        },
+        {
+          "step": 2303,
+          "source": "left_clear",
+          "target": "bin_transport"
+        },
+        {
+          "step": 2599,
+          "source": "bin_transport",
+          "target": "release_left"
+        },
+        {
+          "step": 2604,
+          "source": "release_left",
+          "target": "left_retreat"
+        },
+        {
+          "step": 2676,
+          "source": "left_retreat",
+          "target": "verify_bin"
+        },
+        {
+          "step": 2681,
+          "source": "verify_bin",
+          "target": "return_home"
+        }
+      ],
+      "gripper_events": [
+        {
+          "step": 1860,
+          "side": "left",
+          "command": "close",
+          "stage": "left_insert",
+          "feedback_before_send": [
+            0.0032558587845414877,
+            0.5074616074562073
+          ],
+          "receiver_contact_frames": null,
+          "bin_footprint_clear": null
+        },
+        {
+          "step": 1866,
+          "side": "right",
+          "command": "open",
+          "stage": "close_left",
+          "feedback_before_send": [
+            0.504772961139679,
+            0.5074307918548584
+          ],
+          "receiver_contact_frames": 3,
+          "bin_footprint_clear": null
+        },
+        {
+          "step": 2599,
+          "side": "left",
+          "command": "open",
+          "stage": "bin_transport",
+          "feedback_before_send": [
+            0.5075519680976868,
+            0.003262467449530959
+          ],
+          "receiver_contact_frames": null,
+          "bin_footprint_clear": true
+        }
+      ],
+      "whole_run_gripper_events": [
+        {
+          "step": 131,
+          "side": "right",
+          "command": "close",
+          "state": "small_grasp"
+        },
+        {
+          "step": 416,
+          "side": "right",
+          "command": "open",
+          "state": "weighing_release"
+        },
+        {
+          "step": 845,
+          "side": "right",
+          "command": "close",
+          "state": "regrasp_pose_verified"
+        },
+        {
+          "step": 1860,
+          "side": "left",
+          "command": "close",
+          "state": "visual_cycle_left_insert"
+        },
+        {
+          "step": 1866,
+          "side": "right",
+          "command": "open",
+          "state": "visual_cycle_close_left"
+        },
+        {
+          "step": 2599,
+          "side": "left",
+          "command": "open",
+          "state": "visual_cycle_bin_transport"
+        }
+      ],
+      "visual_confirmations": [
+        {
+          "step": 2681,
+          "points": 164
+        }
+      ],
+      "configured_target_parcels": 1,
+      "requested_target_parcels": 1,
+      "control_elapsed_s": 503.50857152000003,
+      "policy_reentries": [],
+      "expected_gripper_sequence_matches": true,
+      "whole_run_gripper_sequence_matches": true,
+      "expected_policy_reentries_match": true,
+      "independent_visual_sequence_complete": true
+    }
+  ],
+  "limitation": "Visual and feedback evidence does not replace the official task judge."
+}

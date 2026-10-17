@@ -1,0 +1,87 @@
+{
+  "read_only": true,
+  "scope": "Verify archived raw inputs and review existing geometry; no new numerical replay",
+  "frames": [
+    {
+      "step": 420,
+      "source_sha_matches": true,
+      "zip_crc_ok": true,
+      "raw_arrays_present": true,
+      "original_support_height_ok": true,
+      "spatial_exists": false,
+      "raw_input": "results/20261017-011742/sensors-0420.npz",
+      "candidate_point_count_difference": null
+    },
+    {
+      "step": 440,
+      "source_sha_matches": true,
+      "zip_crc_ok": true,
+      "raw_arrays_present": true,
+      "original_support_height_ok": false,
+      "spatial_exists": true,
+      "raw_input": "results/20261017-011742/sensors-0440.npz",
+      "candidate_point_count_difference": 13
+    },
+    {
+      "step": 460,
+      "source_sha_matches": true,
+      "zip_crc_ok": true,
+      "raw_arrays_present": true,
+      "original_support_height_ok": true,
+      "spatial_exists": true,
+      "raw_input": "results/20261017-011742/sensors-0460.npz",
+      "candidate_point_count_difference": 13
+    },
+    {
+      "step": 480,
+      "source_sha_matches": true,
+      "zip_crc_ok": true,
+      "raw_arrays_present": true,
+      "original_support_height_ok": false,
+      "spatial_exists": true,
+      "raw_input": "results/20261017-011742/sensors-0480.npz",
+      "candidate_point_count_difference": 16
+    },
+    {
+      "step": 500,
+      "source_sha_matches": true,
+      "zip_crc_ok": true,
+      "raw_arrays_present": true,
+      "original_support_height_ok": false,
+      "spatial_exists": true,
+      "raw_input": "results/20261017-011742/sensors-0500.npz",
+      "candidate_point_count_difference": 14
+    },
+    {
+      "step": 520,
+      "source_sha_matches": true,
+      "zip_crc_ok": true,
+      "raw_arrays_present": true,
+      "original_support_height_ok": false,
+      "spatial_exists": true,
+      "raw_input": "results/20261017-011742/sensors-0520.npz",
+      "candidate_point_count_difference": 15
+    },
+    {
+      "step": 528,
+      "source_sha_matches": true,
+      "zip_crc_ok": true,
+      "raw_arrays_present": true,
+      "original_support_height_ok": false,
+      "spatial_exists": true,
+      "raw_input": "results/20261017-011742/failed-sensors.npz",
+      "candidate_point_count_difference": 15
+    }
+  ],
+  "limitations": [
+    "No current numerical replay: numpy/cv2/scipy unavailable on host and Docker execution denied.",
+    "420 original valid observation must be retained; spatial alternative absent.",
+    "460 both alternatives supported but height differs; support result alone is not evidence of connectivity.",
+    "528 borrowed previous sent-row timestamp in historical replay is not its actual frame timestamp.",
+    "Need candidate-to-component provenance and continuous new-frame evidence before a controller change.",
+    "Candidate point-count differences do not by themselves establish parent-child provenance or identify a physical object."
+  ],
+  "created_at": "2026-10-17T10:47:43.281040+08:00",
+  "prior_probe_path": "diagnostics/v63-video-settlement-probe-20261017.json",
+  "prior_probe_sha256": "277cebf4b004449de3e5144544a89946a789da4cf7f7056adc85e8815990aefc"
+}

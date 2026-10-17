@@ -1,0 +1,34 @@
+{
+  "version": "v63",
+  "same_code_hash_manifest": "diagnostics/full-visual-v63-hashes-20261017.json",
+  "tests": 332,
+  "sim": "sim70",
+  "controller": "run81",
+  "ros_run_id": "50269456-c9c8-11f1-94bb-c85ea94bd8c7",
+  "seed": 0,
+  "independent_full_reset": true,
+  "video_started_before_go_run": true,
+  "video_path": "results/videos/v63-video-attempt1-FAILED-20261017.mkv",
+  "window_id": 69206023,
+  "resolution": [
+    1280,
+    720
+  ],
+  "fps": 30,
+  "original_speed": true,
+  "continuous": true,
+  "viewport_crop": [
+    1248,
+    702,
+    270,
+    300
+  ],
+  "framing": "results/video-tests/formal-framing-20261017.png",
+  "ui_change": "Before controller start: Tab and Shift+Tab hide left/right panels; verified local public simulate.cc mjKEY_TAB handler changes UI only. No physics shortcuts sent.",
+  "status": "failed_first_settlement",
+  "task_success": null,
+  "run": "20261017-011742",
+  "steps": 527,
+  "error": "Released parcel has no stable support observation; regrasp withheld",
+  "diagnostic": "diagnostics/v63-video-settlement-probe-20261017.json"
+}

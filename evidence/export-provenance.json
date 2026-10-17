@@ -1,0 +1,951 @@
+{
+  "version": "v63",
+  "exported_at": "2026-10-17T11:14:55.569593+08:00",
+  "snapshot": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height",
+  "frozen_files": 115,
+  "frozen_mismatches": [],
+  "v64_code_included": false,
+  "copied_files": {
+    "config.yaml": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/config.yaml",
+      "sha256": "6aa1b68895cf079b8531d008ade9a567c23b956a5f114b5afda41b07d60a5beb",
+      "bytes": 5395
+    },
+    "configs/contract_regrasp.yaml": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/configs/contract_regrasp.yaml",
+      "sha256": "8f3d2c4e11469ba60ee2de05782ee7a7501c7b694fadcfa608de91f1f80bc74c",
+      "bytes": 5710
+    },
+    "configs/contract_regrasp_slow_transition.yaml": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/configs/contract_regrasp_slow_transition.yaml",
+      "sha256": "63c4244d4204c7c3e67df22cbe4dee74508221d21bcf0c08097d9194d853627c",
+      "bytes": 5727
+    },
+    "configs/diagnostic_first_grasp.yaml": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/configs/diagnostic_first_grasp.yaml",
+      "sha256": "d7af3068b4e1e58d1e7f7be5e23cb478becc33974fa549c7bcbbd25110ab1f1c",
+      "bytes": 5574
+    },
+    "configs/diagnostic_regrasp.yaml": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/configs/diagnostic_regrasp.yaml",
+      "sha256": "aa84191d9dbfd32cc04528476cf3df2a9cfa6c3360df022e9375353ac27d0704",
+      "bytes": 5570
+    },
+    "configs/previous_weighing_experiment.yaml": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/configs/previous_weighing_experiment.yaml",
+      "sha256": "acea083721197858ea42577c4882dc4f6750fc42430a0bc037cdaee6b3ab02c7",
+      "bytes": 7004
+    },
+    "configs/recording_first_grasp_then_act.yaml": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/configs/recording_first_grasp_then_act.yaml",
+      "sha256": "6aa1b68895cf079b8531d008ade9a567c23b956a5f114b5afda41b07d60a5beb",
+      "bytes": 5395
+    },
+    "configs/recording_pure_act.yaml": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/configs/recording_pure_act.yaml",
+      "sha256": "1e45a7bdba4a70fc8e242111122bd73c5c184786d494a8ad81fc2aaeb41dd566",
+      "bytes": 5387
+    },
+    "configs/visual_cycle_first_parcel.yaml": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/configs/visual_cycle_first_parcel.yaml",
+      "sha256": "f2c670d4401903a71cea47651e486fbc8f953127a5cb606b65e1bbaa16280f49",
+      "bytes": 5643
+    },
+    "configs/visual_cycle_four_parcels.yaml": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/configs/visual_cycle_four_parcels.yaml",
+      "sha256": "89bbe78befe09ca16869b3db37eb9eb101c136a2d9059af3d4f2f6b808f5ada2",
+      "bytes": 6447
+    },
+    "configs/visual_cycle_posture_probe.yaml": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/configs/visual_cycle_posture_probe.yaml",
+      "sha256": "d7b791d4f767e97e08fc2b1badc24be63e136f1d7310acd4f9793d6eebc28bbe",
+      "bytes": 5835
+    },
+    "configs/visual_third_pose_probe_v33.yaml": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/configs/visual_third_pose_probe_v33.yaml",
+      "sha256": "f183369cdafd1afebd720f93775957d7453f4c08ad9bedb388f84a5025aa7d9a",
+      "bytes": 6005
+    },
+    "configs/visual_third_prepare_probe_v34.yaml": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/configs/visual_third_prepare_probe_v34.yaml",
+      "sha256": "bb183b5077ea52f1eada8e66d49e92dcbce774f3d1638d40623acfa0ecc76ffe",
+      "bytes": 6043
+    },
+    "run_scene1.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/run_scene1.py",
+      "sha256": "b7537f5a79f7351f2f863866b468677e52b923bc1e41f5a96934f5d00dca96a5",
+      "bytes": 59939
+    },
+    "scene1/__init__.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/scene1/__init__.py",
+      "sha256": "fa453540df3be5ea66e6a97cdaaeba2753f1a0c472e9a4bf229ab35c0eba99de",
+      "bytes": 81
+    },
+    "scene1/approach_edges.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/scene1/approach_edges.py",
+      "sha256": "527aa70c5961502202ec3f584776c3056ddc5660f197d30eafe057f508e57c31",
+      "bytes": 5597
+    },
+    "scene1/bin_layout.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/scene1/bin_layout.py",
+      "sha256": "d59c19e882a7549cff83138373e6ccb95d9995c5e3691226797517c7d977d828",
+      "bytes": 3721
+    },
+    "scene1/cartesian.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/scene1/cartesian.py",
+      "sha256": "673c31a4390b46ebaa9c1fd6bd41602d27702384a3ec3b651b1402c4529653cc",
+      "bytes": 52789
+    },
+    "scene1/clearance.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/scene1/clearance.py",
+      "sha256": "55b5259f131115d6b47a52f593eca00445e52f8cd424c8e47001cb5416a14203",
+      "bytes": 1693
+    },
+    "scene1/grasp.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/scene1/grasp.py",
+      "sha256": "7db9ba993fadc75b14001d2cb61d8cf889acbfc59a0fee8e4d1c131577d7f8f1",
+      "bytes": 3898
+    },
+    "scene1/handover.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/scene1/handover.py",
+      "sha256": "c3ac422fb1ca4561504e0e76fbb3915f2815e110b514923c53ffae06ea5fdd62",
+      "bytes": 3856
+    },
+    "scene1/handover_contract.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/scene1/handover_contract.py",
+      "sha256": "b20dc545a736a1bf76ab019d98690ccdb3da18958698c9289fd08a0c03cd5f42",
+      "bytes": 6030
+    },
+    "scene1/head.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/scene1/head.py",
+      "sha256": "72113053d9ed6dc41335869ca4cc663e1c19ffce3ba9e8579fe9de0698d39ee5",
+      "bytes": 3877
+    },
+    "scene1/kinematics.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/scene1/kinematics.py",
+      "sha256": "670d823420c834d46214f2db13332a58a85cee2a8bb47645c196dda8ae1bff61",
+      "bytes": 6312
+    },
+    "scene1/motion.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/scene1/motion.py",
+      "sha256": "c5d41a36abe882f65294b083877bfa04d50280e0ede18e4ff3ced05662b3f82a",
+      "bytes": 3911
+    },
+    "scene1/pickup_resume.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/scene1/pickup_resume.py",
+      "sha256": "3e117896ff26f5c1c2b6792fae6fcaec02dcb701d886cbb0a7b5972e09bad80e",
+      "bytes": 5522
+    },
+    "scene1/placement_gain.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/scene1/placement_gain.py",
+      "sha256": "4d25a92e4a55cfd756643a6552fcbea39b0a257e64f62f53954c70a18e3d3dfa",
+      "bytes": 983
+    },
+    "scene1/placement_height.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/scene1/placement_height.py",
+      "sha256": "5a2cf16c129e2dbc4228fa3e49d0f7fb74fe2985177eb5cc0745fba23a1860ed",
+      "bytes": 2279
+    },
+    "scene1/placement_target.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/scene1/placement_target.py",
+      "sha256": "0da24708e2aaab7118c181a821bbfe4cbcd32ab8d6f7496a7e77a68afb036d88",
+      "bytes": 2552
+    },
+    "scene1/policy_trace.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/scene1/policy_trace.py",
+      "sha256": "98f3add4efcc31166ad664a93ea91069b44c4ce9a95a6e5ce8083b9d8b1c1aac",
+      "bytes": 1090
+    },
+    "scene1/receiver.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/scene1/receiver.py",
+      "sha256": "16911c5ddd8cdc7b2f5cfedf4be6a613e19a0ca5df1ac624b8715b68df74b774",
+      "bytes": 7566
+    },
+    "scene1/recovery.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/scene1/recovery.py",
+      "sha256": "adf3c0d7acfb4989764f2efe249372125386c126b2d0372f538bc5c984c6198f",
+      "bytes": 2323
+    },
+    "scene1/residual.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/scene1/residual.py",
+      "sha256": "5b9cb07595fc044ba7d4d7782627d72e69ca2e5fb1db58ef3adb4020c60e57ad",
+      "bytes": 81356
+    },
+    "scene1/rgbd.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/scene1/rgbd.py",
+      "sha256": "4a753dfd0fdfe226480d863bb1fd95b19f3e6309e662414b5157ec465fbe1fbe",
+      "bytes": 16159
+    },
+    "scene1/servo.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/scene1/servo.py",
+      "sha256": "ef556c3ba48a633a6d572361e14ddca32c7d1b9b1a6348e9c1c8e02beab70acd",
+      "bytes": 3186
+    },
+    "scene1/settlement.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/scene1/settlement.py",
+      "sha256": "4af5b2d89f806d6295b4fd6ad82efafcb92b49cc050daec1c4fe091d270c4271",
+      "bytes": 6576
+    },
+    "scene1/table_reference.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/scene1/table_reference.py",
+      "sha256": "88bc2fe7a65dcf1b63b063712df2ab520c19d28d571f3f8b938c60552eaabdc6",
+      "bytes": 4294
+    },
+    "scene1/trace_window.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/scene1/trace_window.py",
+      "sha256": "7a2812c4de827e0b60bde8052b9132b115809774780d2c842dfbaa0db6d1d647",
+      "bytes": 2673
+    },
+    "scene1/vision.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/scene1/vision.py",
+      "sha256": "3159a74428beb57f94726a6144ea5c781a8155c96b28a596a9bd854588d6be1f",
+      "bytes": 8422
+    },
+    "scene1/visual_cycle.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/scene1/visual_cycle.py",
+      "sha256": "f26f0451df92215b1e7aeb83cb5649ba7254918649c7132e2e968deb0d7d3c6c",
+      "bytes": 35713
+    },
+    "scene1/visual_pickup.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/scene1/visual_pickup.py",
+      "sha256": "7f29b380ab09cc6654644f33389e37b0dceb38855448f8e921580d0f4390e5c7",
+      "bytes": 43136
+    },
+    "scene1/weighing_pose.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/scene1/weighing_pose.py",
+      "sha256": "a185c71d77debcb69e52b1becefb158e4f7c2a40e482dcf236cb7cd0f50c8010",
+      "bytes": 7444
+    },
+    "scene1/wrist.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/scene1/wrist.py",
+      "sha256": "a07b3348ec99a81d0f4b739710d558936e492cedb1bae0478826141dd2ada48f",
+      "bytes": 15625
+    },
+    "tests/fixtures/approach_edges_20261015-173011.npz": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/fixtures/approach_edges_20261015-173011.npz",
+      "sha256": "884cb9e83c47c64561a74b94563b074e94e4cd5fd9630d0f903d91ebc1d49a50",
+      "bytes": 1036979
+    },
+    "tests/fixtures/approach_edges_20261015-183318.npz": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/fixtures/approach_edges_20261015-183318.npz",
+      "sha256": "d08b6f483b7b53f8974077be5150cbc635442f578de9e4652eeac708e41dfb8d",
+      "bytes": 972565
+    },
+    "tests/fixtures/approach_edges_20261015-220604.npz": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/fixtures/approach_edges_20261015-220604.npz",
+      "sha256": "3d0ef579ad6c9b17d96a82e6c05559a743fa95e8e7a02b60f7de579ce9425c92",
+      "bytes": 1036488
+    },
+    "tests/fixtures/approach_edges_v59.json": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/fixtures/approach_edges_v59.json",
+      "sha256": "138c5ec42e17c970517a1cfa1d420bd1628001377ff8605d357d93dd5b9b853a",
+      "bytes": 683
+    },
+    "tests/fixtures/approach_edges_v59.npz": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/fixtures/approach_edges_v59.npz",
+      "sha256": "e901f58e507aba0764f1d9e26b1cd62015c9f613037f5416118518831817d9cb",
+      "bytes": 1543296
+    },
+    "tests/fixtures/bin_fourth_failure_rgbd.npz": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/fixtures/bin_fourth_failure_rgbd.npz",
+      "sha256": "64b0fb4a8d7953309ed369ca58cd5f4d0964527c622811835fa7104dc262de27",
+      "bytes": 577487
+    },
+    "tests/fixtures/bin_layout_geometry.json": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/fixtures/bin_layout_geometry.json",
+      "sha256": "849caafd19d2e71e27a3e60b59b07004eb27d76abf079dc4fe69311f493f2146",
+      "bytes": 1385
+    },
+    "tests/fixtures/bin_rim_outlier_v53.json": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/fixtures/bin_rim_outlier_v53.json",
+      "sha256": "8b4294f6be8c24554c3ede03b93599168e2d6a8299f09d542f60121cca03c402",
+      "bytes": 2066
+    },
+    "tests/fixtures/bin_rim_outlier_v53.npz": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/fixtures/bin_rim_outlier_v53.npz",
+      "sha256": "51b9addd8ad5e45437d39f0ebf4276dd17b12e2385bf727bd8c71f960300c615",
+      "bytes": 1026677
+    },
+    "tests/fixtures/initial_descent_drift_v52.json": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/fixtures/initial_descent_drift_v52.json",
+      "sha256": "e062bc8c9fada7e812f0454a5936383a8d409bc61df2b78756bc13b141cb889e",
+      "bytes": 273801
+    },
+    "tests/fixtures/initial_descent_drift_v52.npz": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/fixtures/initial_descent_drift_v52.npz",
+      "sha256": "8b85eaa15263e1a5d80447325eaf8cbaf09ad51e918f0d02af67b4929b76ae3a",
+      "bytes": 971817
+    },
+    "tests/fixtures/initial_grasp_tilt_v48.json": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/fixtures/initial_grasp_tilt_v48.json",
+      "sha256": "98394d6f897a0fd5c3685213e20c6c9c0f569d6c958ea3f56da954f673838317",
+      "bytes": 71181
+    },
+    "tests/fixtures/next_parcel_candidates.json": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/fixtures/next_parcel_candidates.json",
+      "sha256": "80b1117723cbb9bfb141857abaa1437098a07b717f4459d38c5f8aeedf6bf8c2",
+      "bytes": 1714
+    },
+    "tests/fixtures/next_parcel_rgbd.npz": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/fixtures/next_parcel_rgbd.npz",
+      "sha256": "7c5251cea895d429209135362c55203058fda6631bfe8581e997ca5d024960e4",
+      "bytes": 250123
+    },
+    "tests/fixtures/occluded_pickup_pad.json": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/fixtures/occluded_pickup_pad.json",
+      "sha256": "e5184d1280dfd8fa587efa2761cd0e405cddb6ad4b1b8e64de357c9cb0d473e0",
+      "bytes": 2153
+    },
+    "tests/fixtures/pad_reference_head_motion_v51.json": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/fixtures/pad_reference_head_motion_v51.json",
+      "sha256": "9425ecf0e8d5c058652c08d6860e7631ccf7784ddd6f6541d43ceccf3979b7af",
+      "bytes": 101554
+    },
+    "tests/fixtures/pad_reference_head_motion_v51.npz": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/fixtures/pad_reference_head_motion_v51.npz",
+      "sha256": "3924cb79ac65ec5d5e1f4970fd75dc82902e5542d46bf298ee0a51c809912b31",
+      "bytes": 453232
+    },
+    "tests/fixtures/pickup_close_v62.json": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/fixtures/pickup_close_v62.json",
+      "sha256": "87035a7cbac8cc3fc7439a478b3f596f9c4c3b6f98faa340fb60e00390694f79",
+      "bytes": 326723
+    },
+    "tests/fixtures/pickup_height_v61.json": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/fixtures/pickup_height_v61.json",
+      "sha256": "06ec493b50f454b6f015198cdd40ce481f6c4a92a698677b3192866bb90f4cba",
+      "bytes": 125134
+    },
+    "tests/fixtures/pickup_height_v61.npz": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/fixtures/pickup_height_v61.npz",
+      "sha256": "b24739cbf2c8319287c95246314a6946f040bda6d3715833a2bf476875c46585",
+      "bytes": 2996788
+    },
+    "tests/fixtures/pickup_pitch_reserve_v60.json": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/fixtures/pickup_pitch_reserve_v60.json",
+      "sha256": "fee32815f0dbcb329d9ec3bc3aa209835791baa5a8017f700de29c25cbed15ed",
+      "bytes": 68337
+    },
+    "tests/fixtures/placement_height_v58.json": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/fixtures/placement_height_v58.json",
+      "sha256": "57ed13fd6cfd49f10505f2ec5c11fdea07578e84f193aca059117ffda8d7affb",
+      "bytes": 6919
+    },
+    "tests/fixtures/placement_height_v58.npz": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/fixtures/placement_height_v58.npz",
+      "sha256": "2a0f8803640258d202f28206c2a84d1e3d661f3d6f0c92c8a4210b3b00be8a69",
+      "bytes": 1539465
+    },
+    "tests/fixtures/receiver_below_closing_rgb.npz": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/fixtures/receiver_below_closing_rgb.npz",
+      "sha256": "2448f95a3491c3b32ee03a7654b365a2581278cb1e0e73a08266562828b0cb14",
+      "bytes": 113263
+    },
+    "tests/fixtures/receiver_offset_rgb.npz": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/fixtures/receiver_offset_rgb.npz",
+      "sha256": "5046f52bda3e218888572f35c774a750f83b71aeb55e36c5937b6defd630ee7a",
+      "bytes": 144812
+    },
+    "tests/fixtures/receiver_regrasp_failure_rgb.npz": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/fixtures/receiver_regrasp_failure_rgb.npz",
+      "sha256": "127c0f1c2cb7a88c4966dbb2515b42e6e774446910bd393e54be7bcfb770ef41",
+      "bytes": 118009
+    },
+    "tests/fixtures/receiver_seed_background_v55.json": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/fixtures/receiver_seed_background_v55.json",
+      "sha256": "738685ce0da50b8e4434c7125baaa55ba66d883911e6c8a2c4fe145a69bcff89",
+      "bytes": 8602
+    },
+    "tests/fixtures/receiver_seed_background_v55.npz": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/fixtures/receiver_seed_background_v55.npz",
+      "sha256": "bb65b3b53ed183e1a6883ac542467e6db0a304656a501b093d46e7f9266ee645",
+      "bytes": 766535
+    },
+    "tests/fixtures/receiver_shadow_rgb.npz": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/fixtures/receiver_shadow_rgb.npz",
+      "sha256": "6055c8921704c4a284f0df61904ae0cb993d18f11ffec5cfbf21b4e7ec2e1bfd",
+      "bytes": 126889
+    },
+    "tests/fixtures/receiver_third_failure_rgb.npz": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/fixtures/receiver_third_failure_rgb.npz",
+      "sha256": "d4378436d10ea8becce8274ad90bfb03efa2bcb24611d7435ed6735d388c18d8",
+      "bytes": 122948
+    },
+    "tests/fixtures/regrasp_visible_offset.png": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/fixtures/regrasp_visible_offset.png",
+      "sha256": "334eda74996364bc337d7404387f8de09dd58e54d4993948e147ef8d8ac72948",
+      "bytes": 110243
+    },
+    "tests/fixtures/settlement_first_merge_v57.npz": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/fixtures/settlement_first_merge_v57.npz",
+      "sha256": "e8f64ce8ae7f872945acc101925e7a86a3e0f26bfc973975b51206da1810ff99",
+      "bytes": 1513262
+    },
+    "tests/fixtures/settlement_partial_rgbd.npz": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/fixtures/settlement_partial_rgbd.npz",
+      "sha256": "2f7f14ca0257ebdf848b8ae92dcb08faa0a61dfe30d187802d9fded3601e2a63",
+      "bytes": 434521
+    },
+    "tests/fixtures/settlement_robot_merge_rgbd.npz": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/fixtures/settlement_robot_merge_rgbd.npz",
+      "sha256": "765195ed3e6e2acf981ebff11c462bc3b6cf50bc48e9cedf8c4df7e689d3d125",
+      "bytes": 1071645
+    },
+    "tests/fixtures/table_hull_failure_rgbd.npz": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/fixtures/table_hull_failure_rgbd.npz",
+      "sha256": "d8501d5de523f999016e091e7a03bd25d7fc0471c9aefbd2fdfd0bf85bccb25b",
+      "bytes": 986259
+    },
+    "tests/fixtures/table_motion_v32.json": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/fixtures/table_motion_v32.json",
+      "sha256": "5b5bdb1a638efed816683675cb03f5619f5d9fc4a38c580cc9b84f8e60f726bd",
+      "bytes": 13518
+    },
+    "tests/fixtures/weighing_pose_ratio_v54.json": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/fixtures/weighing_pose_ratio_v54.json",
+      "sha256": "b97cb29650c7275eb2289c175b1d76dfc3c1dd148c564ecb88259cb36b5f6bb2",
+      "bytes": 80611
+    },
+    "tests/fixtures/weighing_pose_ratio_v54.npz": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/fixtures/weighing_pose_ratio_v54.npz",
+      "sha256": "73cf71e613e365c2c1ce6a614f695430f261ecdde72e6820a9fc647ee8c0aa48",
+      "bytes": 2185577
+    },
+    "tests/fixtures/weighing_posture_reserve_v46.json": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/fixtures/weighing_posture_reserve_v46.json",
+      "sha256": "45d2b96cd519b64ac33fd995b59b520a55d6f3414b9f1bb3465fc1413108d317",
+      "bytes": 70242
+    },
+    "tests/fixtures/weighing_reserve_refinement_v49.json": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/fixtures/weighing_reserve_refinement_v49.json",
+      "sha256": "2ee68654fb38042a05f0645e44f702a566789ecf59eb96a631a0bb29f83f2d66",
+      "bytes": 5784
+    },
+    "tests/fixtures/weighing_search_full_orientation_v50.json": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/fixtures/weighing_search_full_orientation_v50.json",
+      "sha256": "27d45c301a10483b33e32bab19ac37ca6a5aef23e11f44ec327bf8ccb81d5d91",
+      "bytes": 230191
+    },
+    "tests/fixtures/weighing_search_support_v42.json": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/fixtures/weighing_search_support_v42.json",
+      "sha256": "a0d8433dfb1eae3a9808b49554935c7b566adfcfefb17df67232e89f53160a7d",
+      "bytes": 2000
+    },
+    "tests/test_approach_edges.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/test_approach_edges.py",
+      "sha256": "b5a1d5177d4cd1d24b59573b04458285513b2d9a4361c50659f04c134f9b93d5",
+      "bytes": 9212
+    },
+    "tests/test_bin_layout.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/test_bin_layout.py",
+      "sha256": "bd3157c27a1f55c12bc2a615a57556cf770b0b6222437d4bb79736ca20e0a372",
+      "bytes": 5807
+    },
+    "tests/test_bin_rim_initialization.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/test_bin_rim_initialization.py",
+      "sha256": "738e9806601f81467ded270def9f9d5b1f9c92ce18503663a9cf48811cb6eecf",
+      "bytes": 3805
+    },
+    "tests/test_clearance.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/test_clearance.py",
+      "sha256": "480327ba2c49e87a4a8744cffb78cf980e44cc82c175d9ca556472ea8ec4e6a3",
+      "bytes": 1477
+    },
+    "tests/test_extensions.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/test_extensions.py",
+      "sha256": "e81a78fa3b28b8d98e01a4b4b0adb2535fb5b3054849e6a6ce695934d5a253b5",
+      "bytes": 11182
+    },
+    "tests/test_first_settlement_sampling.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/test_first_settlement_sampling.py",
+      "sha256": "2a2e866f8c1eff92a41b4389f22b5e07710d5d53dcab272fcbe9b97842de91df",
+      "bytes": 5538
+    },
+    "tests/test_handover.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/test_handover.py",
+      "sha256": "979072ff167295b8367d6517569514906f5552c3f662a404a5a2b6a47cabf4ba",
+      "bytes": 4367
+    },
+    "tests/test_head.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/test_head.py",
+      "sha256": "79a2a89b5b39e1aef82629a4577e03282934b5430efce905e425df5d259e86ba",
+      "bytes": 2037
+    },
+    "tests/test_initial_descent.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/test_initial_descent.py",
+      "sha256": "c42e24917d73f2bdf11e5461ef48cc3f313bdd020fe0391d98af90d28f33a5a2",
+      "bytes": 5480
+    },
+    "tests/test_manipulation.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/test_manipulation.py",
+      "sha256": "144b10848ce39bc17dc5c401dc942f15cc63e2a2b6c5160caa13fa82c1824793",
+      "bytes": 16366
+    },
+    "tests/test_pickup_close.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/test_pickup_close.py",
+      "sha256": "0a372280d26b7c0d071f2977866990af0b13ca35e03853d5c60fc2556a6b5e78",
+      "bytes": 5893
+    },
+    "tests/test_pickup_height.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/test_pickup_height.py",
+      "sha256": "19e463579890af4cd8cbd1403d89c13a573a1171ee725eeeaf79283b58059247",
+      "bytes": 5798
+    },
+    "tests/test_pickup_resume.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/test_pickup_resume.py",
+      "sha256": "65029f0fc2bea349b90182d7ad88f06dfd2a5a0dc8c93b4d46f43068a9981151",
+      "bytes": 8201
+    },
+    "tests/test_placement_gain.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/test_placement_gain.py",
+      "sha256": "9b526dde391c3f24a73f9524bd740570c6eea5756eeed31f3cafc505786939ea",
+      "bytes": 1899
+    },
+    "tests/test_placement_height.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/test_placement_height.py",
+      "sha256": "71e260b6500ddaf2f0f87def6184de0a3665e01fae6e473807dae7eccb16a2af",
+      "bytes": 6845
+    },
+    "tests/test_placement_target.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/test_placement_target.py",
+      "sha256": "5eb1226b0723150f9dfdff9c365d0d8f6dc53bc754421bedbc0e385696a9b52a",
+      "bytes": 3415
+    },
+    "tests/test_receiver.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/test_receiver.py",
+      "sha256": "4541b4cc6669fc8727a1445ef25745f86248ef5fff5f6ca3448b41482ea53a37",
+      "bytes": 8185
+    },
+    "tests/test_receiver_seed.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/test_receiver_seed.py",
+      "sha256": "2c4dd6b18323bae19985fa3438517dc7a3efe9e220052459a44958f368b74ea9",
+      "bytes": 2711
+    },
+    "tests/test_recovery.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/test_recovery.py",
+      "sha256": "416e8d5d4edb66a1dfb1b40e4e6855b3457813124d814763d15ff79af3ca709e",
+      "bytes": 2029
+    },
+    "tests/test_regrasp.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/test_regrasp.py",
+      "sha256": "19964be8caffdcfd62f11eecf07c913930bb8a8147777e2e952a9a1c388b0b24",
+      "bytes": 7342
+    },
+    "tests/test_residual.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/test_residual.py",
+      "sha256": "53ba07fe7897b0e51fc84cab3e35ceb535336bef75b377265a214550c6d032bf",
+      "bytes": 50554
+    },
+    "tests/test_resume_diagnostics.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/test_resume_diagnostics.py",
+      "sha256": "0c2c1c97b43d66173e58a5e1537ab5e1aff8ce7dcaac7a33dea415bbf35b66b1",
+      "bytes": 10557
+    },
+    "tests/test_rgbd_sampling.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/test_rgbd_sampling.py",
+      "sha256": "3c0a04f987ec18b967cf4faef6b62053fa934e45bbb3e77541f81717a294b856",
+      "bytes": 5527
+    },
+    "tests/test_settlement.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/test_settlement.py",
+      "sha256": "4708e32b54fb3953d3d0b795cd564e2deb15bb406827e0819b2758b1cc3edbaa",
+      "bytes": 2909
+    },
+    "tests/test_table_reference.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/test_table_reference.py",
+      "sha256": "9f4a68b50d7bcc5b95fc9114a5aa109352adcc31455bf026552c0a827f8a06c6",
+      "bytes": 5626
+    },
+    "tests/test_visual_cycle.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/test_visual_cycle.py",
+      "sha256": "8998fcaa82ae3afe781c8db51de0a6ac22a6e2018e80a4f4512709581b35e673",
+      "bytes": 14407
+    },
+    "tests/test_visual_pickup.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/test_visual_pickup.py",
+      "sha256": "8b7e10e286496af009e6034997055d071bf885e88266bb8a7317c6ecc6e6379d",
+      "bytes": 48661
+    },
+    "tests/test_weighing_pose.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/test_weighing_pose.py",
+      "sha256": "78758c06989a4a156f3fcb7c35fa4b219a878e6703b95c1d458abcac0223c88d",
+      "bytes": 9432
+    },
+    "tests/test_weighing_pose_ratio.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/test_weighing_pose_ratio.py",
+      "sha256": "8dfae5302d6335f5d8d62ddf96f7c4972ab2d72b986a6c9e11ed86600bfc0a50",
+      "bytes": 5205
+    },
+    "tests/test_wrist.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/full_visual_v63_initial_close_height/tests/test_wrist.py",
+      "sha256": "71d2ebfb3cfb1f956acceef9288261e07e9599007421fd13a6f147dd65cf6064",
+      "bytes": 6290
+    },
+    "run.sh": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/run.sh",
+      "sha256": "a401199fc3fc85952532edacaebf62219be849f4a7b5ab051cdd43956af24a3f",
+      "bytes": 369
+    },
+    "sync_to_container.sh": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/sync_to_container.sh",
+      "sha256": "056a231c11375b37a1d5fef365df3fe25939e0d1e60f539652fb4e81ff5b0d90",
+      "bytes": 985
+    },
+    "capture_scene1.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/capture_scene1.py",
+      "sha256": "dda71bc602a7fd7f7db0316ab877bf633ef5ec549c4cd08f9edc46c8fe4a86d4",
+      "bytes": 2638
+    },
+    "inspect_rgbd.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/inspect_rgbd.py",
+      "sha256": "08e472add14b2bfcd4bb4a19d43e7df5c5e8e4742968cad8d8a98bdc8f12929c",
+      "bytes": 4934
+    },
+    "look_at_scene1.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/look_at_scene1.py",
+      "sha256": "1b8916abf6e114cc262ef258974ebac5d107d48ac21d27346493cd3b73c2be3c",
+      "bytes": 4869
+    },
+    "calibrate_servo.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/calibrate_servo.py",
+      "sha256": "050752b892b6e502ed7b048c2892bbeec1cdc2e0d60cef2f70d1cb470300025e",
+      "bytes": 2653
+    },
+    "validate_tracking.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/validate_tracking.py",
+      "sha256": "d61f16a4cbc97645e41b38340f70398dc53484a7aedbb05b17884111709a2733",
+      "bytes": 4918
+    },
+    "diagnostics/probe_act.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/diagnostics/probe_act.py",
+      "sha256": "82b6721f5d199fedaed38f8f0218e82a845181ebff0ff879cf2507c295fc6c31",
+      "bytes": 4561
+    },
+    "diagnostics/analyze_handover.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/diagnostics/analyze_handover.py",
+      "sha256": "21a99bd73fe52badd3a2eff5292557e86c8579afc859aaae2c9dd085c92e7ede",
+      "bytes": 4065
+    },
+    "diagnostics/analyze_visual_cycle.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/diagnostics/analyze_visual_cycle.py",
+      "sha256": "952398417f3b8b8af61dc34fdb084f456bb577f9c101ba3f59f4c7eece169acc",
+      "bytes": 8478
+    },
+    "diagnostics/replay_trace.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/diagnostics/replay_trace.py",
+      "sha256": "954962a4d67da43a9297f99f3510dae06d7341be4a975c3583d31be2ef554ef9",
+      "bytes": 6294
+    },
+    "diagnostics/record_third_view.sh": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/diagnostics/record_third_view.sh",
+      "sha256": "1a9b4e51dbcc0e6096267207198c3e9f9306d5d3832be55284fc92ba96eff655",
+      "bytes": 1375
+    },
+    "diagnostics/wrist-calibration-20261015.json": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/diagnostics/wrist-calibration-20261015.json",
+      "sha256": "66a3d6dc4772f5e4d15526ab2d7d956cf977f26ff060eb3245d0ae66552a3df5",
+      "bytes": 1364
+    },
+    "results/robot.urdf": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/results/robot.urdf",
+      "sha256": "3d85ea8ef6b82b5584e245292f103980895eab826ee027e2e0ef383bbcb95248",
+      "bytes": 58179
+    },
+    "docs/HANDOFF-v63-20261017.md": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/diagnostics_resume_20261017/HANDOFF_before.md",
+      "sha256": "113d9474270e4fb554c0480be34162e3327fc4a54bfcb09d805f03e64cde6448",
+      "bytes": 29500
+    },
+    "docs/README-original-v63.md": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/README.md",
+      "sha256": "3f17de90a7db3d20fd3a94c3df1d9213c29855e70df1c19a9690178b273aa0cd",
+      "bytes": 14426
+    },
+    "diagnostics/full-visual-v63-all-attempts-20261017.json": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/diagnostics/full-visual-v63-all-attempts-20261017.json",
+      "sha256": "816d2c2472cb888e7eedc4399af1fbd1b52e6b7a2c565ae3221a0fc61c41e936",
+      "bytes": 2249
+    },
+    "diagnostics/full-visual-v63-hashes-20261017.json": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/diagnostics/full-visual-v63-hashes-20261017.json",
+      "sha256": "0900f72e17ca63385639902d52734b681eb2c973a6a5b3d80cfd29bcf822d8dc",
+      "bytes": 12168
+    },
+    "diagnostics/full-visual-v63-tests-20261017.txt": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/diagnostics/full-visual-v63-tests-20261017.txt",
+      "sha256": "dc6094beee6c04e3889f7b2bc0157a02b1175d9c8d3a275a8d18aaaab27694b8",
+      "bytes": 54637
+    },
+    "diagnostics/full-visual-v63-three-independent-20261017.json": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/diagnostics/full-visual-v63-three-independent-20261017.json",
+      "sha256": "9f05e15c7abe1b1ff5d18d7887de4d4f6a259b4343415fae5905ccc4cfb03b93",
+      "bytes": 901
+    },
+    "diagnostics/full-visual-v63-trial1-20261017.json": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/diagnostics/full-visual-v63-trial1-20261017.json",
+      "sha256": "bbcb64fb7e681ee0d8a112fa06155163ca2e9ec42f4246874224cc67a33b028d",
+      "bytes": 17013
+    },
+    "diagnostics/full-visual-v63-trial2-20261017.json": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/diagnostics/full-visual-v63-trial2-20261017.json",
+      "sha256": "ad041a5239395948e71bd59e0a2992a912a1a5c2a8770cb59b3fe8c60b301462",
+      "bytes": 17009
+    },
+    "diagnostics/full-visual-v63-trial3-20261017.json": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/diagnostics/full-visual-v63-trial3-20261017.json",
+      "sha256": "6d3c722110d23400fe1811fa0a08696ef70125ade87eb985c21103fb74015a48",
+      "bytes": 17011
+    },
+    "diagnostics/full-visual-v63-video-attempt1-20261017.json": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/diagnostics/full-visual-v63-video-attempt1-20261017.json",
+      "sha256": "3968a78781b99bd60ec911088912c74c4e6b4666d2c0a283d039b2cb4fdfdeb9",
+      "bytes": 2521
+    },
+    "diagnostics/full-visual-v63-video-attempt2-20261017.json": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/diagnostics/full-visual-v63-video-attempt2-20261017.json",
+      "sha256": "f52d68c210720301d7c75c28347bc38fa5654c429f91583526fae9421dc2c00f",
+      "bytes": 16999
+    },
+    "diagnostics/v63-code-verification-20261017.json": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/diagnostics/v63-code-verification-20261017.json",
+      "sha256": "49cc8716e1a9f256a2fc2703cb6d87fec5beeb1c1cac6fc68f5bf8cae6ccff3d",
+      "bytes": 76
+    },
+    "diagnostics/v63-formal-video-attempt1-session-20261017.json": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/diagnostics/v63-formal-video-attempt1-session-20261017.json",
+      "sha256": "9787659a62a43ba5771037d60f339da4a3837180c47c3b2d2c967c05d642a1f4",
+      "bytes": 1073
+    },
+    "diagnostics/v63-formal-video-attempt2-session-20261017.json": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/diagnostics/v63-formal-video-attempt2-session-20261017.json",
+      "sha256": "9c2ff0c614885f0ad8f5862154d9b96f0cc656ec125401fa6bd7a7815b0986c2",
+      "bytes": 1543
+    },
+    "diagnostics/v63-formal-video-session-20261017.json": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/diagnostics/v63-formal-video-session-20261017.json",
+      "sha256": "9c2ff0c614885f0ad8f5862154d9b96f0cc656ec125401fa6bd7a7815b0986c2",
+      "bytes": 1543
+    },
+    "diagnostics/v63-handoff-timing-baseline-20261017.json": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/diagnostics/v63-handoff-timing-baseline-20261017.json",
+      "sha256": "9d8aa997d80421c9b8c14e72603ab212f382143c92c3fa6788678ab23351e3bd",
+      "bytes": 29678
+    },
+    "diagnostics/v63-settlement-source-verification-20261017.json": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/diagnostics/v63-settlement-source-verification-20261017.json",
+      "sha256": "e568d259c0ccac51db7564f62665f29899a17080702ea200ce02f23b883d7a48",
+      "bytes": 3171
+    },
+    "diagnostics/v63-timing-components-20261017.json": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/diagnostics/v63-timing-components-20261017.json",
+      "sha256": "47d3115c93adb150e04c1e2ca478d4f0066ef5bf2e5fe335d64b70d58475faa3",
+      "bytes": 257236
+    },
+    "diagnostics/v63-trial1-postrun-code-verification-20261017.json": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/diagnostics/v63-trial1-postrun-code-verification-20261017.json",
+      "sha256": "985a5f333d9a4a3a1e6dadf066a9530ef331dda4ddd13f24b6b92a32af29ad8d",
+      "bytes": 88
+    },
+    "diagnostics/v63-trial2-postrun-code-verification-20261017.json": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/diagnostics/v63-trial2-postrun-code-verification-20261017.json",
+      "sha256": "e06a598bb300f5c2d0fa8808dc7cfe3bf3c16de7454f775f63a85e0cd84afabf",
+      "bytes": 88
+    },
+    "diagnostics/v63-trial3-postrun-code-verification-20261017.json": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/diagnostics/v63-trial3-postrun-code-verification-20261017.json",
+      "sha256": "47fb99acdc85eec62c442618c809e723f793813ad5bdf08a8917c3055447d290",
+      "bytes": 108
+    },
+    "diagnostics/v63-video-attempt1-code-verification-20261017.json": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/diagnostics/v63-video-attempt1-code-verification-20261017.json",
+      "sha256": "d4baf9a093dab774d8af7f750f2ea6bc5c3333fafa1f72260db5093f702d7067",
+      "bytes": 192
+    },
+    "diagnostics/v63-video-attempt2-code-verification-20261017.json": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/diagnostics/v63-video-attempt2-code-verification-20261017.json",
+      "sha256": "4bcd063524ffa31f2d55780bdea0b6ac9e7f796dd2c674d1e126e7652523703d",
+      "bytes": 88
+    },
+    "diagnostics/v63-video-camera-precheck-20261017.json": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/diagnostics/v63-video-camera-precheck-20261017.json",
+      "sha256": "795995bf2f2cd485d3dcd15d118bd2cb452fd3fe1f819f73cf0477cd0cfec948",
+      "bytes": 208
+    },
+    "diagnostics/v63-video-decode-command-compatibility-20261017.json": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/diagnostics/v63-video-decode-command-compatibility-20261017.json",
+      "sha256": "c725c43d82c2d9fd9ed560addb436bca3a6b3cdef412749ee86ad3e43be1b59a",
+      "bytes": 293
+    },
+    "diagnostics/v63-video-decoded-frames-20261017.json": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/diagnostics/v63-video-decoded-frames-20261017.json",
+      "sha256": "38c95c52c40509ab68fa501ebb48912114d52df3ebdbe35b3f69c5c84c6bf0df",
+      "bytes": 298
+    },
+    "diagnostics/v63-video-ffprobe-20261017.json": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/diagnostics/v63-video-ffprobe-20261017.json",
+      "sha256": "7b055a4e7d34004435f02466feb73d693f1e54e019266346943507bc51c0077a",
+      "bytes": 366
+    },
+    "diagnostics/v63-video-lossless-remux-20261017.json": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/diagnostics/v63-video-lossless-remux-20261017.json",
+      "sha256": "0278b999f666ae2c1f57551d4925d2893af9331248a70a7432bd14a177d1be2d",
+      "bytes": 716
+    },
+    "diagnostics/v63-video-recheck-parameterized-20261017.json": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/diagnostics/v63-video-recheck-parameterized-20261017.json",
+      "sha256": "005694f102cee0e9e0769dd1eb1787f898dd2428196c04e113b643d462b26d0f",
+      "bytes": 915
+    },
+    "diagnostics/v63-video-settlement-probe-20261017.json": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/diagnostics/v63-video-settlement-probe-20261017.json",
+      "sha256": "277cebf4b004449de3e5144544a89946a789da4cf7f7056adc85e8815990aefc",
+      "bytes": 17345
+    },
+    "diagnostics/v63-video2-camera-precheck-20261017.json": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/diagnostics/v63-video2-camera-precheck-20261017.json",
+      "sha256": "d79dc3b239518f844a720dd3b618a7f5f607688953564b7d89e7c48d6996ac9d",
+      "bytes": 208
+    },
+    "diagnostics/handoff-final-code-verification-20261017.json": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/diagnostics/handoff-final-code-verification-20261017.json",
+      "sha256": "8bb2d6b539b3f526952aebfe8e19486c70b6f4ee4b64d32d839baeaa2d4dce6f",
+      "bytes": 974
+    },
+    "diagnostics/official-seed-interface-handoff-20261017.json": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/diagnostics/official-seed-interface-handoff-20261017.json",
+      "sha256": "9bcd6030734aac134cdd65d84c23123cc7d1959bfaf6cd0f25419fda50edaef4",
+      "bytes": 4089
+    },
+    "diagnostics/visual-cycle-three-independent-20261015.json": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/diagnostics/visual-cycle-three-independent-20261015.json",
+      "sha256": "03041afbe178adaecc27a9aad8bef54d0f75e33a7f811987ea736405f3abe4f8",
+      "bytes": 17162
+    },
+    "diagnostics/v63_video_settlement_probe.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/diagnostics_resume_20261017/v63_video_settlement_probe.py",
+      "sha256": "f3e8c7ef281336598eebed576d89644363837ca724384bcffaad300c34c2171d",
+      "bytes": 2166
+    },
+    "diagnostics/check_video_frame_stream.py": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/backups/diagnostics_resume_20261017/check_video_frame_stream.py",
+      "sha256": "40aff66f3a6e4155df8f6b0cd127a636f1e2a7ff0b3316ee6545012a581f1197",
+      "bytes": 1180
+    },
+    "results/full-visual-v63-video-review-20261017.html": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/results/full-visual-v63-video-review-20261017.html",
+      "sha256": "faef4c569a828399ac0cbf6fbd29f4b927310cc44e40120e6be8b560459f6e82",
+      "bytes": 187607
+    },
+    "results/full-visual-v63-video-attempt1-review-20261017.html": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/results/full-visual-v63-video-attempt1-review-20261017.html",
+      "sha256": "1895fa9489658f8e6c5c169537e35187d17fa9f1739c79cc2c6cf6617a33be71",
+      "bytes": 14496
+    },
+    "results/videos/v63-final-home-20261017.png": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/results/videos/v63-final-home-20261017.png",
+      "sha256": "273f9bf9da0278d5f2f4546683ccb810e314c68592153b81ccea0be368eeb60f",
+      "bytes": 215221
+    },
+    "results/videos/v63-four-parcels-third-view-20261017.mp4": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/results/videos/v63-four-parcels-third-view-20261017.mp4",
+      "sha256": "238a8bbaf17af14c2bcf56bc35663364ddd348ee4275b49aa30bc297def72b7e",
+      "bytes": 52050388
+    },
+    "results/videos/v63-video-attempt1-FAILED-20261017.mkv": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/results/videos/v63-video-attempt1-FAILED-20261017.mkv",
+      "sha256": "5293be7e2099901ba7c50287286b1a610c98f9ac9e976b86909c87ac8f9933eb",
+      "bytes": 4147539
+    },
+    "results/20261016-200019/run.json": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/results/20261016-200019/run.json",
+      "sha256": "82817e6cc0e0208b249ebf844072e699a70b24027b2cba88904edad7f355a425",
+      "bytes": 9592
+    },
+    "results/20261016-200019/summary.json": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/results/20261016-200019/summary.json",
+      "sha256": "ab2e575e4b9cefefcd35cd2f1fe1bf983d9bc7e08c403ce5d242225cffab6b3f",
+      "bytes": 1113
+    },
+    "results/20261016-204228/run.json": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/results/20261016-204228/run.json",
+      "sha256": "82817e6cc0e0208b249ebf844072e699a70b24027b2cba88904edad7f355a425",
+      "bytes": 9592
+    },
+    "results/20261016-204228/summary.json": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/results/20261016-204228/summary.json",
+      "sha256": "ebd58fbc5bdd834691f37d87bdf2116cf715c96f0ba7e14e47d11c65acf23e16",
+      "bytes": 1113
+    },
+    "results/20261016-212331/run.json": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/results/20261016-212331/run.json",
+      "sha256": "82817e6cc0e0208b249ebf844072e699a70b24027b2cba88904edad7f355a425",
+      "bytes": 9592
+    },
+    "results/20261016-212331/summary.json": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/results/20261016-212331/summary.json",
+      "sha256": "7f4a2903ebffb7e589b0f4e923818b49dc2a7dfaa7601c3b19f170cff5aca15d",
+      "bytes": 1111
+    },
+    "results/20261017-011742/run.json": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/results/20261017-011742/run.json",
+      "sha256": "82817e6cc0e0208b249ebf844072e699a70b24027b2cba88904edad7f355a425",
+      "bytes": 9592
+    },
+    "results/20261017-011742/summary.json": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/results/20261017-011742/summary.json",
+      "sha256": "734681eea07c0e0be0b923d0206137c5c4c2756d57b8fbd845e34ce5854d6031",
+      "bytes": 1139
+    },
+    "results/20261017-011742/failed_observation.json": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/results/20261017-011742/failed_observation.json",
+      "sha256": "2584cb523529972eb85563195d0085dfb040354546fec5c581ade0d5881e483c",
+      "bytes": 3908
+    },
+    "results/20261017-012700/run.json": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/results/20261017-012700/run.json",
+      "sha256": "82817e6cc0e0208b249ebf844072e699a70b24027b2cba88904edad7f355a425",
+      "bytes": 9592
+    },
+    "results/20261017-012700/summary.json": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/results/20261017-012700/summary.json",
+      "sha256": "2f27ef3eca765c1edad3c2a2f0bd72d5ef756d1edf40c4d255e34377f42ba5b8",
+      "bytes": 1103
+    },
+    "results/20261017-011742/sensors-0420.npz": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/results/20261017-011742/sensors-0420.npz",
+      "sha256": "eba4e0f6798efaa1fe5f2908b75c81029cdb9b2ba3adfeb61871aa513202c2a1",
+      "bytes": 699638
+    },
+    "results/20261017-011742/sensors-0440.npz": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/results/20261017-011742/sensors-0440.npz",
+      "sha256": "1a808874c22ed62956237cca86c74091d0bdaeed7737896905496b1d18713cf4",
+      "bytes": 696023
+    },
+    "results/20261017-011742/sensors-0460.npz": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/results/20261017-011742/sensors-0460.npz",
+      "sha256": "90ec063aa1c9ff85e7bc842ff2a0362f30c50f3b294040b66601b375f9145a73",
+      "bytes": 689636
+    },
+    "results/20261017-011742/sensors-0480.npz": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/results/20261017-011742/sensors-0480.npz",
+      "sha256": "96dba19dd26182871f8103de7a5832a975098c8237b2992a9f91151df6986103",
+      "bytes": 688908
+    },
+    "results/20261017-011742/sensors-0500.npz": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/results/20261017-011742/sensors-0500.npz",
+      "sha256": "35171b60e8518186e7f54bdac641b7490d228e98369d1d03383d72304be63bd2",
+      "bytes": 687168
+    },
+    "results/20261017-011742/sensors-0520.npz": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/results/20261017-011742/sensors-0520.npz",
+      "sha256": "b95fcf397079a8030fe1b7b3da092d20f1999ea8d6ecddef8f0b1baa56eed69b",
+      "bytes": 685434
+    },
+    "results/20261017-011742/failed-sensors.npz": {
+      "source": "/home/krist/kuavo_course/scene1_act_optimization/results/20261017-011742/failed-sensors.npz",
+      "sha256": "a7fa010871cfe768898f8ebf9f62dc0343dc4969d5d13855dc5f3a60c789e035",
+      "bytes": 488303
+    }
+  },
+  "limitations": "All five independent runs used seed 0; four completed, one failed. task_success=null. No official judge pass or multi-seed claim."
+}

@@ -1,0 +1,22 @@
+{
+  "run": "20261016-163318",
+  "frames": [
+    {
+      "step": 5957,
+      "source": "sensors-5957.npz",
+      "sha256": "d579fb76f795aa238e6897263ceeb53834afd0612aad5d913a98d008117e80a3"
+    },
+    {
+      "step": 6140,
+      "source": "sensors-6140.npz",
+      "sha256": "7e6f46d42e09e85c9ddd45f8a85b6e6aad8494aacdc8751025bb63b6bc664746"
+    },
+    {
+      "step": 6154,
+      "source": "failed-sensors.npz",
+      "sha256": "a284acc7f7bf4ad4c453a841dde1eef86d60dc8e228c6f4d8d992af055d9beac"
+    }
+  ],
+  "source": "Unannotated saved RGB-D; targets transformed by original verified tabletop reference.",
+  "limitation": "Periodic replay does not establish closed-loop success."
+}

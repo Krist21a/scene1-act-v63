@@ -1,0 +1,75 @@
+{
+  "source_run": "20261016-114010",
+  "source_steps": [
+    60,
+    80,
+    100,
+    120
+  ],
+  "stored_failed_rim": {
+    "center": {
+      "array": [
+        0.6110682417930857,
+        0.28730297977260094
+      ],
+      "dtype": "float64"
+    },
+    "corners": {
+      "array": [
+        [
+          0.9310396313667297,
+          0.4622041881084442
+        ],
+        [
+          0.29042643308639526,
+          0.4609723389148712
+        ],
+        [
+          0.2910967171192169,
+          0.11240166425704956
+        ],
+        [
+          0.931709885597229,
+          0.11363351345062256
+        ]
+      ],
+      "dtype": "float32"
+    },
+    "rim_z": 0.21688922641624686,
+    "plane_z": -0.084053147492819,
+    "stamp": 1792151305.113932,
+    "visible_edges": 2,
+    "supporting_points": 140
+  },
+  "frames": [
+    {
+      "step": 60,
+      "table_z_base_m": -0.08439282032822004,
+      "stamp": 1792150851.2134864
+    },
+    {
+      "step": 80,
+      "table_z_base_m": -0.0843624199205204,
+      "stamp": 1792150854.0805137
+    },
+    {
+      "step": 100,
+      "table_z_base_m": -0.08404139802878763,
+      "stamp": 1792150857.432107
+    },
+    {
+      "step": 120,
+      "table_z_base_m": -0.08367579283240745,
+      "stamp": 1792150860.6187105
+    }
+  ],
+  "sources": {
+    "visual-cycle-checkpoint.json": "b36ae89978495a7990f557fa832fe2e96b6cf3597f9cb7bf1cac0f5dbeba420c",
+    "steps.jsonl": "d0e65180c0df2d5ae835bde03ec19f0a942333483a8989dd955746d15b74f2e7",
+    "sensors-0060.npz": "4be0c6a6e1aa3b7033b0cbe26dae6fc0a13f6658f7af1a094f25a6fd970de53e",
+    "sensors-0080.npz": "5e9298bd77d135b8c1997344b7ad78506eb9d2a30a2b7255ee91e8cc58245158",
+    "sensors-0100.npz": "820806983a2e952ab63c2317ec3e8c892421064c3ccdbf3928e98acc41d4c38d",
+    "sensors-0120.npz": "ef20090413bb4b99c1ce0e55d257d9a15da44b053593ca79de1da0b4e0b8ecac"
+  },
+  "limitation": "The exact initial frame that created the 641 mm cache was not saved. Raw step 60 proves the isolated-point bounding-box defect; step 80+ confirms four observed sides and contradicts the cached length."
+}
